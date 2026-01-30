@@ -128,6 +128,54 @@ print(f"    - 评委得分列数: {len(judge_cols)}")
 for col in judge_cols:
     df[col] = df[col].apply(clean_judge_score)
 
+def normalize_judge_scores(df, weeks=range(1, 12)):
+    """
+    将每个赛季-周次的评委打分归一到 1-10 区间。
+    返回: (df_normalized, scale_map)
+    scale_map[(season, week)] = scale_factor，用于还原。
+    """
+    df = df.copy()
+    scale_map = {}
+
+    for week in weeks:
+        week_cols = [f'week{week}_judge{j}_score' for j in range(1, 5)]
+        existing_cols = [c for c in week_cols if c in df.columns]
+        if not existing_cols:
+            continue
+
+        for season, season_df in df.groupby('season'):
+            max_score = season_df[existing_cols].max().max()
+            if pd.isna(max_score) or max_score <= 0:
+                scale_map[(season, week)] = 1.0
+                continue
+
+            scale_factor = 10.0 / max_score if max_score > 10 else 1.0
+            scale_map[(season, week)] = scale_factor
+            if scale_factor != 1.0:
+                season_mask = df['season'] == season
+                df.loc[season_mask, existing_cols] = df.loc[season_mask, existing_cols] * scale_factor
+
+    return df, scale_map
+
+def restore_judge_scores(df, scale_map, weeks=range(1, 12)):
+    """
+    将归一化后的评委打分还原到原始尺度。
+    """
+    df = df.copy()
+    for week in weeks:
+        week_cols = [f'week{week}_judge{j}_score' for j in range(1, 5)]
+        existing_cols = [c for c in week_cols if c in df.columns]
+        if not existing_cols:
+            continue
+
+        for season in df['season'].dropna().unique():
+            scale_factor = scale_map.get((season, week), 1.0)
+            if scale_factor != 1.0:
+                season_mask = df['season'] == season
+                df.loc[season_mask, existing_cols] = df.loc[season_mask, existing_cols] / scale_factor
+
+    return df
+
 # 计算每周的评委总分和平均分
 for week in range(1, 12):
     week_cols = [f'week{week}_judge{j}_score' for j in range(1, 5)]
