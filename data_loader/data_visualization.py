@@ -54,7 +54,6 @@ fig, ax = plt.subplots(figsize=(14, 8))
 custom_heatmap_cmap = LinearSegmentedColormap.from_list("dwts_theme", ["#BADDF3", "#7BADDF", "#B581B4", "#DA8176"])
 pivot_data = df_long.pivot_table(values='judge_total', index='season', columns='week', aggfunc='mean')
 sns.heatmap(pivot_data, cmap=custom_heatmap_cmap, ax=ax, linewidths=0.5, linecolor='white', cbar_kws={'label': 'Average Judge Total Score'})
-ax.set_title('Average Judge Total Score by Season and Week')
 plt.savefig('fig1_score_heatmap.png')
 plt.close()
 
@@ -74,7 +73,6 @@ for idx, name in enumerate(controversy_names):
     ax.plot(season_avg.index, season_avg.values, 's--', color=COLORS['neutral'], alpha=0.5, label='Season Average')
     for _, row in contestant_data.iterrows():
         ax.annotate(f"#{int(row['weekly_rank'])}", (row['week'], row['judge_total']), textcoords="offset points", xytext=(0,10), ha='center', fontsize=8)
-    ax.set_title(f'{name} (Season {season}, Final: #{int(placement)})')
     ax.legend(loc='lower right')
 plt.tight_layout()
 plt.savefig('fig2_controversy_analysis.png')
@@ -93,7 +91,6 @@ ax.barh(range(len(industry_stats)), industry_stats['placement'].values, color=co
 ax.set_yticks(range(len(industry_stats)))
 ax.set_yticklabels(industry_stats.index)
 ax.invert_yaxis()
-ax.set_title('(a) Average Placement by Industry (n≥5)')
 
 # (b) 年龄与排名
 ax = axes[0, 1]
@@ -104,7 +101,6 @@ ax.set_xticklabels(age_placement.index)
 z = np.polyfit(range(len(age_placement)), age_placement.values, 1)
 p = np.poly1d(z)
 ax.plot(range(len(age_placement)), p(range(len(age_placement))), color=COLORS['success'], linestyle='--', label='Trend')
-ax.set_title('(b) Average Placement by Age Group')
 
 # (c) 舞伴经验影响
 ax = axes[1, 0]
@@ -114,14 +110,12 @@ ax.scatter(exp_groups.index, exp_groups['placement'], s=exp_groups['count']*10, 
 z = np.polyfit(exp_groups.index, exp_groups['placement'], 1)
 p = np.poly1d(z)
 ax.plot(exp_groups.index, p(exp_groups.index), color=COLORS['accent'], linestyle='--')
-ax.set_title('(c) Partner Experience vs Placement')
 
 # (d) 不同名次选手的得分趋势
 ax = axes[1, 1]
 for place, color in zip([1, 2, 3], [COLORS['success'], COLORS['accent'], COLORS['primary']]):
     place_avg = df_long[df_long['placement'] == place].groupby('week')['judge_total'].mean()
     ax.plot(place_avg.index, place_avg.values, 'o-', color=color, label=f'Rank #{place}')
-ax.set_title('(d) Score Trajectory by Final Rank')
 ax.legend()
 
 # (e) 相关性热力图
@@ -130,13 +124,11 @@ numeric_cols = ['celebrity_age_during_season', 'placement', 'weeks_participated'
 corr_data = df[numeric_cols].dropna()
 corr_data.columns = ['Age', 'Place', 'Weeks', 'AvgSc', 'StdSc', 'PrtExp']
 sns.heatmap(corr_data.corr(), annot=True, fmt='.2f', cmap='RdBu_r', center=0, ax=ax, square=True, cbar=False)
-ax.set_title('(e) Correlation Matrix of Key Variables')
 
 # (f) 淘汰选手的平均分分布
 ax = axes[2, 1]
 elim_scores = df[df['elimination_week'] > 0].groupby('elimination_week')['avg_judge_total'].mean()
 ax.bar(elim_scores.index, elim_scores.values, color=COLORS['secondary'], alpha=0.8)
-ax.set_title('(f) Avg Score of Eliminated Contestants by Week')
 
 plt.tight_layout()
 plt.savefig('fig3_key_insights_summary.png')
