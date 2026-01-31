@@ -1,0 +1,8 @@
+feature,importance,importance_norm
+week,0.33639118,0.3363912
+season,0.2299925,0.22999251
+age,0.106707536,0.10670754
+partner_historical_avg_placement,0.10656512,0.106565125
+industry_category_encoded,0.08794821,0.08794822
+partner_prev_seasons,0.07332476,0.07332477
+is_us_contestant,0.059070703,0.059070706

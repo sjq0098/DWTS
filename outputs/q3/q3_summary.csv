@@ -1,0 +1,21 @@
+metric,value
+Judge Model R²,0.5796
+Fan Model R²,0.8309
+Judge Model MAE,3.26
+Fan Model MAE,22399.35
+Judge Model NDCG,0.9882
+Fan Model NDCG,0.9848
+TreeSHAP Ratio: week,2.2527
+TreeSHAP Ratio: season,0.3702
+TreeSHAP Ratio: age,0.3742
+TreeSHAP Ratio: partner_historical_avg_placement,0.4662
+TreeSHAP Ratio: industry_category_encoded,0.2537
+TreeSHAP Ratio: partner_prev_seasons,0.4383
+TreeSHAP Ratio: is_us_contestant,0.2202
+RankSHAP Ratio: age,0.9622
+RankSHAP Ratio: partner_historical_avg_placement,1.3475
+RankSHAP Ratio: partner_prev_seasons,1.0354
+RankSHAP Ratio: industry_category_encoded,0.5834
+RankSHAP Ratio: is_us_contestant,0.3545
+RankSHAP Ratio: week,N/A
+RankSHAP Ratio: season,N/A
