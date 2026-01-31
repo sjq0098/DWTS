@@ -276,21 +276,21 @@ class FanVoteEstimator:
         )
         self.pred_df["popularity_score"] = np.exp(self.pred_df["popularity_raw"])
 
-    # 周内归一化成份额
+        # 周内归一化成份额
         self.pred_df["vote_share_hat"] = self.pred_df.groupby(
             ["season", "week"]
         )["popularity_score"].transform(lambda s: s / s.sum())
         
         # 设定票池
-    BASE_TOTAL_VOTES = 1_000_000
+        BASE_TOTAL_VOTES = 1_000_000
         
-    def week_vote_pool(row):
-        w = row["week"]
-        W = row["season_weeks"]
-        if W <= 1:
-            return BASE_TOTAL_VOTES
-        factor = 0.8 + 0.6 * (w - 1) / (W - 1)
-        return BASE_TOTAL_VOTES * factor
+        def week_vote_pool(row):
+            w = row["week"]
+            W = row["season_weeks"]
+            if W <= 1:
+                return BASE_TOTAL_VOTES
+            factor = 0.8 + 0.6 * (w - 1) / (W - 1)
+            return BASE_TOTAL_VOTES * factor
     
         self.pred_df["total_votes_hat"] = self.pred_df.apply(week_vote_pool, axis=1)
         self.pred_df["votes_hat"] = (
@@ -513,6 +513,7 @@ class EliminationConsistencyEvaluator:
         
         print(f"\n[Metrics] 赛季级一致性汇总（前10行）：")
         print(self.season_summary.head(10).to_string())
+        self.season_summary.to_csv("q1_season_consistency_summary.csv", index=False)
         return self
     
     def plot_consistency(self):
@@ -523,7 +524,6 @@ class EliminationConsistencyEvaluator:
                self.season_summary["exact_elim"], color=COLORS["primary"], edgecolor='navy', alpha=0.85)
         ax.axhline(y=self.season_summary["exact_elim"].mean(), color='red', 
                    linestyle='--', linewidth=2, label=f'Average: {self.season_summary["exact_elim"].mean():.3f}')
-        ax.set_title("Season-level Elimination Exact Match Rate", fontsize=14, fontweight='bold')
         ax.set_xlabel("Season", fontsize=12)
         ax.set_ylabel("Exact Match Rate", fontsize=12)
         ax.legend()
@@ -542,7 +542,6 @@ class EliminationConsistencyEvaluator:
         ax.plot(week_summary["week"], week_summary["exact_match_mean"], 
                 marker="o", linewidth=2, markersize=8, color=COLORS["accent"])
         ax.fill_between(week_summary["week"], 0, week_summary["exact_match_mean"], alpha=0.2, color='orange')
-        ax.set_title("Weekly Exact Match Rate (Averaged Across Seasons)", fontsize=14, fontweight='bold')
         ax.set_xlabel("Week", fontsize=12)
         ax.set_ylabel("Exact Match Rate", fontsize=12)
         ax.set_ylim(0, 1)
@@ -556,7 +555,6 @@ class EliminationConsistencyEvaluator:
                self.season_summary["bottom2_cover"], color=COLORS["success"], edgecolor='darkred', alpha=0.85)
         ax.axhline(y=self.season_summary["bottom2_cover"].mean(), color='red', 
                    linestyle='--', linewidth=2, label=f'Average: {self.season_summary["bottom2_cover"].mean():.3f}')
-        ax.set_title("Bottom-2 Coverage Rate by Season", fontsize=14, fontweight='bold')
         ax.set_xlabel("Season", fontsize=12)
         ax.set_ylabel("Bottom-2 Coverage Rate", fontsize=12)
         ax.legend()
@@ -578,7 +576,6 @@ class EliminationConsistencyEvaluator:
             linewidths=0.5, linecolor="white",
             cbar_kws={"label": "Average Judge Total Score"}
         )
-        ax.set_title("Average Judge Total Score Heatmap (All Seasons)", fontsize=14, fontweight='bold')
         ax.set_xlabel("Week", fontsize=12)
         ax.set_ylabel("Season", fontsize=12)
         plt.tight_layout()
@@ -796,7 +793,6 @@ class UncertaintyAnalyzer:
                 color='mediumpurple', alpha=0.7)
         ax.axvline(x=self.unc_df["rel_ci80"].mean(), color='red', linestyle='--', 
                    linewidth=2, label=f'Mean: {self.unc_df["rel_ci80"].mean():.3f}')
-        ax.set_title("Distribution of Relative Uncertainty (CI80 / Median)", fontsize=14, fontweight='bold')
         ax.set_xlabel("Relative CI80 Width", fontsize=12)
         ax.set_ylabel("Count", fontsize=12)
         ax.legend()
@@ -814,7 +810,6 @@ class UncertaintyAnalyzer:
             self.week_unc["rel_ci80_mean"] + self.week_unc["rel_ci80_std"],
             alpha=0.25, color='teal', label="±1 Std"
         )
-        ax.set_title("Uncertainty by Week (Across All Seasons)", fontsize=14, fontweight='bold')
         ax.set_xlabel("Week", fontsize=12)
         ax.set_ylabel("Relative CI80 Width", fontsize=12)
         ax.legend()
@@ -829,7 +824,6 @@ class UncertaintyAnalyzer:
         bars = ax.bar(range(topk), top_cele["rel_ci80_mean"], color='coral', edgecolor='darkred', alpha=0.8)
         ax.set_xticks(range(topk))
         ax.set_xticklabels(top_cele["celebrity_name"], rotation=45, ha="right", fontsize=9)
-        ax.set_title("Top Contestants with Highest Mean Uncertainty", fontsize=14, fontweight='bold')
         ax.set_xlabel("Celebrity", fontsize=12)
         ax.set_ylabel("Mean Relative CI80 Width", fontsize=12)
         plt.tight_layout()
@@ -850,8 +844,10 @@ class UncertaintyAnalyzer:
         ).fillna(0)
         
         fig, ax = plt.subplots(figsize=(10, 6), dpi=300)
-        im = ax.imshow(heat_u.values, aspect="auto", cmap='YlOrRd')
-        ax.set_title(f"Uncertainty Heatmap (Season {example_season}, Top12)", fontsize=14, fontweight='bold')
+        heat_cmap = LinearSegmentedColormap.from_list(
+            "dwts_theme", [COLORS["light"], COLORS["primary"], COLORS["secondary"], COLORS["success"]]
+        )
+        im = ax.imshow(heat_u.values, aspect="auto", cmap=heat_cmap)
         ax.set_xlabel("Week", fontsize=12)
         ax.set_ylabel("Celebrity", fontsize=12)
         ax.set_xticks(np.arange(heat_u.shape[1]))
@@ -877,7 +873,6 @@ class UncertaintyAnalyzer:
         fig, ax = plt.subplots(figsize=(8, 5), dpi=300)
         scatter = ax.scatter(scatter_df["pred_total_votes"], scatter_df["placement"], 
                             alpha=0.5, c='steelblue', edgecolor='navy', s=50)
-        ax.set_title("Predicted Total Votes vs Final Placement", fontsize=14, fontweight='bold')
         ax.set_xlabel("Predicted Total Votes", fontsize=12)
         ax.set_ylabel("Final Placement (Lower is Better)", fontsize=12)
         

@@ -277,7 +277,7 @@ def main():
     print(f"[一致性] 淘汰周精确匹配率: {exact_elim:.4f}")
     print(f"[一致性] Bottom-2覆盖率: {bottom2:.4f}")
 
-    # 4) 不确定性分析（Conformal Prediction：不使用 Bootstrap）
+    # 4) 不确定性分析（Conformal Prediction）
     #    用“先验份额”作为弱标签构造非一致性分数并做split conformal
     eps = 1e-6
     result_df = result_df.copy()

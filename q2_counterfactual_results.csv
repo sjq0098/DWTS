@@ -1,0 +1,265 @@
+season,week,n_contestants,original_rule,true_eliminated,rank_eliminated,pct_eliminated,rank_twist_eliminated,pct_twist_eliminated,rank_matches_true,pct_matches_true,methods_agree,twist_changes_rank,twist_changes_pct
+1,2,6,rank,['Trista Sutter'],['Evander Holyfield'],['Evander Holyfield'],Evander Holyfield,Evander Holyfield,False,False,True,False,False
+1,3,5,rank,['Evander Holyfield'],['Evander Holyfield'],['Evander Holyfield'],Evander Holyfield,Evander Holyfield,True,True,True,False,False
+1,4,4,rank,['Rachel Hunter'],['Joey McIntyre'],['Joey McIntyre'],Joey McIntyre,Joey McIntyre,False,False,True,False,False
+2,1,10,rank,['Kenny Mayne'],['Master P'],['Kenny Mayne'],Master P,Master P,False,True,False,False,True
+2,2,9,rank,"[""Tatum O'Neal""]",['Master P'],"[""Tatum O'Neal""]",Master P,Master P,False,True,False,False,True
+2,3,8,rank,['Giselle Fernandez'],['Master P'],['Master P'],Master P,Master P,False,False,True,False,False
+2,4,7,rank,['Master P'],['Master P'],['Master P'],Master P,Master P,True,True,True,False,False
+2,5,6,rank,['Tia Carrere'],['Tia Carrere'],['Tia Carrere'],Tia Carrere,Tia Carrere,True,True,True,False,False
+2,6,5,rank,['George Hamilton'],['George Hamilton'],['George Hamilton'],Jerry Rice,Jerry Rice,True,True,True,True,True
+2,7,4,rank,['Lisa Rinna'],['Jerry Rice'],['Jerry Rice'],Jerry Rice,Jerry Rice,False,False,True,False,False
+3,1,11,percent,['Tucker Carlson'],['Tucker Carlson'],['Tucker Carlson'],Tucker Carlson,Tucker Carlson,True,True,True,False,False
+3,2,10,percent,['Shanna Moakler'],['Jerry Springer'],['Jerry Springer'],Jerry Springer,Jerry Springer,False,False,True,False,False
+3,3,9,percent,['Harry Hamlin'],['Emmitt Smith'],['Emmitt Smith'],Emmitt Smith,Emmitt Smith,False,False,True,False,False
+3,4,8,percent,['Vivica A. Fox'],['Sara Evans'],['Sara Evans'],Sara Evans,Sara Evans,False,False,True,False,False
+3,5,7,percent,['Willa Ford'],['Jerry Springer'],['Jerry Springer'],Sara Evans,Sara Evans,False,False,True,True,True
+3,7,5,percent,['Jerry Springer'],['Jerry Springer'],['Jerry Springer'],Jerry Springer,Jerry Springer,True,True,True,False,False
+3,8,4,percent,['Monique Coleman'],['Monique Coleman'],['Monique Coleman'],Monique Coleman,Monique Coleman,True,True,True,False,False
+4,2,11,percent,['Paulina Porizkova'],['Clyde Drexler'],['Clyde Drexler'],Clyde Drexler,Clyde Drexler,False,False,True,False,False
+4,3,10,percent,['Shandi Finnessey'],['Clyde Drexler'],['Clyde Drexler'],Clyde Drexler,Clyde Drexler,False,False,True,False,False
+4,4,9,percent,['Leeza Gibbons'],['Clyde Drexler'],['Clyde Drexler'],Clyde Drexler,Clyde Drexler,False,False,True,False,False
+4,5,8,percent,['Clyde Drexler'],['Clyde Drexler'],['Clyde Drexler'],Clyde Drexler,Clyde Drexler,True,True,True,False,False
+4,6,7,percent,['Heather Mills'],['John Ratzenberger'],['John Ratzenberger'],John Ratzenberger,John Ratzenberger,False,False,True,False,False
+4,7,6,percent,['John Ratzenberger'],['Billy Ray Cyrus'],['Billy Ray Cyrus'],Billy Ray Cyrus,Billy Ray Cyrus,False,False,True,False,False
+4,8,5,percent,['Billy Ray Cyrus'],['Billy Ray Cyrus'],['Billy Ray Cyrus'],Billy Ray Cyrus,Billy Ray Cyrus,True,True,True,False,False
+4,9,4,percent,['Ian Ziering'],['Ian Ziering'],['Ian Ziering'],Ian Ziering,Ian Ziering,True,True,True,False,False
+5,1,12,percent,['Josie Maran'],['Josie Maran'],['Josie Maran'],Josie Maran,Josie Maran,True,True,True,False,False
+5,2,11,percent,['Albert Reed'],['Wayne Newton'],['Wayne Newton'],Wayne Newton,Wayne Newton,False,False,True,False,False
+5,3,10,percent,['Wayne Newton'],['Wayne Newton'],['Wayne Newton'],Wayne Newton,Wayne Newton,True,True,True,False,False
+5,4,9,percent,['Floyd Mayweather Jr.'],['Mark Cuban'],['Mark Cuban'],Mark Cuban,Mark Cuban,False,False,True,False,False
+5,5,8,percent,['Mark Cuban'],['Mark Cuban'],['Mark Cuban'],Marie Osmond,Marie Osmond,True,True,True,True,True
+5,6,7,percent,['Sabrina Bryan'],['Jane Seymour'],['Jane Seymour'],Jane Seymour,Jane Seymour,False,False,True,False,False
+5,7,6,percent,['Jane Seymour'],['Jane Seymour'],['Jane Seymour'],Jane Seymour,Jane Seymour,True,True,True,False,False
+5,8,5,percent,['Cameron Mathison'],['Marie Osmond'],['Marie Osmond'],Marie Osmond,Marie Osmond,False,False,True,False,False
+5,9,4,percent,['Jennie Garth'],['Marie Osmond'],['Marie Osmond'],Marie Osmond,Marie Osmond,False,False,True,False,False
+6,2,12,percent,"['Penn Jillette', 'Monica Seles']","['Monica Seles', 'Steve Guttenberg']","['Monica Seles', 'Penn Jillette']",Monica Seles,Monica Seles,False,True,False,False,False
+6,3,10,percent,['Steve Guttenberg'],['Marissa Jaret Winokur'],['Marissa Jaret Winokur'],Marissa Jaret Winokur,Marissa Jaret Winokur,False,False,True,False,False
+6,4,9,percent,['Adam Carolla'],['Adam Carolla'],['Adam Carolla'],Adam Carolla,Adam Carolla,True,True,True,False,False
+6,5,8,percent,['Priscilla Presley'],['Priscilla Presley'],['Priscilla Presley'],Priscilla Presley,Priscilla Presley,True,True,True,False,False
+6,6,7,percent,['Marlee Matlin'],['Marlee Matlin'],['Marlee Matlin'],Marlee Matlin,Marlee Matlin,True,True,True,False,False
+6,7,6,percent,['Shannon Elizabeth'],['Cristian de la Fuente'],['Cristian de la Fuente'],Cristian de la Fuente,Cristian de la Fuente,False,False,True,False,False
+6,8,5,percent,['Mario'],['Marissa Jaret Winokur'],['Marissa Jaret Winokur'],Marissa Jaret Winokur,Marissa Jaret Winokur,False,False,True,False,False
+6,9,4,percent,['Marissa Jaret Winokur'],['Marissa Jaret Winokur'],['Marissa Jaret Winokur'],Marissa Jaret Winokur,Marissa Jaret Winokur,True,True,True,False,False
+7,1,13,percent,"['Ted McGinley', 'Jeffrey Ross']","['Jeffrey Ross', 'Cloris Leachman']","['Jeffrey Ross', 'Ted McGinley']",Jeffrey Ross,Jeffrey Ross,False,True,False,False,False
+7,2,11,percent,['Kim Kardashian'],['Cloris Leachman'],['Cloris Leachman'],Cloris Leachman,Cloris Leachman,False,False,True,False,False
+7,4,9,percent,['Rocco DiSpirito'],['Rocco DiSpirito'],['Rocco DiSpirito'],Rocco DiSpirito,Rocco DiSpirito,True,True,True,False,False
+7,5,8,percent,['Toni Braxton'],['Lance Bass'],['Lance Bass'],Cloris Leachman,Cloris Leachman,False,False,True,True,True
+7,6,7,percent,['Cloris Leachman'],['Cloris Leachman'],['Cloris Leachman'],Cloris Leachman,Cloris Leachman,True,True,True,False,False
+7,7,6,percent,['Susan Lucci'],['Warren Sapp'],['Warren Sapp'],Warren Sapp,Warren Sapp,False,False,True,False,False
+7,8,5,percent,['Maurice Greene'],['Cody Linley'],['Cody Linley'],Maurice Greene,Maurice Greene,False,False,True,True,True
+7,9,4,percent,['Cody Linley'],['Cody Linley'],['Cody Linley'],Cody Linley,Cody Linley,True,True,True,False,False
+8,2,13,percent,['Belinda Carlisle'],['Steve-O'],['Steve-O'],Steve-O,Steve-O,False,False,True,False,False
+8,3,12,percent,['Denise Richards'],['Steve Wozniak'],['Steve Wozniak'],Steve Wozniak,Steve Wozniak,False,False,True,False,False
+8,4,11,percent,"['Holly Madison', 'Steve Wozniak']","['Steve Wozniak', 'Steve-O']","['Steve Wozniak', 'Holly Madison']",Steve Wozniak,Steve Wozniak,False,True,False,False,False
+8,5,9,percent,['David Alan Grier'],['Steve-O'],['Steve-O'],Steve-O,Steve-O,False,False,True,False,False
+8,6,8,percent,['Steve-O'],['Steve-O'],['Steve-O'],Steve-O,Steve-O,True,True,True,False,False
+8,7,7,percent,['Lawrence Taylor'],['Lawrence Taylor'],['Lawrence Taylor'],Lawrence Taylor,Lawrence Taylor,True,True,True,False,False
+8,8,6,percent,['Chuck Wicks'],['Melissa Rycroft'],['Melissa Rycroft'],Melissa Rycroft,Melissa Rycroft,False,False,True,False,False
+8,9,5,percent,"[""Lil' Kim""]",['Ty Murray'],['Ty Murray'],Ty Murray,Ty Murray,False,False,True,False,False
+8,10,4,percent,['Ty Murray'],['Ty Murray'],['Ty Murray'],Ty Murray,Ty Murray,True,True,True,False,False
+9,1,16,percent,"['Macy Gray', 'Ashley Hamiliton']","['Ashley Hamiliton', 'Macy Gray']","['Ashley Hamiliton', 'Macy Gray']",Macy Gray,Macy Gray,True,True,True,False,False
+9,2,14,percent,['Kathy Ireland'],['Kathy Ireland'],['Kathy Ireland'],Tom DeLay,Tom DeLay,True,True,True,True,True
+9,3,13,percent,['Debi Mazar'],['Michael Irvin'],['Michael Irvin'],Michael Irvin,Michael Irvin,False,False,True,False,False
+9,4,11,percent,['Chuck Liddell'],['Michael Irvin'],['Michael Irvin'],Louie Vito,Louie Vito,False,False,True,True,True
+9,5,10,percent,['Natalie Coughlin'],['Michael Irvin'],['Michael Irvin'],Michael Irvin,Michael Irvin,False,False,True,False,False
+9,6,9,percent,"['Louie Vito', 'Melissa Joan Hart']","['Melissa Joan Hart', 'Michael Irvin']","['Michael Irvin', 'Melissa Joan Hart']",Michael Irvin,Michael Irvin,False,False,True,False,False
+9,7,7,percent,"['Michael Irvin', 'Mark Dacascos']","['Mark Dacascos', 'Michael Irvin']","['Mark Dacascos', 'Michael Irvin']",Mark Dacascos,Mark Dacascos,True,True,True,False,False
+9,8,5,percent,['Aaron Carter'],['Aaron Carter'],['Aaron Carter'],Donny Osmond,Donny Osmond,True,True,True,True,True
+9,9,4,percent,['Joanna Krupa'],['Donny Osmond'],['Donny Osmond'],Donny Osmond,Donny Osmond,False,False,True,False,False
+10,2,11,percent,['Shannen Doherty'],['Buzz Aldrin'],['Buzz Aldrin'],Buzz Aldrin,Buzz Aldrin,False,False,True,False,False
+10,3,10,percent,['Buzz Aldrin'],['Buzz Aldrin'],['Buzz Aldrin'],Buzz Aldrin,Buzz Aldrin,True,True,True,False,False
+10,4,9,percent,['Aiden Turner'],['Kate Gosselin'],['Aiden Turner'],Kate Gosselin,Kate Gosselin,False,True,False,False,True
+10,5,8,percent,['Kate Gosselin'],['Kate Gosselin'],['Kate Gosselin'],Kate Gosselin,Kate Gosselin,True,True,True,False,False
+10,6,7,percent,['Jake Pavelka'],['Jake Pavelka'],['Jake Pavelka'],Jake Pavelka,Jake Pavelka,True,True,True,False,False
+10,7,6,percent,['Pamela Anderson'],['Niecy Nash'],['Niecy Nash'],Niecy Nash,Niecy Nash,False,False,True,False,False
+10,8,5,percent,['Niecy Nash'],['Niecy Nash'],['Niecy Nash'],Niecy Nash,Niecy Nash,True,True,True,False,False
+10,9,4,percent,['Chad Ochocinco'],['Chad Ochocinco'],['Chad Ochocinco'],Chad Ochocinco,Chad Ochocinco,True,True,True,False,False
+11,1,12,percent,['David Hasselhoff'],['Margaret Cho'],['Margaret Cho'],David Hasselhoff,David Hasselhoff,False,False,True,True,True
+11,2,11,percent,['Michael Bolton'],['Michael Bolton'],['Michael Bolton'],Michael Bolton,Michael Bolton,True,True,True,False,False
+11,3,10,percent,['Margaret Cho'],['Margaret Cho'],['Margaret Cho'],Margaret Cho,Margaret Cho,True,True,True,False,False
+11,4,9,percent,['The Situation'],['The Situation'],['The Situation'],The Situation,The Situation,True,True,True,False,False
+11,5,8,percent,['Florence Henderson'],['Bristol Palin'],['Bristol Palin'],Bristol Palin,Bristol Palin,False,False,True,False,False
+11,6,7,percent,['Audrina Patridge'],['Kurt Warner'],['Kurt Warner'],Kurt Warner,Kurt Warner,False,False,True,False,False
+11,7,6,percent,['Rick Fox'],['Bristol Palin'],['Bristol Palin'],Bristol Palin,Bristol Palin,False,False,True,False,False
+11,8,5,percent,['Kurt Warner'],['Bristol Palin'],['Kurt Warner'],Bristol Palin,Bristol Palin,False,True,False,False,True
+11,9,4,percent,['Brandy'],['Bristol Palin'],['Bristol Palin'],Bristol Palin,Bristol Palin,False,False,True,False,False
+12,2,11,percent,['Mike Catherwood'],['Mike Catherwood'],['Mike Catherwood'],Wendy Williams,Wendy Williams,True,True,True,True,True
+12,3,10,percent,['Wendy Williams'],['Wendy Williams'],['Wendy Williams'],Wendy Williams,Wendy Williams,True,True,True,False,False
+12,4,9,percent,['Sugar Ray Leonard'],['Kendra Wilkinson'],['Kendra Wilkinson'],Kendra Wilkinson,Kendra Wilkinson,False,False,True,False,False
+12,5,8,percent,['Petra Nemcova'],['Petra Nemcova'],['Petra Nemcova'],Kendra Wilkinson,Kendra Wilkinson,True,True,True,True,True
+12,6,7,percent,['Chris Jericho'],['Chris Jericho'],['Chris Jericho'],Chris Jericho,Chris Jericho,True,True,True,False,False
+12,7,6,percent,['Kendra Wilkinson'],['Romeo'],['Romeo'],Kirstie Alley,Kirstie Alley,False,False,True,True,True
+12,8,5,percent,['Romeo'],['Ralph Macchio'],['Ralph Macchio'],Ralph Macchio,Ralph Macchio,False,False,True,False,False
+12,9,4,percent,['Ralph Macchio'],['Ralph Macchio'],['Ralph Macchio'],Ralph Macchio,Ralph Macchio,True,True,True,False,False
+13,1,12,percent,['Metta World Peace (Ron)'],['Metta World Peace (Ron)'],['Metta World Peace (Ron)'],Metta World Peace (Ron),Metta World Peace (Ron),True,True,True,False,False
+13,2,11,percent,['Elisabetta Canalis'],['Chaz Bono'],['Chaz Bono'],Chaz Bono,Chaz Bono,False,False,True,False,False
+13,3,10,percent,['Kristin Cavallari'],['Chaz Bono'],['Chaz Bono'],Chaz Bono,Chaz Bono,False,False,True,False,False
+13,4,9,percent,['Chynna Phillips'],['Carson Kressley'],['Carson Kressley'],Carson Kressley,Carson Kressley,False,False,True,False,False
+13,5,8,percent,['Carson Kressley'],['Carson Kressley'],['Carson Kressley'],Carson Kressley,Carson Kressley,True,True,True,False,False
+13,6,7,percent,['Chaz Bono'],['Chaz Bono'],['Chaz Bono'],Chaz Bono,Chaz Bono,True,True,True,False,False
+13,7,6,percent,['David Arquette'],['Nancy Grace'],['Nancy Grace'],Nancy Grace,Nancy Grace,False,False,True,False,False
+13,8,5,percent,['Nancy Grace'],['Nancy Grace'],['Nancy Grace'],Nancy Grace,Nancy Grace,True,True,True,False,False
+13,9,4,percent,['Hope Solo'],['Hope Solo'],['Hope Solo'],Hope Solo,Hope Solo,True,True,True,False,False
+14,2,12,percent,['Martina Navratilova'],['Martina Navratilova'],['Martina Navratilova'],Martina Navratilova,Martina Navratilova,True,True,True,False,False
+14,3,11,percent,['Jack Wagner'],['Melissa Gilbert'],['Melissa Gilbert'],Jack Wagner,Jack Wagner,False,False,True,True,True
+14,4,10,percent,['Sherri Sheperd'],['Gladys Knight'],['Gladys Knight'],Gladys Knight,Gladys Knight,False,False,True,False,False
+14,5,9,percent,['Gavin DeGraw'],['Gavin DeGraw'],['Gavin DeGraw'],Gavin DeGraw,Gavin DeGraw,True,True,True,False,False
+14,6,8,percent,['Gladys Knight'],['Gladys Knight'],['Gladys Knight'],Gladys Knight,Gladys Knight,True,True,True,False,False
+14,7,7,percent,['Jaleel White'],['Melissa Gilbert'],['Melissa Gilbert'],Melissa Gilbert,Melissa Gilbert,False,False,True,False,False
+14,8,6,percent,"['Roshon Fegan', 'Melissa Gilbert']","['Melissa Gilbert', 'Maria Menounos']","['Melissa Gilbert', 'Maria Menounos']",Melissa Gilbert,Melissa Gilbert,False,False,True,False,False
+14,9,4,percent,['Maria Menounos'],['Katherine Jenkins'],['Katherine Jenkins'],Katherine Jenkins,Katherine Jenkins,False,False,True,False,False
+15,1,13,percent,['Pamela Anderson'],['Pamela Anderson'],['Pamela Anderson'],Pamela Anderson,Pamela Anderson,True,True,True,False,False
+15,2,12,percent,['Joey Fatone'],['Bristol Palin'],['Bristol Palin'],Bristol Palin,Bristol Palin,False,False,True,False,False
+15,3,11,percent,"['Helio Castroneves', 'Drew Lachey']","['Bristol Palin', 'Drew Lachey']","['Bristol Palin', 'Drew Lachey']",Bristol Palin,Bristol Palin,False,False,True,False,False
+15,4,9,percent,['Bristol Palin'],['Kirstie Alley'],['Kirstie Alley'],Kirstie Alley,Kirstie Alley,False,False,True,False,False
+15,6,8,percent,['Sabrina Bryan'],['Emmitt Smith'],['Emmitt Smith'],Emmitt Smith,Emmitt Smith,False,False,True,False,False
+15,8,7,percent,"['Gilles Marini', 'Kirstie Alley']","['Kirstie Alley', 'Shawn Johnson']","['Kirstie Alley', 'Shawn Johnson']",Kirstie Alley,Kirstie Alley,False,False,True,False,False
+15,9,5,percent,"['Apolo Anton Ohno', 'Emmitt Smith']","['Emmitt Smith', 'Kelly Monaco']","['Emmitt Smith', 'Kelly Monaco']",Emmitt Smith,Emmitt Smith,False,False,True,False,False
+16,3,11,percent,['Wynonna Judd'],['Wynonna Judd'],['Wynonna Judd'],Wynonna Judd,Wynonna Judd,True,True,True,False,False
+16,4,10,percent,['Lisa Vanderpump'],['Lisa Vanderpump'],['Lisa Vanderpump'],Victor Ortiz,Victor Ortiz,True,True,True,True,True
+16,5,9,percent,['D. L. Hughley'],['D. L. Hughley'],['D. L. Hughley'],Andy Dick,Andy Dick,True,True,True,True,True
+16,6,8,percent,['Victor Ortiz'],['Victor Ortiz'],['Victor Ortiz'],Victor Ortiz,Victor Ortiz,True,True,True,False,False
+16,7,7,percent,['Andy Dick'],['Andy Dick'],['Andy Dick'],Andy Dick,Andy Dick,True,True,True,False,False
+16,8,6,percent,['Sean Lowe'],['Sean Lowe'],['Sean Lowe'],Sean Lowe,Sean Lowe,True,True,True,False,False
+16,9,5,percent,['Ingo Rademacher'],['Ingo Rademacher'],['Ingo Rademacher'],Ingo Rademacher,Ingo Rademacher,True,True,True,False,False
+16,10,4,percent,['Alexandra Raisman'],['Jacoby Jones'],['Jacoby Jones'],Jacoby Jones,Jacoby Jones,False,False,True,False,False
+17,2,12,percent,['Keyshawn Johnson'],['Bill Nye'],['Keyshawn Johnson'],Bill Nye,Bill Nye,False,True,False,False,True
+17,3,11,percent,['Bill Nye'],['Valerie Harper'],['Valerie Harper'],Bill Nye,Bill Nye,False,False,True,True,True
+17,4,10,percent,['Valerie Harper'],['Valerie Harper'],['Valerie Harper'],Valerie Harper,Valerie Harper,True,True,True,False,False
+17,5,9,percent,['Christina Milian'],['Leah Remini'],['Leah Remini'],Leah Remini,Leah Remini,False,False,True,False,False
+17,7,8,percent,"['Nicole ""Snooki"" Polizzi']",['Bill Engvall'],['Bill Engvall'],Bill Engvall,Bill Engvall,False,False,True,False,False
+17,8,7,percent,['Brant Daugherty'],['Bill Engvall'],['Bill Engvall'],Bill Engvall,Bill Engvall,False,False,True,False,False
+17,9,6,percent,['Elizabeth Berkley Lauren'],['Bill Engvall'],['Bill Engvall'],Bill Engvall,Bill Engvall,False,False,True,False,False
+17,10,5,percent,['Leah Remini'],['Bill Engvall'],['Bill Engvall'],Bill Engvall,Bill Engvall,False,False,True,False,False
+17,11,4,percent,['Bill Engvall'],['Bill Engvall'],['Bill Engvall'],Bill Engvall,Bill Engvall,True,True,True,False,False
+18,2,11,percent,['Sean Avery'],['Billy Dee Williams'],['Billy Dee Williams'],Billy Dee Williams,Billy Dee Williams,False,False,True,False,False
+18,5,9,percent,['Cody Simpson'],['Drew Carey'],['Drew Carey'],Drew Carey,Drew Carey,False,False,True,False,False
+18,6,8,percent,['Drew Carey'],['Drew Carey'],['Drew Carey'],Candace Cameron Bure,Candace Cameron Bure,True,True,True,True,True
+18,7,7,percent,['NeNe Leakes'],['NeNe Leakes'],['NeNe Leakes'],NeNe Leakes,NeNe Leakes,True,True,True,False,False
+18,8,6,percent,['Danica McKellar'],['James Maslow'],['James Maslow'],Candace Cameron Bure,Candace Cameron Bure,False,False,True,True,True
+18,9,5,percent,['Charlie White'],['Candace Cameron Bure'],['Candace Cameron Bure'],Candace Cameron Bure,Candace Cameron Bure,False,False,True,False,False
+18,10,4,percent,['James Maslow'],['Candace Cameron Bure'],['Candace Cameron Bure'],Candace Cameron Bure,Candace Cameron Bure,False,False,True,False,False
+19,1,13,percent,['Lolo Jones'],['Betsey Johnson'],['Lolo Jones'],Betsey Johnson,Betsey Johnson,False,True,False,False,True
+19,2,12,percent,['Tavis Smiley'],['Michael Waltrip'],['Michael Waltrip'],Michael Waltrip,Michael Waltrip,False,False,True,False,False
+19,3,11,percent,['Randy Couture'],['Randy Couture'],['Randy Couture'],Randy Couture,Randy Couture,True,True,True,False,False
+19,4,10,percent,['Betsey Johnson'],['Jonathan Bennett'],['Jonathan Bennett'],Jonathan Bennett,Jonathan Bennett,False,False,True,False,False
+19,6,9,percent,['Jonathan Bennett'],['Tommy Chong'],['Tommy Chong'],Antonio Sabato Jr.,Antonio Sabato Jr.,False,False,True,True,True
+19,7,8,percent,['Antonio Sabato Jr.'],['Michael Waltrip'],['Michael Waltrip'],Michael Waltrip,Michael Waltrip,False,False,True,False,False
+19,8,7,percent,['Michael Waltrip'],['Michael Waltrip'],['Michael Waltrip'],Michael Waltrip,Michael Waltrip,True,True,True,False,False
+19,9,6,percent,['Lea Thompson'],['Tommy Chong'],['Tommy Chong'],Tommy Chong,Tommy Chong,False,False,True,False,False
+19,10,5,percent,['Tommy Chong'],['Tommy Chong'],['Tommy Chong'],Tommy Chong,Tommy Chong,True,True,True,False,False
+19,11,4,percent,['Bethany Mota'],['Bethany Mota'],['Bethany Mota'],Bethany Mota,Bethany Mota,True,True,True,False,False
+20,2,12,percent,['Redfoo'],['Chris Soules'],['Chris Soules'],Chris Soules,Chris Soules,False,False,True,False,False
+20,3,11,percent,['Charlotte McKinney'],['Charlotte McKinney'],['Charlotte McKinney'],Patti LaBelle,Patti LaBelle,True,True,True,True,True
+20,4,10,percent,['Michael Sam'],['Chris Soules'],['Chris Soules'],Chris Soules,Chris Soules,False,False,True,False,False
+20,5,9,percent,['Suzanne Somers'],['Robert Herjavec'],['Robert Herjavec'],Robert Herjavec,Robert Herjavec,False,False,True,False,False
+20,6,8,percent,['Patti LaBelle'],['Robert Herjavec'],['Robert Herjavec'],Robert Herjavec,Robert Herjavec,False,False,True,False,False
+20,7,7,percent,['Willow Shields'],['Chris Soules'],['Chris Soules'],Robert Herjavec,Robert Herjavec,False,False,True,True,True
+20,8,6,percent,"['Chris Soules', 'Robert Herjavec']","['Robert Herjavec', 'Noah Galloway']","['Robert Herjavec', 'Chris Soules']",Robert Herjavec,Robert Herjavec,False,True,False,False,False
+20,9,4,percent,['Nastia Liukin'],['Noah Galloway'],['Noah Galloway'],Noah Galloway,Noah Galloway,False,False,True,False,False
+21,2,13,percent,"['Victor Espinoza', 'Chaka Khan']","['Chaka Khan', 'Gary Busey']","['Chaka Khan', 'Gary Busey']",Chaka Khan,Chaka Khan,False,False,True,False,False
+21,4,10,percent,['Gary Busey'],['Gary Busey'],['Gary Busey'],Gary Busey,Gary Busey,True,True,True,False,False
+21,6,9,percent,['Paula Deen'],['Paula Deen'],['Paula Deen'],Paula Deen,Paula Deen,True,True,True,False,False
+21,7,8,percent,['Hayes Grier'],['Alek Skarlatos'],['Tamar Braxton'],Alek Skarlatos,Alek Skarlatos,False,False,False,False,True
+21,8,7,percent,['Andy Grammer'],['Andy Grammer'],['Andy Grammer'],Andy Grammer,Andy Grammer,True,True,True,False,False
+21,9,6,percent,['Alexa PenaVega'],['Tamar Braxton'],['Tamar Braxton'],Tamar Braxton,Tamar Braxton,False,False,True,False,False
+21,11,4,percent,['Carlos PenaVega'],['Alek Skarlatos'],['Alek Skarlatos'],Alek Skarlatos,Alek Skarlatos,False,False,True,False,False
+22,2,12,percent,['Geraldo Rivera'],['Geraldo Rivera'],['Geraldo Rivera'],Geraldo Rivera,Geraldo Rivera,True,True,True,False,False
+22,3,11,percent,['Mischa Barton'],['Mischa Barton'],['Mischa Barton'],Mischa Barton,Mischa Barton,True,True,True,False,False
+22,4,10,percent,['Marla Maples'],['Doug Flutie'],['Doug Flutie'],Doug Flutie,Doug Flutie,False,False,True,False,False
+22,6,9,percent,['Doug Flutie'],['Doug Flutie'],['Doug Flutie'],Doug Flutie,Doug Flutie,True,True,True,False,False
+22,7,8,percent,"['Von Miller', 'Kim Fields']","['Jodie Sweetin', 'Kim Fields']","['Jodie Sweetin', 'Kim Fields']",Jodie Sweetin,Jodie Sweetin,False,False,True,False,False
+22,8,6,percent,['Jodie Sweetin'],['Wanya Morris'],['Wanya Morris'],Wanya Morris,Wanya Morris,False,False,True,False,False
+22,9,5,percent,"['Wanya Morris', 'Antonio Brown']","['Antonio Brown', 'Ginger Zee']","['Antonio Brown', 'Ginger Zee']",Antonio Brown,Antonio Brown,False,False,True,False,False
+23,2,13,percent,['Jake T. Austin'],['Rick Perry'],['Rick Perry'],Rick Perry,Rick Perry,False,False,True,False,False
+23,3,12,percent,['Rick Perry'],['Rick Perry'],['Rick Perry'],Vanilla Ice,Vanilla Ice,True,True,True,True,True
+23,4,11,percent,"['Vanilla Ice', 'Babyface']","['Babyface', 'Marilu Henner']","['Babyface', 'Marilu Henner']",Babyface,Babyface,False,False,True,False,False
+23,6,9,percent,['Amber Rose'],['Amber Rose'],['Amber Rose'],Amber Rose,Amber Rose,True,True,True,False,False
+23,7,8,percent,['Maureen McCormick'],['Marilu Henner'],['Marilu Henner'],Marilu Henner,Marilu Henner,False,False,True,False,False
+23,8,7,percent,['Ryan Lochte'],['Marilu Henner'],['Marilu Henner'],Marilu Henner,Marilu Henner,False,False,True,False,False
+23,9,6,percent,['Marilu Henner'],['James Hinchcliffe'],['James Hinchcliffe'],Marilu Henner,Marilu Henner,False,False,True,True,True
+23,10,5,percent,['Terra Jole'],['Calvin Johnson Jr.'],['Calvin Johnson Jr.'],Calvin Johnson Jr.,Calvin Johnson Jr.,False,False,True,False,False
+23,11,4,percent,['Jana Kramer'],['Jana Kramer'],['Jana Kramer'],Jana Kramer,Jana Kramer,True,True,True,False,False
+24,2,12,percent,['Chris Kattan'],['Chris Kattan'],['Chris Kattan'],Mr. T,Mr. T,True,True,True,True,True
+24,3,11,percent,['Charo'],['Charo'],['Charo'],Mr. T,Mr. T,True,True,True,True,True
+24,4,10,percent,['Mr. T'],['Mr. T'],['Mr. T'],Mr. T,Mr. T,True,True,True,False,False
+24,5,9,percent,['Erika Jayne'],['David Ross'],['David Ross'],David Ross,David Ross,False,False,True,False,False
+24,6,8,percent,['Heather Morris'],['Nick Viall'],['Nick Viall'],Nick Viall,Nick Viall,False,False,True,False,False
+24,7,7,percent,"['Nancy Kerrigan', 'Nick Viall']","['Bonner Bolton', 'David Ross']","['Bonner Bolton', 'David Ross']",Bonner Bolton,Bonner Bolton,False,False,True,False,False
+24,8,5,percent,['Bonner Bolton'],['Bonner Bolton'],['Bonner Bolton'],Bonner Bolton,Bonner Bolton,True,True,True,False,False
+24,9,4,percent,['Simone Biles'],['David Ross'],['David Ross'],David Ross,David Ross,False,False,True,False,False
+25,2,13,percent,"['Debbie Gibson', 'Barbara Corcoran']","['Barbara Corcoran', 'Derek Fisher']","['Barbara Corcoran', 'Derek Fisher']",Barbara Corcoran,Barbara Corcoran,False,False,True,False,False
+25,4,11,percent,['Derek Fisher'],['Nick Lachey'],['Nick Lachey'],Nick Lachey,Nick Lachey,False,False,True,False,False
+25,5,10,percent,['Sasha Pieterse'],['Nick Lachey'],['Nick Lachey'],Nick Lachey,Nick Lachey,False,False,True,False,False
+25,6,9,percent,['Nick Lachey'],['Nick Lachey'],['Nick Lachey'],Nick Lachey,Nick Lachey,True,True,True,False,False
+25,7,8,percent,"['Vanessa Lachey', 'Nikki Bella']","['Nikki Bella', 'Terrell Owens']","['Nikki Bella', 'Terrell Owens']",Nikki Bella,Nikki Bella,False,False,True,False,False
+25,8,6,percent,['Terrell Owens'],['Drew Scott'],['Drew Scott'],Drew Scott,Drew Scott,False,False,True,False,False
+25,9,5,percent,['Victoria Arlen'],['Drew Scott'],['Drew Scott'],Drew Scott,Drew Scott,False,False,True,False,False
+25,10,4,percent,['Drew Scott'],['Drew Scott'],['Drew Scott'],Drew Scott,Drew Scott,True,True,True,False,False
+26,1,10,percent,"['Jamie Anderson', 'Johnny Damon']","['Kareem Abdul-Jabbar', 'Johnny Damon']","['Kareem Abdul-Jabbar', 'Johnny Damon']",Kareem Abdul-Jabbar,Kareem Abdul-Jabbar,False,False,True,False,False
+26,2,8,percent,"['Arike Ogunbowale', 'Kareem Abdul-Jabbar']","['Kareem Abdul-Jabbar', 'Jennie Finch Daigle']","['Kareem Abdul-Jabbar', 'Jennie Finch Daigle']",Kareem Abdul-Jabbar,Kareem Abdul-Jabbar,False,False,True,False,False
+26,3,6,percent,"['Mirai Nagasu', 'Chris Mazdzer', 'Jennie Finch Daigle']","['Jennie Finch Daigle', 'Chris Mazdzer', 'Mirai Nagasu']","['Jennie Finch Daigle', 'Chris Mazdzer', 'Mirai Nagasu']",Jennie Finch Daigle,Jennie Finch Daigle,True,True,True,False,False
+27,1,13,percent,['Nikki Glaser'],['Joe Amabile'],['Joe Amabile'],Joe Amabile,Joe Amabile,False,False,True,False,False
+27,2,12,percent,['Danelle Umstead'],['Joe Amabile'],['Joe Amabile'],Joe Amabile,Joe Amabile,False,False,True,False,False
+27,3,11,percent,['Nancy McKeon'],['Joe Amabile'],['Joe Amabile'],Joe Amabile,Joe Amabile,False,False,True,False,False
+27,4,10,percent,['Tinashe'],['Joe Amabile'],['Joe Amabile'],Joe Amabile,Joe Amabile,False,False,True,False,False
+27,6,9,percent,['Mary Lou Retton'],['John Schneider'],['John Schneider'],John Schneider,John Schneider,False,False,True,False,False
+27,7,8,percent,"['John Schneider', 'DeMarcus Ware']","['Joe Amabile', 'DeMarcus Ware']","['Joe Amabile', 'DeMarcus Ware']",Joe Amabile,Joe Amabile,False,False,True,False,False
+27,8,6,percent,"['Juan Pablo Di Pace', 'Joe Amabile']","['Bobby Bones', 'Joe Amabile']","['Joe Amabile', 'Bobby Bones']",Bobby Bones,Bobby Bones,False,False,True,False,False
+28,2,12,rank,['Mary Wilson'],['Lamar Odom'],['Lamar Odom'],Lamar Odom,Lamar Odom,False,False,True,False,False
+28,4,10,rank,['Lamar Odom'],['Lamar Odom'],['Lamar Odom'],Lamar Odom,Lamar Odom,True,True,True,False,False
+28,6,9,rank,['Sailor Brinkley-Cook'],['Sean Spicer'],['Sean Spicer'],Sean Spicer,Sean Spicer,False,False,True,False,False
+28,7,8,rank,['Karamo Brown'],['Sean Spicer'],['Sean Spicer'],Sean Spicer,Sean Spicer,False,False,True,False,False
+28,8,7,rank,['Kate Flannery'],['Sean Spicer'],['Sean Spicer'],Sean Spicer,Sean Spicer,False,False,True,False,False
+28,9,6,rank,['Sean Spicer'],['Sean Spicer'],['Sean Spicer'],Sean Spicer,Sean Spicer,True,True,True,False,False
+28,10,5,rank,['James Van Der Beek'],['James Van Der Beek'],['James Van Der Beek'],James Van Der Beek,James Van Der Beek,True,True,True,False,False
+29,2,15,rank,['Charles Oakley'],['Charles Oakley'],['Charles Oakley'],Skai Jackson,Skai Jackson,True,True,True,True,True
+29,3,14,rank,['Carole Baskin'],['Carole Baskin'],['Carole Baskin'],Carole Baskin,Carole Baskin,True,True,True,False,False
+29,4,13,rank,['Anne Heche'],['Anne Heche'],['Anne Heche'],Jeannie Mai,Jeannie Mai,True,True,True,True,True
+29,5,12,rank,['Jesse Metcalfe'],['Jesse Metcalfe'],['Jesse Metcalfe'],Chrishell Stause,Chrishell Stause,True,True,True,True,True
+29,6,11,rank,['Veron Davis'],['Skai Jackson'],['Skai Jackson'],Skai Jackson,Skai Jackson,False,False,True,False,False
+29,7,10,rank,['Monica Aldama'],['Monica Aldama'],['Monica Aldama'],Monica Aldama,Monica Aldama,True,True,True,False,False
+29,8,8,rank,['Chrishell Stause'],['Nelly'],['Nelly'],Nelly,Nelly,False,False,True,False,False
+29,9,7,rank,['AJ McLean'],['Nelly'],['Nelly'],Nelly,Nelly,False,False,True,False,False
+29,10,6,rank,"['Skai Jackson', 'Johnny Weir']","['Nelly', 'Johnny Weir']","['Johnny Weir', 'Nelly']",Nelly,Nelly,False,False,True,False,False
+30,2,15,rank,['Martin Kove'],['Martin Kove'],['Martin Kove'],Martin Kove,Martin Kove,True,True,True,False,False
+30,3,14,rank,['Christine Chiu'],['Cody Rigsby'],['Cody Rigsby'],Cody Rigsby,Cody Rigsby,False,False,True,False,False
+30,4,13,rank,"['Matt James', 'Brian Austin Green']","['Brian Austin Green', 'Matt James']","['Brian Austin Green', 'Matt James']",Brian Austin Green,Brian Austin Green,True,True,True,False,False
+30,5,11,rank,['Melanie C'],['Iman Shumpert'],['Iman Shumpert'],Iman Shumpert,Iman Shumpert,False,False,True,False,False
+30,6,10,rank,['Kenya Moore'],['Kenya Moore'],['Kenya Moore'],Kenya Moore,Kenya Moore,True,True,True,False,False
+30,7,9,rank,"['Mike ""The Miz"" Mizanin']","['Mike ""The Miz"" Mizanin']","['Mike ""The Miz"" Mizanin']","Mike ""The Miz"" Mizanin","Mike ""The Miz"" Mizanin",True,True,True,False,False
+30,8,8,rank,"['Olivia Jade', 'Jimmie Allen']","['Jimmie Allen', 'Iman Shumpert']","['Jimmie Allen', 'Olivia Jade']",Jimmie Allen,Jimmie Allen,False,True,False,False,False
+30,9,6,rank,"['Suni Lee', 'Melora Hardin']","['Cody Rigsby', 'Melora Hardin']","['Melora Hardin', 'Cody Rigsby']",Cody Rigsby,Cody Rigsby,False,False,True,False,False
+31,1,16,rank,['Jason Lewis'],['Vinny Guadagnino'],['Jason Lewis'],Vinny Guadagnino,Vinny Guadagnino,False,True,False,False,True
+31,2,15,rank,['Teresa Giudice'],['Cheryl Ladd'],['Teresa Giudice'],Cheryl Ladd,Cheryl Ladd,False,True,False,False,True
+31,3,14,rank,['Cheryl Ladd'],['Vinny Guadagnino'],['Cheryl Ladd'],Vinny Guadagnino,Vinny Guadagnino,False,True,False,False,True
+31,4,13,rank,['Sam Champion'],['Sam Champion'],['Sam Champion'],Sam Champion,Sam Champion,True,True,True,False,False
+31,5,12,rank,['Joseph Baena'],['Vinny Guadagnino'],['Vinny Guadagnino'],Vinny Guadagnino,Vinny Guadagnino,False,False,True,False,False
+31,6,10,rank,['Jessie James Decker'],['Vinny Guadagnino'],['Vinny Guadagnino'],Vinny Guadagnino,Vinny Guadagnino,False,False,True,False,False
+31,7,9,rank,['Jordin Sparks'],['Vinny Guadagnino'],['Vinny Guadagnino'],Vinny Guadagnino,Vinny Guadagnino,False,False,True,False,False
+31,8,8,rank,"[""Heidi D'Amelio"", 'Vinny Guadagnino']","['Vinny Guadagnino', ""Heidi D'Amelio""]","['Vinny Guadagnino', ""Heidi D'Amelio""]",Vinny Guadagnino,Vinny Guadagnino,True,True,True,False,False
+31,9,6,rank,"['Daniel Durant', 'Trevor Donovan']","['Trevor Donovan', 'Daniel Durant']","['Trevor Donovan', 'Daniel Durant']",Trevor Donovan,Trevor Donovan,True,True,True,False,False
+32,1,14,rank,['Matt Walsh'],['Matt Walsh'],['Matt Walsh'],Tyson Beckford,Tyson Beckford,True,True,True,True,True
+32,2,13,rank,['Jamie Lynn Spears'],['Mauricio Umansky'],['Mauricio Umansky'],Mauricio Umansky,Mauricio Umansky,False,False,True,False,False
+32,3,12,rank,['Tyson Beckford'],['Tyson Beckford'],['Tyson Beckford'],Tyson Beckford,Tyson Beckford,True,True,True,False,False
+32,4,11,rank,['Adrian Peterson'],['Barry Williams'],['Barry Williams'],Alyson Hannigan,Alyson Hannigan,False,False,True,True,True
+32,5,10,rank,['Mira Sorvino'],['Harry Jowsey'],['Harry Jowsey'],Harry Jowsey,Harry Jowsey,False,False,True,False,False
+32,6,9,rank,['Mauricio Umansky'],['Harry Jowsey'],['Harry Jowsey'],Harry Jowsey,Harry Jowsey,False,False,True,False,False
+32,7,8,rank,['Lele Pons'],['Harry Jowsey'],['Harry Jowsey'],Harry Jowsey,Harry Jowsey,False,False,True,False,False
+32,8,7,rank,['Barry Williams'],['Harry Jowsey'],['Harry Jowsey'],Harry Jowsey,Harry Jowsey,False,False,True,False,False
+32,9,6,rank,['Harry Jowsey'],['Harry Jowsey'],['Harry Jowsey'],Harry Jowsey,Harry Jowsey,True,True,True,False,False
+33,2,13,rank,"['Tori Spelling', 'Anna Delvey']","['Reginald VelJohnson', 'Anna Delvey']","['Reginald VelJohnson', 'Eric Roberts']",Reginald VelJohnson,Eric Roberts,False,False,False,False,False
+33,3,11,rank,"['Eric Roberts', 'Reginald VelJohnson']","['Reginald VelJohnson', 'Eric Roberts']","['Reginald VelJohnson', 'Eric Roberts']",Reginald VelJohnson,Reginald VelJohnson,True,True,True,False,False
+33,4,9,rank,['Brooks Nader'],['Dwight Howard'],['Dwight Howard'],Dwight Howard,Dwight Howard,False,False,True,False,False
+33,5,8,rank,['Phaedra Parks'],['Phaedra Parks'],['Phaedra Parks'],Dwight Howard,Dwight Howard,True,True,True,True,True
+33,6,7,rank,['Jenn Tran'],['Ilona Maher'],['Ilona Maher'],Ilona Maher,Ilona Maher,False,False,True,False,False
+33,7,6,rank,['Dwight Howard'],['Dwight Howard'],['Dwight Howard'],Dwight Howard,Dwight Howard,True,True,True,False,False
+34,2,14,rank,"['Baron Davis', 'Corey Feldman']","['Corey Feldman', 'Andy Richter']","['Corey Feldman', 'Andy Richter']",Corey Feldman,Corey Feldman,False,False,True,False,False
+34,3,12,rank,['Lauren Jauregui'],['Lauren Jauregui'],['Lauren Jauregui'],Andy Richter,Andy Richter,True,True,True,True,True
+34,4,11,rank,['Hilaria Baldwin'],['Andy Richter'],['Andy Richter'],Andy Richter,Andy Richter,False,False,True,False,False
+34,6,10,rank,['Scott Hoying'],['Andy Richter'],['Scott Hoying'],Andy Richter,Andy Richter,False,True,False,False,True
+34,7,9,rank,['Jen Affleck'],['Andy Richter'],['Andy Richter'],Andy Richter,Andy Richter,False,False,True,False,False
+34,8,8,rank,['Danielle Fishel'],['Andy Richter'],['Andy Richter'],Andy Richter,Andy Richter,False,False,True,False,False
+34,9,7,rank,['Andy Richter'],['Andy Richter'],['Andy Richter'],Andy Richter,Andy Richter,True,True,True,False,False
+34,10,6,rank,['Whitney Leavitt'],['Dylan Efron'],['Dylan Efron'],Dylan Efron,Dylan Efron,False,False,True,False,False
