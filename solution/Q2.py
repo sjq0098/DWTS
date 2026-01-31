@@ -24,7 +24,7 @@ warnings.filterwarnings('ignore')
 np.random.seed(2026)
 RANDOM_SEED = 2026
 
-# 主题配色
+# 主题配色 - 马卡龙风格（低饱和度柔和色调）
 COLORS = {
     "primary": "#7BADDF",      # 浅蓝
     "secondary": "#B581B4",    # 薰衣草紫
@@ -33,9 +33,15 @@ COLORS = {
     "neutral": "#B1A8D3",      # 淡紫
     "light": "#BADDF3",        # 极浅蓝
     "dark": "#4A5568",         # 深灰
-    "rank": "#3182CE",         # 排名法颜色
-    "percent": "#E53E3E"       # 百分比法颜色
+    "rank": "#7BADDF",         # 排名法颜色（柔和蓝，与primary一致）
+    "percent": "#DA8176"       # 百分比法颜色（珊瑚粉，与success一致）
 }
+
+# 扩展调色板（马卡龙风格）
+PALETTE = [
+    '#BADDF3', '#C8C3E1', '#B581B4', '#B1A8D3', '#B5C3EA', 
+    '#7FBDB0', '#F4E09B', '#EAB170', '#DA8176', '#7BADDF'
+]
 
 # 设置绘图风格
 plt.style.use("seaborn-v0_8-whitegrid")
@@ -172,49 +178,72 @@ class VotingMethodAnalyzer:
         return dcg / idcg if idcg > 0 else 0.0
     
     def compute_rankshap(self, g: pd.DataFrame, method: str = "rank") -> dict:
-        """计算RankSHAP归因值（简化版）
-
-        采用固定“相关性”作为参考（评委+粉丝的标准化之和），
-        比较不同排序策略带来的NDCG差异，得到J/F贡献。
+        """计算RankSHAP归因值 - 基于方差敏感性分析
+        
+        核心思想：
+        - 排名法将所有得分压缩为等距排名（1,2,3...），消除原始方差差异
+        - 百分比法保留原始分布方差，方差大的特征对组合得分影响更大
+        
+        通过计算各特征在组合得分中的"有效贡献方差"来衡量偏向性。
         """
         n = len(g)
         if n < 2:
             return {"phi_J": 0.5, "phi_F": 0.5, "bias": 0.5, "ndcg": 0.0}
 
         gg = g.copy()
-
-        # 固定相关性：评委与粉丝标准化加和
+        
+        if method == "rank":
+            # 排名法：转换为排名（方差被压缩为uniform分布）
+            judge_contrib = gg["judge_total"].rank(ascending=False, method="min").values
+            vote_contrib = gg["votes_hat"].rank(ascending=False, method="min").values
+            
+            # 组合得分 = 排名之和（数值越低越好）
+            combined = judge_contrib + vote_contrib
+            
+            # 计算对组合得分方差的贡献
+            # 排名的方差是固定的：Var(1,2,...,n) = (n^2-1)/12
+            var_j = np.var(judge_contrib)
+            var_f = np.var(vote_contrib)
+            cov_jf = np.cov(judge_contrib, vote_contrib)[0, 1]
+            
+        else:  # percent
+            # 百分比法：转换为百分比（保留原始分布的相对差异）
+            judge_contrib = (gg["judge_total"] / gg["judge_total"].sum()).values
+            vote_contrib = (gg["votes_hat"] / gg["votes_hat"].sum()).values
+            
+            # 组合得分 = 百分比之和（数值越高越好）
+            combined = judge_contrib + vote_contrib
+            
+            # 百分比的方差取决于原始数据的离散程度
+            var_j = np.var(judge_contrib)
+            var_f = np.var(vote_contrib)
+            cov_jf = np.cov(judge_contrib, vote_contrib)[0, 1]
+        
+        # 计算NDCG用于质量评估
+        # 用combined作为排序依据，用标准化得分和作为relevance
         judge_z = (gg["judge_total"] - gg["judge_total"].mean()) / (gg["judge_total"].std() + 1e-8)
         vote_z = (gg["votes_hat"] - gg["votes_hat"].mean()) / (gg["votes_hat"].std() + 1e-8)
         relevance = (judge_z + vote_z).values
-
-        v_empty = 0.0
-
+        
+        # 对于rank方法，combined越小越好，所以用-combined排序
         if method == "rank":
-            judge_rank = gg["judge_total"].rank(ascending=False, method="min").values
-            vote_rank = gg["votes_hat"].rank(ascending=False, method="min").values
-
-            score_J = -judge_rank
-            score_F = -vote_rank
-            score_JF = -(judge_rank + vote_rank)
-
-        else:  # percent
-            judge_pct = gg["judge_total"] / gg["judge_total"].sum()
-            vote_pct = gg["votes_hat"] / gg["votes_hat"].sum()
-
-            score_J = judge_pct.values
-            score_F = vote_pct.values
-            score_JF = (judge_pct + vote_pct).values
-
-        v_J = self.compute_ndcg(relevance, score_J)
-        v_F = self.compute_ndcg(relevance, score_F)
-        v_JF = self.compute_ndcg(relevance, score_JF)
-
-        # Shapley值计算（2特征简化版）
-        phi_J = 0.5 * (v_J - v_empty) + 0.5 * (v_JF - v_F)
-        phi_F = 0.5 * (v_F - v_empty) + 0.5 * (v_JF - v_J)
-
-        # 偏向性指标
+            order_score = -combined
+        else:
+            order_score = combined
+        ndcg = self.compute_ndcg(relevance, order_score)
+        
+        # 基于方差分解的Shapley值计算
+        # Var(combined) = Var(J) + Var(F) + 2*Cov(J,F)
+        # 每个特征的边际贡献 = Var(特征) + Cov(特征, 另一特征)
+        var_combined = var_j + var_f + 2 * cov_jf
+        
+        # Shapley值：各特征对总方差的贡献
+        # phi_J = Var(J) + Cov(J,F)  (边际贡献的Shapley分配)
+        # phi_F = Var(F) + Cov(J,F)
+        phi_J = var_j + cov_jf
+        phi_F = var_f + cov_jf
+        
+        # 偏向性指标：粉丝贡献占总贡献的比例
         total_phi = abs(phi_J) + abs(phi_F)
         bias = abs(phi_F) / total_phi if total_phi > 0 else 0.5
 
@@ -222,7 +251,10 @@ class VotingMethodAnalyzer:
             "phi_J": phi_J,
             "phi_F": phi_F,
             "bias": bias,
-            "ndcg": v_JF
+            "ndcg": ndcg,
+            "var_judge": var_j,
+            "var_fan": var_f,
+            "cov_jf": cov_jf
         }
     
     def analyze_all_weeks(self):
@@ -764,7 +796,7 @@ class Q2Visualizer:
         
         ax.set_xlabel("Season", fontsize=12)
         ax.set_ylabel("Conflict Rate", fontsize=12)
-        ax.set_title("Method Conflict Rate by Season (Rank vs Percent)", fontsize=14)
+        # 论文要求不展示图标题
         ax.legend()
         
         # 添加规则说明
@@ -778,45 +810,108 @@ class Q2Visualizer:
         plt.close()
     
     def plot_bias_comparison(self):
-        """图2: 两种方法的偏向性对比"""
+        """图2: 两种方法的偏向性对比 - 优化版"""
         wr = self.method_analyzer.weekly_results
+        from scipy import stats
         
-        fig, axes = plt.subplots(1, 2, figsize=(14, 5), dpi=300)
+        fig, axes = plt.subplots(1, 3, figsize=(16, 5), dpi=300)
         
-        # 左图：偏向性分布
+        # 左图：KDE密度曲线（更清晰展示分布差异）
         ax1 = axes[0]
-        ax1.hist(wr["rank_bias"], bins=30, alpha=0.6, label="Rank Method", 
-                 color=COLORS["rank"], edgecolor="white")
-        ax1.hist(wr["pct_bias"], bins=30, alpha=0.6, label="Percent Method",
-                 color=COLORS["percent"], edgecolor="white")
-        ax1.axvline(x=0.5, color="black", linestyle="--", linewidth=2, label="Balanced (0.5)")
-        ax1.set_xlabel("Fan Bias (higher = more fan-favored)", fontsize=11)
-        ax1.set_ylabel("Count", fontsize=11)
-        ax1.set_title("Distribution of Fan Bias by Method", fontsize=12)
-        ax1.legend()
         
-        # 右图：按赛季的平均偏向性
+        rank_bias = wr["rank_bias"].dropna()
+        pct_bias = wr["pct_bias"].dropna()
+        
+        # 绘制KDE曲线
+        from scipy.stats import gaussian_kde
+        x_range = np.linspace(0, 1, 200)
+        
+        kde_rank = gaussian_kde(rank_bias)
+        kde_pct = gaussian_kde(pct_bias)
+        
+        ax1.fill_between(x_range, kde_rank(x_range), alpha=0.4, color=COLORS["rank"], label="Rank Method")
+        ax1.fill_between(x_range, kde_pct(x_range), alpha=0.4, color=COLORS["percent"], label="Percent Method")
+        ax1.plot(x_range, kde_rank(x_range), color=COLORS["rank"], linewidth=2)
+        ax1.plot(x_range, kde_pct(x_range), color=COLORS["percent"], linewidth=2)
+        
+        # 标注均值
+        rank_mean = rank_bias.mean()
+        pct_mean = pct_bias.mean()
+        ax1.axvline(x=rank_mean, color=COLORS["rank"], linestyle="--", linewidth=2, alpha=0.8)
+        ax1.axvline(x=pct_mean, color=COLORS["percent"], linestyle="--", linewidth=2, alpha=0.8)
+        ax1.axvline(x=0.5, color="black", linestyle=":", linewidth=2, label="Balanced (0.5)")
+        
+        # 添加均值标注
+        ax1.annotate(f'μ={rank_mean:.3f}', xy=(rank_mean, kde_rank(rank_mean)[0]), 
+                    xytext=(rank_mean-0.15, kde_rank(rank_mean)[0]+0.5),
+                    fontsize=10, color=COLORS["rank"], fontweight='bold',
+                    arrowprops=dict(arrowstyle='->', color=COLORS["rank"], lw=1.5))
+        ax1.annotate(f'μ={pct_mean:.3f}', xy=(pct_mean, kde_pct(pct_mean)[0]), 
+                    xytext=(pct_mean+0.05, kde_pct(pct_mean)[0]+0.5),
+                    fontsize=10, color=COLORS["percent"], fontweight='bold',
+                    arrowprops=dict(arrowstyle='->', color=COLORS["percent"], lw=1.5))
+        
+        ax1.set_xlabel("Fan Bias (higher = more fan-favored)", fontsize=11)
+        ax1.set_ylabel("Density", fontsize=11)
+        # 论文要求不展示图标题
+        ax1.legend(loc='upper right')
+        ax1.set_xlim(0, 1)
+        
+        # 中图：小提琴图对比
         ax2 = axes[1]
+        
+        # 准备数据
+        violin_data = [rank_bias.values, pct_bias.values]
+        positions = [1, 2]
+        
+        vp = ax2.violinplot(violin_data, positions=positions, showmeans=True, showmedians=True)
+        
+        # 设置颜色
+        colors_violin = [COLORS["rank"], COLORS["percent"]]
+        for i, body in enumerate(vp['bodies']):
+            body.set_facecolor(colors_violin[i])
+            body.set_alpha(0.6)
+        
+        # 添加箱线图元素
+        for partname in ('cbars', 'cmins', 'cmaxes', 'cmeans', 'cmedians'):
+            if partname in vp:
+                vp[partname].set_edgecolor('black')
+                vp[partname].set_linewidth(1)
+        
+        ax2.axhline(y=0.5, color="black", linestyle="--", linewidth=1.5, alpha=0.7, label="Balanced")
+        ax2.set_xticks(positions)
+        ax2.set_xticklabels(["Rank Method", "Percent Method"])
+        ax2.set_ylabel("Fan Bias", fontsize=11)
+        # 论文要求不展示图标题
+        
+        # 添加统计检验结果
+        t_stat, p_value = stats.ttest_ind(rank_bias, pct_bias)
+        significance = "***" if p_value < 0.001 else "**" if p_value < 0.01 else "*" if p_value < 0.05 else "ns"
+        ax2.text(1.5, max(pct_bias.max(), rank_bias.max()) + 0.05, 
+                f'p = {p_value:.2e} {significance}', ha='center', fontsize=10, fontweight='bold')
+        
+        # 右图：偏向性差异（Percent - Rank）按赛季
+        ax3 = axes[2]
         season_bias = wr.groupby("season").agg({
             "rank_bias": "mean",
             "pct_bias": "mean"
         }).reset_index()
+        season_bias["diff"] = season_bias["pct_bias"] - season_bias["rank_bias"]
         
-        x = np.arange(len(season_bias))
-        width = 0.35
+        colors_bar = [COLORS["percent"] if d > 0 else COLORS["rank"] for d in season_bias["diff"]]
         
-        ax2.bar(x - width/2, season_bias["rank_bias"], width, label="Rank Method",
-                color=COLORS["rank"], alpha=0.8)
-        ax2.bar(x + width/2, season_bias["pct_bias"], width, label="Percent Method",
-                color=COLORS["percent"], alpha=0.8)
-        ax2.axhline(y=0.5, color="black", linestyle="--", linewidth=1.5)
+        ax3.bar(season_bias["season"].astype(str), season_bias["diff"], 
+               color=colors_bar, alpha=0.8, edgecolor="white")
+        ax3.axhline(y=0, color="black", linestyle="-", linewidth=1)
+        ax3.axhline(y=season_bias["diff"].mean(), color="red", linestyle="--", linewidth=2,
+                   label=f'Average Δ = {season_bias["diff"].mean():.3f}')
         
-        ax2.set_xlabel("Season", fontsize=11)
-        ax2.set_ylabel("Average Fan Bias", fontsize=11)
-        ax2.set_title("Average Fan Bias by Season", fontsize=12)
-        ax2.set_xticks(x[::3])
-        ax2.set_xticklabels(season_bias["season"].values[::3])
-        ax2.legend()
+        ax3.set_xlabel("Season", fontsize=11)
+        ax3.set_ylabel("Bias Difference (Percent - Rank)", fontsize=11)
+        # 论文要求不展示图标题
+        ax3.legend()
+        plt.sca(ax3)
+        plt.xticks(rotation=45, ha="right", fontsize=8)
         
         plt.tight_layout()
         plt.savefig(OUTPUT_DIR / "fig2_bias_comparison.png", dpi=300, bbox_inches="tight")
@@ -843,7 +938,7 @@ class Q2Visualizer:
                 color=COLORS["percent"], alpha=0.85)
         
         ax1.set_ylabel("Rate", fontsize=11)
-        ax1.set_title("Overall Method Comparison", fontsize=12)
+        # 论文要求不展示图标题
         ax1.set_xticks(x)
         ax1.set_xticklabels(metrics)
         ax1.legend()
@@ -868,7 +963,7 @@ class Q2Visualizer:
                 color=COLORS["percent"], alpha=0.85)
         
         ax2.set_ylabel("Score", fontsize=11)
-        ax2.set_title("Ranking Quality Metrics", fontsize=12)
+        # 论文要求不展示图标题
         ax2.set_xticks(x2)
         ax2.set_xticklabels(metrics2)
         ax2.legend()
@@ -878,13 +973,14 @@ class Q2Visualizer:
         plt.close()
     
     def plot_controversy_analysis(self):
-        """图4: 争议案例分析"""
+        """图4: 争议案例分析 - 优化版"""
         cases = self.controversy_analyzer.controversy_results
         
         if not cases:
             return
         
         fig, axes = plt.subplots(2, 2, figsize=(14, 10), dpi=300)
+        # 论文要求不展示图标题
         
         case_keys = list(cases.keys())[:4]  # 最多展示4个案例
         
@@ -892,27 +988,52 @@ class Q2Visualizer:
             ax = axes[idx // 2, idx % 2]
             case = cases[key]
             
-            weeks = [w["week"] for w in case["weeks"]]
-            judge_ranks = [w["judge_rank"] for w in case["weeks"]]
-            vote_ranks = [w["vote_rank"] for w in case["weeks"]]
-            rank_orders = [w["rank_method_order"] for w in case["weeks"]]
-            pct_orders = [w["pct_method_order"] for w in case["weeks"]]
+            weeks = np.array([w["week"] for w in case["weeks"]])
+            judge_ranks = np.array([w["judge_rank"] for w in case["weeks"]])
+            vote_ranks = np.array([w["vote_rank"] for w in case["weeks"]])
+            n_contestants = np.array([w["n_contestants"] for w in case["weeks"]])
             
-            ax.plot(weeks, judge_ranks, "o-", label="Judge Rank", 
-                    color=COLORS["accent"], linewidth=2, markersize=8)
-            ax.plot(weeks, vote_ranks, "s-", label="Fan Vote Rank",
-                    color=COLORS["primary"], linewidth=2, markersize=8)
-            ax.plot(weeks, rank_orders, "^--", label="Rank Method Order",
-                    color=COLORS["rank"], linewidth=1.5, markersize=6, alpha=0.7)
-            ax.plot(weeks, pct_orders, "v--", label="Percent Method Order",
-                    color=COLORS["percent"], linewidth=1.5, markersize=6, alpha=0.7)
+            # 归一化排名到0-1（0=最好，1=最差）
+            judge_norm = judge_ranks / n_contestants
+            vote_norm = vote_ranks / n_contestants
+            
+            # 绘制填充区域高亮差异
+            ax.fill_between(weeks, judge_norm, vote_norm, 
+                           where=(judge_norm > vote_norm),
+                           alpha=0.3, color=COLORS["primary"], 
+                           label='Fan Advantage (saved by fans)')
+            ax.fill_between(weeks, judge_norm, vote_norm, 
+                           where=(judge_norm <= vote_norm),
+                           alpha=0.3, color=COLORS["accent"],
+                           label='Judge Advantage')
+            
+            # 绘制主线
+            ax.plot(weeks, judge_norm, "o-", label="Judge Rank (normalized)", 
+                    color=COLORS["accent"], linewidth=2.5, markersize=8, zorder=5)
+            ax.plot(weeks, vote_norm, "s-", label="Fan Vote Rank (normalized)",
+                    color=COLORS["primary"], linewidth=2.5, markersize=8, zorder=5)
+            
+            # 添加危险区域标注
+            ax.axhspan(0.8, 1.0, alpha=0.15, color='red', label='Elimination Zone')
+            ax.axhline(y=0.5, color='gray', linestyle='--', alpha=0.5)
+            
+            # 统计粉丝挽救次数
+            fan_saves = np.sum(judge_norm > 0.8)  # 评委认为该淘汰但粉丝救回
+            total_weeks = len(weeks)
             
             ax.set_xlabel("Week", fontsize=10)
-            ax.set_ylabel("Rank (lower = better)", fontsize=10)
-            ax.set_title(f'{case["celebrity_name"]} (S{case["season"]}) - Place: {case["placement"]}',
-                        fontsize=11)
-            ax.legend(loc="upper right", fontsize=8)
+            ax.set_ylabel("Normalized Rank (0=Best, 1=Worst)", fontsize=10)
+            # 论文要求不展示图标题
+            ax.legend(loc="upper left", fontsize=7, ncol=2)
+            ax.set_ylim(-0.05, 1.05)
             ax.invert_yaxis()
+            
+            # 标注关键发现
+            avg_gap = np.mean(judge_norm - vote_norm)
+            gap_text = f'Avg Gap: {avg_gap:.2f}' if avg_gap > 0 else f'Avg Gap: {avg_gap:.2f}'
+            ax.text(0.98, 0.02, f'Fan saves: {avg_gap:.2f} avg rank improvement',
+                   transform=ax.transAxes, ha='right', va='bottom', fontsize=9,
+                   bbox=dict(boxstyle='round', facecolor=COLORS["primary"], alpha=0.3))
         
         plt.tight_layout()
         plt.savefig(OUTPUT_DIR / "fig4_controversy_analysis.png", dpi=300, bbox_inches="tight")
@@ -941,7 +1062,7 @@ class Q2Visualizer:
         
         ax1.set_xlabel("Season", fontsize=11)
         ax1.set_ylabel("Agreement Rate", fontsize=11)
-        ax1.set_title("Method Agreement Rate by Season", fontsize=12)
+        # 论文要求不展示图标题
         ax1.legend()
         plt.sca(ax1)
         plt.xticks(rotation=45, ha="right")
@@ -963,7 +1084,7 @@ class Q2Visualizer:
         
         ax2.set_xlabel("Original Rule", fontsize=11)
         ax2.set_ylabel("Outcome Change Rate", fontsize=11)
-        ax2.set_title("Twist Rule Impact by Original Method", fontsize=12)
+        # 论文要求不展示图标题
         ax2.set_xticks(x)
         ax2.set_xticklabels(twist_data["original_rule"])
         ax2.legend()
@@ -1013,8 +1134,7 @@ class Q2Visualizer:
         ax.set_yticks(x)
         ax.set_yticklabels(categories)
         ax.set_xlabel("Score", fontsize=11)
-        ax.set_title(f'Method Comparison Summary\nRecommended: {rec["recommended_method"].upper()} Method',
-                    fontsize=14)
+        # 论文要求不展示图标题
         ax.legend(loc="lower right")
         
         # 添加数值标签
@@ -1033,82 +1153,164 @@ class Q2Visualizer:
         """图7: 两种方法下的排序差异热力图"""
         wr = self.method_analyzer.weekly_results
         
-        # 创建赛季x周次的肯德尔相关系数热力图
+        # 创建赛季x周次的“分歧度”热力图（1 - Kendall Tau）
         pivot_data = wr.pivot_table(
             values="kendall_tau",
             index="season",
             columns="week",
             aggfunc="mean"
         )
+        disagreement = 1 - pivot_data
         
         fig, ax = plt.subplots(figsize=(14, 8), dpi=300)
         
         custom_cmap = LinearSegmentedColormap.from_list(
-            "correlation", ["#E53E3E", "#FFFFFF", "#3182CE"]
+            "disagreement", ["#FFFFFF", "#E53E3E"]
         )
         
         sns.heatmap(
-            pivot_data, cmap=custom_cmap, ax=ax,
-            center=0.5, vmin=0, vmax=1,
+            disagreement, cmap=custom_cmap, ax=ax,
+            vmin=0, vmax=1,
             linewidths=0.5, linecolor="white",
-            cbar_kws={"label": "Kendall Tau (method agreement)"}
+            cbar_kws={"label": "Disagreement (1 - Kendall Tau)"}
         )
         
         ax.set_xlabel("Week", fontsize=12)
         ax.set_ylabel("Season", fontsize=12)
-        ax.set_title("Method Ranking Agreement (Kendall Tau) by Season and Week", fontsize=14)
+        # 论文要求不展示图标题
         
         plt.tight_layout()
         plt.savefig(OUTPUT_DIR / "fig7_kendall_tau_heatmap.png", dpi=300, bbox_inches="tight")
         plt.close()
     
     def plot_phi_comparison(self):
-        """图8: RankSHAP Phi值对比"""
+        """图8: RankSHAP归因分析 - 优化版"""
         wr = self.method_analyzer.weekly_results
+        from scipy import stats
         
-        fig, axes = plt.subplots(1, 2, figsize=(14, 5), dpi=300)
+        fig, axes = plt.subplots(1, 3, figsize=(16, 5), dpi=300)
         
-        # 左图：Phi_J和Phi_F的分布
+        # 左图：归一化贡献比例对比（用bias而不是原始φ）
         ax1 = axes[0]
         
-        data_to_plot = [
-            wr["rank_phi_J"].dropna(),
-            wr["rank_phi_F"].dropna(),
-            wr["pct_phi_J"].dropna(),
-            wr["pct_phi_F"].dropna()
-        ]
+        # 准备数据：展示两种方法下 Fan 和 Judge 的平均贡献比例
+        rank_fan_contrib = wr["rank_bias"].mean()
+        rank_judge_contrib = 1 - rank_fan_contrib
+        pct_fan_contrib = wr["pct_bias"].mean()
+        pct_judge_contrib = 1 - pct_fan_contrib
         
-        bp = ax1.boxplot(data_to_plot, labels=["Rank φ_J", "Rank φ_F", "Pct φ_J", "Pct φ_F"],
-                        patch_artist=True)
+        x = np.arange(2)
+        width = 0.35
         
-        colors_box = [COLORS["rank"], COLORS["rank"], COLORS["percent"], COLORS["percent"]]
-        for patch, color in zip(bp["boxes"], colors_box):
-            patch.set_facecolor(color)
-            patch.set_alpha(0.6)
+        # 堆叠柱状图
+        ax1.bar(x, [rank_judge_contrib, pct_judge_contrib], width=0.6, 
+               label='Judge Contribution', color=COLORS["accent"], alpha=0.8)
+        ax1.bar(x, [rank_fan_contrib, pct_fan_contrib], width=0.6,
+               bottom=[rank_judge_contrib, pct_judge_contrib],
+               label='Fan Contribution', color=COLORS["primary"], alpha=0.8)
         
-        ax1.set_ylabel("Shapley Value", fontsize=11)
-        ax1.set_title("Distribution of RankSHAP Values", fontsize=12)
-        ax1.axhline(y=0, color="gray", linestyle="--", alpha=0.5)
+        # 添加数值标注
+        ax1.text(0, rank_judge_contrib/2, f'{rank_judge_contrib:.1%}', ha='center', va='center', 
+                fontsize=11, fontweight='bold', color='white')
+        ax1.text(0, rank_judge_contrib + rank_fan_contrib/2, f'{rank_fan_contrib:.1%}', 
+                ha='center', va='center', fontsize=11, fontweight='bold', color='white')
+        ax1.text(1, pct_judge_contrib/2, f'{pct_judge_contrib:.1%}', ha='center', va='center', 
+                fontsize=11, fontweight='bold', color='white')
+        ax1.text(1, pct_judge_contrib + pct_fan_contrib/2, f'{pct_fan_contrib:.1%}', 
+                ha='center', va='center', fontsize=11, fontweight='bold', color='white')
         
-        # 右图：Phi_F/Phi_J比值
+        ax1.set_xticks(x)
+        ax1.set_xticklabels(['Rank Method', 'Percent Method'], fontsize=11)
+        ax1.set_ylabel('Contribution Ratio', fontsize=11)
+        # 论文要求不展示图标题
+        ax1.legend(loc='upper right')
+        ax1.set_ylim(0, 1.05)
+        ax1.axhline(y=0.5, color='gray', linestyle='--', alpha=0.5)
+        
+        # 中图：偏向性差异直方图
         ax2 = axes[1]
         
-        wr["rank_ratio"] = wr["rank_phi_F"] / (wr["rank_phi_J"].abs() + 1e-8)
-        wr["pct_ratio"] = wr["pct_phi_F"] / (wr["pct_phi_J"].abs() + 1e-8)
+        bias_diff = wr["pct_bias"] - wr["rank_bias"]
         
-        ax2.scatter(wr["rank_ratio"], wr["pct_ratio"], alpha=0.4, 
-                   c=wr["season"], cmap="viridis", s=30)
+        # 根据差异正负着色
+        colors_hist = [COLORS["percent"] if d > 0 else COLORS["rank"] for d in bias_diff]
         
-        ax2.axhline(y=1, color="gray", linestyle="--", alpha=0.5)
-        ax2.axvline(x=1, color="gray", linestyle="--", alpha=0.5)
-        ax2.plot([0, 5], [0, 5], "r--", alpha=0.5, label="y=x")
+        n, bins, patches = ax2.hist(bias_diff.dropna(), bins=40, edgecolor='white', alpha=0.8)
         
-        ax2.set_xlabel("Rank Method φ_F/|φ_J|", fontsize=11)
-        ax2.set_ylabel("Percent Method φ_F/|φ_J|", fontsize=11)
-        ax2.set_title("Fan vs Judge Contribution Ratio", fontsize=12)
+        # 重新着色
+        for i, patch in enumerate(patches):
+            if bins[i] > 0:
+                patch.set_facecolor(COLORS["percent"])
+            else:
+                patch.set_facecolor(COLORS["rank"])
+        
+        ax2.axvline(x=0, color='black', linestyle='-', linewidth=2)
+        ax2.axvline(x=bias_diff.mean(), color='red', linestyle='--', linewidth=2,
+                   label=f'Mean Δ = {bias_diff.mean():.3f}')
+        
+        # 统计检验
+        t_stat, p_val = stats.ttest_1samp(bias_diff.dropna(), 0)
+        significance = "***" if p_val < 0.001 else "**" if p_val < 0.01 else "*" if p_val < 0.05 else "ns"
+        
+        ax2.text(0.95, 0.95, f'p = {p_val:.2e} {significance}\n(Percent > Rank)', 
+                transform=ax2.transAxes, ha='right', va='top', fontsize=10,
+                bbox=dict(boxstyle='round', facecolor='wheat', alpha=0.8))
+        
+        # 标注百分比
+        positive_pct = (bias_diff > 0).mean() * 100
+        ax2.text(0.05, 0.95, f'{positive_pct:.1f}% weeks\nPercent favors fans more', 
+                transform=ax2.transAxes, ha='left', va='top', fontsize=10,
+                bbox=dict(boxstyle='round', facecolor=COLORS["percent"], alpha=0.3))
+        
+        ax2.set_xlabel('Bias Difference (Percent - Rank)', fontsize=11)
+        ax2.set_ylabel('Count', fontsize=11)
+        # 论文要求不展示图标题
         ax2.legend()
-        ax2.set_xlim(0, 5)
-        ax2.set_ylim(0, 5)
+        
+        # 右图：方法比较总结雷达图
+        ax3 = axes[2]
+        
+        # 准备雷达图数据
+        mc = self.method_analyzer.method_comparison
+        
+        categories = ['Fan Bias\n(higher=fan-favored)', 'Accuracy', 'Bottom-2\nCoverage', 'NDCG']
+        
+        rank_vals = [
+            mc["avg_rank_bias"],
+            mc["rank_accuracy"],
+            mc["rank_bottom2_coverage"],
+            mc["avg_rank_ndcg"]
+        ]
+        
+        pct_vals = [
+            mc["avg_pct_bias"],
+            mc["pct_accuracy"],
+            mc["pct_bottom2_coverage"],
+            mc["avg_pct_ndcg"]
+        ]
+        
+        x_pos = np.arange(len(categories))
+        width = 0.35
+        
+        bars1 = ax3.barh(x_pos - width/2, rank_vals, width, label='Rank Method', 
+                        color=COLORS["rank"], alpha=0.8)
+        bars2 = ax3.barh(x_pos + width/2, pct_vals, width, label='Percent Method',
+                        color=COLORS["percent"], alpha=0.8)
+        
+        # 添加数值标注
+        for bar, val in zip(bars1, rank_vals):
+            ax3.text(val + 0.02, bar.get_y() + bar.get_height()/2, f'{val:.3f}',
+                    va='center', fontsize=9)
+        for bar, val in zip(bars2, pct_vals):
+            ax3.text(val + 0.02, bar.get_y() + bar.get_height()/2, f'{val:.3f}',
+                    va='center', fontsize=9)
+        
+        ax3.set_yticks(x_pos)
+        ax3.set_yticklabels(categories)
+        ax3.set_xlabel('Score', fontsize=11)
+        # 论文要求不展示图标题
+        ax3.legend(loc='lower right')
+        ax3.set_xlim(0, 1.15)
         
         plt.tight_layout()
         plt.savefig(OUTPUT_DIR / "fig8_phi_comparison.png", dpi=300, bbox_inches="tight")
