@@ -15,10 +15,10 @@ season,week,method,celebrity,score_rank,n_contestants,judge_rank,fan_rank
 2,6,percent,Jerry Rice,4,5,4,2
 2,7,percent,Jerry Rice,4,4,4,3
 2,8,percent,Jerry Rice,3,3,3,3
-2,1,dynamic,Jerry Rice,6,10,5,6
-2,2,dynamic,Jerry Rice,3,9,4,3
-2,3,dynamic,Jerry Rice,1,8,7,1
-2,4,dynamic,Jerry Rice,6,7,5,7
+2,1,dynamic,Jerry Rice,5,10,5,6
+2,2,dynamic,Jerry Rice,4,9,4,3
+2,3,dynamic,Jerry Rice,6,8,7,1
+2,4,dynamic,Jerry Rice,5,7,5,7
 2,5,dynamic,Jerry Rice,5,6,5,5
 2,6,dynamic,Jerry Rice,4,5,4,2
 2,7,dynamic,Jerry Rice,4,4,4,3
@@ -40,7 +40,7 @@ season,week,method,celebrity,score_rank,n_contestants,judge_rank,fan_rank
 4,7,percent,Billy Ray Cyrus,5,6,6,5
 4,8,percent,Billy Ray Cyrus,5,5,5,5
 4,1,dynamic,Billy Ray Cyrus,11,11,11,11
-4,2,dynamic,Billy Ray Cyrus,9,11,6,9
+4,2,dynamic,Billy Ray Cyrus,8,11,6,9
 4,3,dynamic,Billy Ray Cyrus,6,10,6,7
 4,4,dynamic,Billy Ray Cyrus,5,9,5,5
 4,5,dynamic,Billy Ray Cyrus,7,8,7,7
@@ -71,11 +71,11 @@ season,week,method,celebrity,score_rank,n_contestants,judge_rank,fan_rank
 11,2,dynamic,Bristol Palin,4,11,3,4
 11,3,dynamic,Bristol Palin,9,10,9,9
 11,4,dynamic,Bristol Palin,8,9,8,8
-11,5,dynamic,Bristol Palin,6,8,8,6
-11,6,dynamic,Bristol Palin,6,7,6,6
+11,5,dynamic,Bristol Palin,7,8,8,6
+11,6,dynamic,Bristol Palin,5,7,6,6
 11,7,dynamic,Bristol Palin,4,6,6,3
-11,8,dynamic,Bristol Palin,5,5,5,4
-11,9,dynamic,Bristol Palin,4,4,4,3
+11,8,dynamic,Bristol Palin,4,5,5,4
+11,9,dynamic,Bristol Palin,3,4,4,3
 11,10,dynamic,Bristol Palin,3,3,3,3
 27,1,rank,Bobby Bones,5,13,5,5
 27,2,rank,Bobby Bones,10,12,10,10
@@ -102,5 +102,5 @@ season,week,method,celebrity,score_rank,n_contestants,judge_rank,fan_rank
 27,5,dynamic,Bobby Bones,8,9,8,8
 27,6,dynamic,Bobby Bones,7,9,7,7
 27,7,dynamic,Bobby Bones,6,8,6,7
-27,8,dynamic,Bobby Bones,6,6,6,5
+27,8,dynamic,Bobby Bones,5,6,6,5
 27,9,dynamic,Bobby Bones,4,4,4,4

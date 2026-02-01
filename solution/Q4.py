@@ -68,7 +68,7 @@ CSV_OUTPUT_DIR.mkdir(parents=True, exist_ok=True)
 # 动态权重参数（来自Q4思路）
 WEIGHT_PARAMS = {
     "t0": 0.65,
-    "beta": 15,
+    "beta": 12,
     "k": 0.4,
     "C": 0.3,
 }
@@ -88,11 +88,12 @@ SENSITIVITY_PARAMS = {
 }
 
 
+
+
 def sigmoid_weight(t: float, t0: float, beta: float, k: float, C: float) -> float:
-    """Sigmoid时间权重（返回评委权重）"""
-    return k / (1 + np.exp(-beta * (t - t0))) + C
-
-
+    w_mid = 0.5
+    w_range = 0.1  # 只波动 0.1 而非 0.2
+    return w_mid + w_range * np.tanh(beta * (t0 - t))  # 递减但更平缓
 def minmax_norm(series: pd.Series) -> pd.Series:
     """Min-Max归一化，避免除0"""
     s_min = series.min()
@@ -189,7 +190,8 @@ class Q4VotingSystem:
 
         # 统一尺度用于观赏性指标
         g["score_norm"] = minmax_norm(g["score"])
-
+        # 统一量纲：都转换为 [0,1] 的百分位排名
+        g["score"] = g["score"].rank(pct=True)  # 添加这一行统一量纲
         return g
 
     def _select_eliminated(self, g: pd.DataFrame, k: int, use_bottom2: bool,
