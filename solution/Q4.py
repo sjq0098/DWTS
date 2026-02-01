@@ -9,6 +9,7 @@ from pathlib import Path
 import numpy as np
 import pandas as pd
 import matplotlib.pyplot as plt
+from matplotlib.colors import LinearSegmentedColormap
 
 from scipy.stats import spearmanr
 import seaborn as sns
@@ -33,6 +34,13 @@ COLORS = {
     "judge": "#EAB170",        # 评委颜色
     "fan": "#7BADDF",          # 粉丝颜色
 }
+
+# 柔和配色（与前几问一致风格）
+PALETTE = [
+    "#BADDF3", "#C8C3E1", "#B581B4", "#B1A8D3", "#B5C3EA",
+    "#F4E09B", "#EAB170", "#DA8176"
+]
+HEATMAP_CMAP = LinearSegmentedColormap.from_list("pastel", PALETTE)
 
 # 设置绘图风格
 plt.style.use("seaborn-v0_8-whitegrid")
@@ -99,7 +107,7 @@ class Q4VotingSystem:
 
     def __init__(self,
                  long_data_path: str = "dwts_long_format.csv",
-                 vote_data_path: str = "q1_fan_vote_estimates.csv"):
+                 vote_data_path: str = "q1_fan_vote_estimates_enhanced.csv"):
         self.long_data_path = long_data_path
         self.vote_data_path = vote_data_path
         self.df = None
@@ -676,11 +684,10 @@ class Q4VotingSystem:
             pivot = pivot.reindex(columns=["rank", "percent", "dynamic"])
 
             # 使用更大的字体
-            cmap = "RdYlGn_r" if metric == "fairness_rate" else "RdYlGn"
-            sns.heatmap(pivot, annot=True, fmt=".2f", cmap=cmap,
+            sns.heatmap(pivot, annot=True, fmt=".2f", cmap=HEATMAP_CMAP,
                        ax=axes[idx], cbar_kws={"shrink": 0.7},
                        annot_kws={"fontsize": 11, "fontweight": "bold"})
-            axes[idx].set_title(name, fontsize=14, fontweight="bold")
+            # MCM图表不显示标题
             axes[idx].set_xlabel("Method", fontsize=12)
             axes[idx].set_ylabel("Season", fontsize=12)
             axes[idx].tick_params(axis='both', labelsize=11)
@@ -739,7 +746,7 @@ class Q4VotingSystem:
             ax.invert_yaxis()  # 排名1在上
             ax.set_xlabel("Week", fontsize=11)
             ax.set_ylabel("Combined Rank", fontsize=11)
-            ax.set_title(f"S{season}: {celeb}\n{info.get('issue', '')}", fontsize=11, fontweight="bold")
+            # MCM图表不显示标题
             ax.legend(fontsize=9, loc="best")
             ax.grid(True, alpha=0.3)
 

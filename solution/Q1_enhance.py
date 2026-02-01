@@ -15,6 +15,7 @@ Created on Sun Feb  1 22:18:16 2026
 
 import re
 import warnings
+from pandas.api.types import is_categorical_dtype
 from pathlib import Path
 
 import numpy as np
@@ -269,6 +270,9 @@ class FanVoteEstimator:
             self.long_df[col] = self.long_df[col].fillna(mean_val)
         cat_fill_cols = [c for c in self.cat_features if c in self.long_df.columns]
         for col in cat_fill_cols:
+            if is_categorical_dtype(self.long_df[col]):
+                if "Unknown" not in self.long_df[col].cat.categories:
+                    self.long_df[col] = self.long_df[col].cat.add_categories(["Unknown"])
             self.long_df[col] = self.long_df[col].fillna("Unknown")
         
         print(f"\n[Step 5] 特征构造完成（含增强特征）")
@@ -298,6 +302,9 @@ class FanVoteEstimator:
                         era_data[col] = era_data[col].fillna(era_data[col].median())
                 for col in self.cat_features:
                     if col in era_data.columns:
+                        if is_categorical_dtype(era_data[col]):
+                            if "Unknown" not in era_data[col].cat.categories:
+                                era_data[col] = era_data[col].cat.add_categories(["Unknown"])
                         era_data[col] = era_data[col].fillna("Unknown")
                 
                 self.train_data_by_era[era_name] = era_data
@@ -751,13 +758,63 @@ class EliminationConsistencyEvaluator:
         
         ax.axhline(y=self.season_summary["exact_elim"].mean(), color='red', 
                    linestyle='--', linewidth=2, label=f'Average: {self.season_summary["exact_elim"].mean():.3f}')
-        ax.set_title("Season-level Elimination Exact Match Rate (Enhanced Model)", fontsize=14, fontweight='bold')
         ax.set_xlabel("Season", fontsize=12)
         ax.set_ylabel("Exact Match Rate", fontsize=12)
         ax.legend()
         plt.xticks(rotation=45, ha="right")
         plt.tight_layout()
         plt.savefig(OUTPUT_DIR / "fig1_season_consistency_enhanced.png", dpi=300, bbox_inches='tight')
+        plt.savefig(OUTPUT_DIR / "fig1_season_consistency.png", dpi=300, bbox_inches='tight')
+        plt.close()
+
+        # 图2: 周级一致率（按周次聚合）
+        week_summary = (
+            self.eval_week_df.groupby("week", as_index=False)
+            .agg(exact_match_mean=("exact_match", "mean"))
+        )
+
+        fig, ax = plt.subplots(figsize=(8, 4), dpi=300)
+        ax.plot(week_summary["week"], week_summary["exact_match_mean"], 
+                marker="o", linewidth=2, markersize=8, color=COLORS["accent"])
+        ax.fill_between(week_summary["week"], 0, week_summary["exact_match_mean"], alpha=0.2, color='orange')
+        ax.set_xlabel("Week", fontsize=12)
+        ax.set_ylabel("Exact Match Rate", fontsize=12)
+        ax.set_ylim(0, 1)
+        plt.tight_layout()
+        plt.savefig(OUTPUT_DIR / "fig2_weekly_consistency.png", dpi=300, bbox_inches='tight')
+        plt.close()
+
+        # 图3: Bottom-2覆盖率
+        fig, ax = plt.subplots(figsize=(10, 4.5), dpi=300)
+        ax.bar(self.season_summary["season"].astype(str), 
+               self.season_summary["bottom2_cover"], color=COLORS["success"], edgecolor='darkred', alpha=0.85)
+        ax.axhline(y=self.season_summary["bottom2_cover"].mean(), color='red', 
+                   linestyle='--', linewidth=2, label=f'Average: {self.season_summary["bottom2_cover"].mean():.3f}')
+        ax.set_xlabel("Season", fontsize=12)
+        ax.set_ylabel("Bottom-2 Coverage Rate", fontsize=12)
+        ax.legend()
+        plt.xticks(rotation=45, ha="right")
+        plt.tight_layout()
+        plt.savefig(OUTPUT_DIR / "fig3_bottom2_coverage.png", dpi=300, bbox_inches='tight')
+        plt.close()
+
+        # 图4: 评分热力图（浅蓝 -> 珊瑚粉）
+        pivot_data = self.result_df.pivot_table(
+            values="judge_total", index="season", columns="week", aggfunc="mean"
+        )
+        custom_heatmap_cmap = LinearSegmentedColormap.from_list(
+            "dwts_theme", [COLORS["light"], COLORS["primary"], COLORS["secondary"], COLORS["success"]]
+        )
+        fig, ax = plt.subplots(figsize=(12, 7), dpi=300)
+        sns.heatmap(
+            pivot_data, cmap=custom_heatmap_cmap, ax=ax,
+            linewidths=0.5, linecolor="white",
+            cbar_kws={"label": "Average Judge Total Score"}
+        )
+        ax.set_xlabel("Week", fontsize=12)
+        ax.set_ylabel("Season", fontsize=12)
+        plt.tight_layout()
+        plt.savefig(OUTPUT_DIR / "fig2_score_heatmap.png", dpi=300, bbox_inches="tight")
         plt.close()
         
         print(f"\n[Plots] 一致性图表已保存至 {OUTPUT_DIR}")
@@ -841,12 +898,107 @@ class UncertaintyAnalyzer:
                 color=COLORS["secondary"], alpha=0.7)
         ax.axvline(x=self.unc_df["rel_ci80"].mean(), color='red', linestyle='--', 
                    linewidth=2, label=f'Mean: {self.unc_df["rel_ci80"].mean():.3f}')
-        ax.set_title("Distribution of Relative Uncertainty (Enhanced Model)", fontsize=14, fontweight='bold')
         ax.set_xlabel("Relative CI80 Width", fontsize=12)
         ax.set_ylabel("Count", fontsize=12)
         ax.legend()
         plt.tight_layout()
         plt.savefig(OUTPUT_DIR / "fig4_uncertainty_distribution_enhanced.png", dpi=300, bbox_inches='tight')
+        plt.savefig(OUTPUT_DIR / "fig4_uncertainty_distribution.png", dpi=300, bbox_inches='tight')
+        plt.close()
+
+        # 图5: 不确定性随周变化
+        week_summary = (
+            self.unc_df.groupby("week", as_index=False)
+            .agg(rel_ci80_mean=("rel_ci80", "mean"), rel_ci80_std=("rel_ci80", "std"))
+        )
+
+        fig, ax = plt.subplots(figsize=(8, 4.5), dpi=300)
+        ax.plot(week_summary["week"], week_summary["rel_ci80_mean"], 
+                marker="o", linewidth=2, markersize=8, color='teal')
+        ax.fill_between(
+            week_summary["week"],
+            week_summary["rel_ci80_mean"] - week_summary["rel_ci80_std"],
+            week_summary["rel_ci80_mean"] + week_summary["rel_ci80_std"],
+            alpha=0.25, color='teal', label="±1 Std"
+        )
+        ax.set_xlabel("Week", fontsize=12)
+        ax.set_ylabel("Relative CI80 Width", fontsize=12)
+        ax.legend()
+        plt.tight_layout()
+        plt.savefig(OUTPUT_DIR / "fig5_uncertainty_by_week.png", dpi=300, bbox_inches='tight')
+        plt.close()
+
+        # 图6: 不确定性最高的选手
+        topk = 15
+        cele_unc = (
+            self.unc_df.groupby("celebrity_name", as_index=False)
+            .agg(rel_ci80_mean=("rel_ci80", "mean"))
+            .sort_values("rel_ci80_mean", ascending=False)
+        )
+        top_cele = cele_unc.head(topk)
+        fig, ax = plt.subplots(figsize=(10, 5), dpi=300)
+        ax.bar(range(topk), top_cele["rel_ci80_mean"], color='coral', edgecolor='darkred', alpha=0.8)
+        ax.set_xticks(range(topk))
+        ax.set_xticklabels(top_cele["celebrity_name"], rotation=45, ha="right", fontsize=9)
+        ax.set_xlabel("Celebrity", fontsize=12)
+        ax.set_ylabel("Mean Relative CI80 Width", fontsize=12)
+        plt.tight_layout()
+        plt.savefig(OUTPUT_DIR / "fig6_top_uncertainty_contestants.png", dpi=300, bbox_inches='tight')
+        plt.close()
+
+        # 图7: 示例赛季热力图
+        example_season = int(self.unc_df["season"].max())
+        ex_df_u = self.unc_df[self.unc_df["season"] == example_season].copy()
+
+        top12_u = (
+            ex_df_u.groupby("celebrity_name")["votes_q50"].sum()
+            .sort_values(ascending=False).head(12).index.tolist()
+        )
+
+        heat_u = ex_df_u[ex_df_u["celebrity_name"].isin(top12_u)].pivot_table(
+            index="celebrity_name", columns="week", values="rel_ci80", aggfunc="mean"
+        ).fillna(0)
+
+        fig, ax = plt.subplots(figsize=(10, 6), dpi=300)
+        heat_cmap = LinearSegmentedColormap.from_list(
+            "dwts_theme", [COLORS["light"], COLORS["primary"], COLORS["secondary"], COLORS["success"]]
+        )
+        im = ax.imshow(heat_u.values, aspect="auto", cmap=heat_cmap)
+        ax.set_xlabel("Week", fontsize=12)
+        ax.set_ylabel("Celebrity", fontsize=12)
+        ax.set_xticks(np.arange(heat_u.shape[1]))
+        ax.set_xticklabels(heat_u.columns.tolist())
+        ax.set_yticks(np.arange(heat_u.shape[0]))
+        ax.set_yticklabels(heat_u.index.tolist(), fontsize=9)
+        cbar = plt.colorbar(im, ax=ax)
+        cbar.set_label("Relative CI80 Width")
+        plt.tight_layout()
+        plt.savefig(OUTPUT_DIR / "fig7_uncertainty_heatmap.png", dpi=300, bbox_inches='tight')
+        plt.close()
+
+        # 图8: 预测票数 vs 最终名次散点图
+        season_total = (
+            self.estimator.result_df.groupby(["season", "celebrity_name"], as_index=False)
+            .agg(pred_total_votes=("votes_hat", "sum"))
+        )
+        placement_df = self.estimator.df[["season", "celebrity_name", "placement"]].copy()
+
+        scatter_df = season_total.merge(placement_df, on=["season", "celebrity_name"], how="inner")
+        scatter_df = scatter_df.dropna(subset=["pred_total_votes", "placement"])
+
+        fig, ax = plt.subplots(figsize=(8, 5), dpi=300)
+        ax.scatter(scatter_df["pred_total_votes"], scatter_df["placement"], 
+                   alpha=0.5, c='steelblue', edgecolor='navy', s=50)
+        ax.set_xlabel("Predicted Total Votes", fontsize=12)
+        ax.set_ylabel("Final Placement (Lower is Better)", fontsize=12)
+
+        # 计算相关系数
+        corr = scatter_df["pred_total_votes"].corr(scatter_df["placement"])
+        ax.text(0.95, 0.95, f'Correlation: {corr:.3f}', transform=ax.transAxes, 
+                fontsize=11, verticalalignment='top', horizontalalignment='right',
+                bbox=dict(boxstyle='round', facecolor='wheat', alpha=0.5))
+        plt.tight_layout()
+        plt.savefig(OUTPUT_DIR / "fig8_votes_vs_placement.png", dpi=300, bbox_inches='tight')
         plt.close()
         
         print(f"\n[Plots] 不确定性图表已保存")

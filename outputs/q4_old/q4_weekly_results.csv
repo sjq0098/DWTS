@@ -1,0 +1,1006 @@
+season,week,method,w_judge,w_fan,n_contestants,eliminated,revived,excitement_var
+1,1,rank,,,6,Kelly Monaco,,0.1288888888888889
+1,2,rank,,,6,Evander Holyfield,,0.11333333333333336
+1,3,rank,,,5,Evander Holyfield,,0.125
+1,4,rank,,,4,Joey McIntyre,,0.125
+1,5,rank,,,3,Joey McIntyre,,0.16666666666666666
+1,6,rank,,,2,,,0.25
+2,1,rank,,,10,Kenny Mayne,,0.11726643598615916
+2,2,rank,,,9,Master P,,0.1150068587105624
+2,3,rank,,,8,Master P,,0.10809948979591837
+2,4,rank,,,7,Master P,,0.1159297052154195
+2,5,rank,,,6,Tia Carrere,,0.11666666666666665
+2,6,rank,,,5,George Hamilton,,0.15183673469387754
+2,7,rank,,,4,Jerry Rice,,0.15798611111111113
+2,8,rank,,,3,,,0.16666666666666666
+3,1,rank,,,11,Tucker Carlson,,0.10202479338842975
+3,2,rank,,,10,Jerry Springer,,0.09148148148148147
+3,3,rank,,,9,Emmitt Smith,,0.09963348765432097
+3,4,rank,,,8,Sara Evans,,0.1064164201183432
+3,5,rank,,,7,Jerry Springer,,0.14639905548996457
+3,6,rank,,,5,Jerry Springer,,0.125
+3,7,rank,,,5,Jerry Springer,,0.13999999999999999
+3,8,rank,,,4,Monique Coleman,,0.13020833333333331
+3,9,rank,,,3,Mario Lopez,,0.16666666666666666
+3,10,rank,,,2,,,0.25
+4,1,rank,,,11,Billy Ray Cyrus,,0.10219008264462809
+4,2,rank,,,11,Clyde Drexler,,0.09683844234335294
+4,3,rank,,,10,Clyde Drexler,,0.1113888888888889
+4,4,rank,,,9,Clyde Drexler,,0.09789737654320989
+4,5,rank,,,8,Clyde Drexler,,0.10714285714285714
+4,6,rank,,,7,John Ratzenberger,,0.11791383219954647
+4,7,rank,,,6,Billy Ray Cyrus,,0.12555555555555556
+4,8,rank,,,5,Billy Ray Cyrus,,0.125
+4,9,rank,,,4,Ian Ziering,,0.15798611111111113
+4,10,rank,,,3,,,0.16666666666666666
+5,1,rank,,,12,Josie Maran,,0.09347738751147842
+5,2,rank,,,11,Wayne Newton,,0.0865702479338843
+5,3,rank,,,10,Wayne Newton,,0.11432098765432097
+5,4,rank,,,9,Mark Cuban,,0.10503472222222224
+5,5,rank,,,8,Mark Cuban,,0.11649408284023668
+5,6,rank,,,7,Jane Seymour,,0.10799319727891157
+5,7,rank,,,6,Jane Seymour,,0.11472222222222221
+5,8,rank,,,5,Marie Osmond,,0.125
+5,9,rank,,,4,Marie Osmond,,0.15798611111111113
+5,10,rank,,,3,,,0.16666666666666666
+6,1,rank,,,12,Adam Carolla,,0.10599332325522803
+6,2,rank,,,12,"Monica Seles,Steve Guttenberg",,0.10231577134986226
+6,3,rank,,,10,Marissa Jaret Winokur,,0.08407407407407408
+6,4,rank,,,9,Adam Carolla,,0.10252700617283951
+6,5,rank,,,8,Priscilla Presley,,0.10809948979591835
+6,6,rank,,,7,Marlee Matlin,,0.10402494331065759
+6,7,rank,,,6,Cristian de la Fuente,,0.10805555555555556
+6,8,rank,,,5,Marissa Jaret Winokur,,0.11875
+6,9,rank,,,4,Marissa Jaret Winokur,,0.1388888888888889
+6,10,rank,,,3,,,0.16666666666666666
+7,1,rank,,,13,"Jeffrey Ross,Cloris Leachman",,0.0952292899408284
+7,2,rank,,,11,Cloris Leachman,,0.10512396694214875
+7,3,rank,,,9,Cloris Leachman,,0.10136959876543208
+7,4,rank,,,9,Rocco DiSpirito,,0.10252700617283951
+7,5,rank,,,8,Lance Bass,,0.12282986111111113
+7,6,rank,,,7,Cloris Leachman,,0.10799319727891156
+7,7,rank,,,6,Warren Sapp,,0.11805555555555554
+7,8,rank,,,5,Cody Linley,,0.13387755102040816
+7,9,rank,,,4,Cody Linley,,0.13020833333333331
+7,10,rank,,,3,,,0.17283950617283952
+8,1,rank,,,13,Steve Wozniak,,0.0975304076265615
+8,2,rank,,,13,Steve-O,,0.09148997370151217
+8,3,rank,,,12,Steve Wozniak,,0.10651974288337925
+8,4,rank,,,11,"Steve Wozniak,Holly Madison",,0.09991735537190083
+8,5,rank,,,9,Steve-O,,0.1080246913580247
+8,6,rank,,,8,Steve-O,,0.10897640306122448
+8,7,rank,,,7,Lawrence Taylor,,0.11196145124716553
+8,8,rank,,,6,Melissa Rycroft,,0.11472222222222221
+8,9,rank,,,5,Ty Murray,,0.15836734693877552
+8,10,rank,,,4,Ty Murray,,0.13888888888888887
+8,11,rank,,,3,,,0.16666666666666666
+9,1,rank,,,16,"Ashley Hamiliton,Macy Gray",,0.09713139120095124
+9,2,rank,,,14,Kathy Ireland,,0.09930612244897959
+9,3,rank,,,13,Michael Irvin,,0.09592784352399736
+9,4,rank,,,11,Michael Irvin,,0.11084911059728486
+9,5,rank,,,10,Michael Irvin,,0.10878892733564013
+9,6,rank,,,9,"Melissa Joan Hart,Michael Irvin",,0.11555555555555558
+9,7,rank,,,7,"Mark Dacascos,Michael Irvin",,0.11196145124716554
+9,8,rank,,,5,Aaron Carter,,0.13387755102040816
+9,9,rank,,,4,Donny Osmond,,0.125
+9,10,rank,,,3,,,0.16666666666666666
+10,1,rank,,,11,Buzz Aldrin,,0.09830578512396695
+10,2,rank,,,11,Buzz Aldrin,,0.09838842975206612
+10,3,rank,,,10,Buzz Aldrin,,0.10262345679012344
+10,4,rank,,,9,Aiden Turner,,0.11753086419753088
+10,5,rank,,,8,Kate Gosselin,,0.10132334183673469
+10,6,rank,,,7,Jake Pavelka,,0.11111111111111113
+10,7,rank,,,6,Niecy Nash,,0.13854595336076816
+10,8,rank,,,5,Niecy Nash,,0.1275
+10,9,rank,,,4,Chad Ochocinco,,0.1579861111111111
+10,10,rank,,,3,,,0.16666666666666666
+11,1,rank,,,12,Margaret Cho,,0.10937499999999999
+11,2,rank,,,11,Michael Bolton,,0.09743801652892561
+11,3,rank,,,10,Margaret Cho,,0.10632716049382715
+11,4,rank,,,9,The Situation,,0.10416666666666667
+11,5,rank,,,8,Bristol Palin,,0.12194896449704141
+11,6,rank,,,7,Kurt Warner,,0.11111111111111113
+11,7,rank,,,6,Bristol Palin,,0.12805555555555556
+11,8,rank,,,5,Kurt Warner,,0.17469387755102042
+11,9,rank,,,4,Bristol Palin,,0.1388888888888889
+11,10,rank,,,3,,,0.16666666666666666
+12,1,rank,,,11,Mike Catherwood,,0.10285123966942149
+12,2,rank,,,11,Mike Catherwood,,0.11855933068054282
+12,3,rank,,,10,Wendy Williams,,0.10074074074074076
+12,4,rank,,,9,Kendra Wilkinson,,0.10599922839506173
+12,5,rank,,,8,Petra Nemcova,,0.12630208333333334
+12,6,rank,,,7,Chris Jericho,,0.11989795918367349
+12,7,rank,,,6,Romeo,,0.13854595336076816
+12,8,rank,,,5,Ralph Macchio,,0.125
+12,9,rank,,,4,Ralph Macchio,,0.1388888888888889
+12,10,rank,,,3,,,0.18055555555555558
+13,1,rank,,,12,Metta World Peace (Ron),,0.09852789256198348
+13,2,rank,,,11,Chaz Bono,,0.09958677685950411
+13,3,rank,,,10,Chaz Bono,,0.1018827160493827
+13,4,rank,,,9,Carson Kressley,,0.09384645061728397
+13,5,rank,,,8,Carson Kressley,,0.11065051020408163
+13,6,rank,,,7,Chaz Bono,,0.11989795918367348
+13,7,rank,,,6,Nancy Grace,,0.11666666666666665
+13,8,rank,,,5,Nancy Grace,,0.1275
+13,9,rank,,,4,Hope Solo,,0.1388888888888889
+13,10,rank,,,3,,,0.16666666666666666
+14,1,rank,,,12,Melissa Gilbert,,0.11102430555555555
+14,2,rank,,,12,Martina Navratilova,,0.10197141873278237
+14,3,rank,,,11,Melissa Gilbert,,0.10653409090909091
+14,4,rank,,,10,Gladys Knight,,0.09827160493827161
+14,5,rank,,,9,Gavin DeGraw,,0.11805555555555555
+14,6,rank,,,8,Gladys Knight,,0.10714285714285715
+14,7,rank,,,7,Melissa Gilbert,,0.11196145124716553
+14,8,rank,,,6,"Melissa Gilbert,Maria Menounos",,0.11472222222222223
+14,9,rank,,,4,Katherine Jenkins,,0.18000000000000002
+14,10,rank,,,3,,,0.17283950617283952
+15,1,rank,,,13,Pamela Anderson,,0.0995233399079553
+15,2,rank,,,12,Bristol Palin,,0.09267389807162535
+15,3,rank,,,11,"Bristol Palin,Drew Lachey",,0.11034545912410429
+15,4,rank,,,9,Kirstie Alley,,0.10976080246913582
+15,5,rank,,,8,Kelly Monaco,,0.11575255102040816
+15,6,rank,,,8,Emmitt Smith,,0.11065051020408165
+15,7,rank,,,7,Kirstie Alley,,0.11111111111111112
+15,8,rank,,,7,"Kirstie Alley,Shawn Johnson",,0.11592970521541952
+15,9,rank,,,5,"Emmitt Smith,Kelly Monaco",,0.125
+15,10,rank,,,3,,,0.16666666666666666
+16,1,rank,,,12,D. L. Hughley,,0.09933138200183655
+16,2,rank,,,12,Dorothy Hamill,,0.09588785583103765
+16,3,rank,,,11,Wynonna Judd,,0.10107438016528926
+16,4,rank,,,10,Lisa Vanderpump,,0.11006920415224912
+16,5,rank,,,9,D. L. Hughley,,0.10743484224965706
+16,6,rank,,,8,Victor Ortiz,,0.10642538265306122
+16,7,rank,,,7,Andy Dick,,0.10912698412698414
+16,8,rank,,,6,Sean Lowe,,0.11666666666666665
+16,9,rank,,,5,Ingo Rademacher,,0.14
+16,10,rank,,,4,Jacoby Jones,,0.1579861111111111
+17,1,rank,,,12,Bill Nye,,0.10174185032139578
+17,2,rank,,,12,Keyshawn Johnson,,0.11312673217435122
+17,3,rank,,,11,Valerie Harper,,0.10594995535816489
+17,4,rank,,,10,Valerie Harper,,0.10493827160493827
+17,5,rank,,,9,Leah Remini,,0.10947145061728396
+17,6,rank,,,8,Bill Engvall,,0.12278106508875741
+17,7,rank,,,8,Bill Engvall,,0.11216517857142859
+17,8,rank,,,7,Bill Engvall,,0.12046485260770975
+17,9,rank,,,6,Bill Engvall,,0.11472222222222221
+17,10,rank,,,5,Bill Engvall,,0.1551020408163265
+17,11,rank,,,4,Bill Engvall,,0.1388888888888889
+18,1,rank,,,12,Billy Dee Williams,,0.10105314508723601
+18,2,rank,,,11,Billy Dee Williams,,0.09429752066115703
+18,3,rank,,,9,Drew Carey,,0.1187307098765432
+18,4,rank,,,9,Candace Cameron Bure,,0.1013695987654321
+18,5,rank,,,9,Drew Carey,,0.10484182098765432
+18,6,rank,,,8,Drew Carey,,0.11649408284023668
+18,7,rank,,,7,NeNe Leakes,,0.10912698412698414
+18,8,rank,,,6,James Maslow,,0.13888888888888892
+18,9,rank,,,5,Candace Cameron Bure,,0.11499999999999999
+18,10,rank,,,4,Candace Cameron Bure,,0.13888888888888887
+19,1,rank,,,13,Lolo Jones,,0.10474155770069686
+19,2,rank,,,12,Michael Waltrip,,0.0841798668503214
+19,3,rank,,,11,Randy Couture,,0.10289256198347108
+19,4,rank,,,10,Jonathan Bennett,,0.10480968858131487
+19,5,rank,,,9,Michael Waltrip,,0.10802469135802469
+19,6,rank,,,9,Tommy Chong,,0.10941015089163236
+19,7,rank,,,8,Antonio Sabato Jr.,,0.12278106508875739
+19,8,rank,,,7,Michael Waltrip,,0.11111111111111112
+19,9,rank,,,6,Tommy Chong,,0.12805555555555556
+19,10,rank,,,5,Tommy Chong,,0.125
+19,11,rank,,,4,Bethany Mota,,0.14
+20,1,rank,,,12,Redfoo,,0.09767888636936256
+20,2,rank,,,12,Chris Soules,,0.09887224517906334
+20,3,rank,,,11,Charlotte McKinney,,0.1102080996314187
+20,4,rank,,,10,Chris Soules,,0.09987654320987653
+20,5,rank,,,9,Robert Herjavec,,0.10765432098765432
+20,6,rank,,,8,Robert Herjavec,,0.10554846938775511
+20,7,rank,,,7,Chris Soules,,0.1032214538708045
+20,8,rank,,,6,"Robert Herjavec,Noah Galloway",,0.11333333333333334
+20,9,rank,,,4,Noah Galloway,,0.1579861111111111
+20,10,rank,,,3,,,0.18055555555555558
+21,1,rank,,,13,Kim Zolciak-Biermann,,0.09631821170282709
+21,2,rank,,,13,"Chaka Khan,Gary Busey",,0.09518819855358317
+21,3,rank,,,10,Paula Deen,,0.11361111111111108
+21,4,rank,,,10,Gary Busey,,0.10990740740740741
+21,5,rank,,,9,Paula Deen,,0.09934413580246913
+21,6,rank,,,9,Paula Deen,,0.11294367283950618
+21,7,rank,,,8,Alek Skarlatos,,0.1242603550295858
+21,8,rank,,,7,Andy Grammer,,0.11196145124716553
+21,9,rank,,,6,Tamar Braxton,,0.12805555555555556
+21,10,rank,,,4,Nick Carter,,0.15798611111111113
+21,11,rank,,,4,Alek Skarlatos,,0.14409722222222224
+22,1,rank,,,12,Geraldo Rivera,,0.10794019742883378
+22,2,rank,,,12,Geraldo Rivera,,0.09921659779614324
+22,3,rank,,,11,Mischa Barton,,0.09198347107438015
+22,4,rank,,,10,Doug Flutie,,0.10682098765432098
+22,5,rank,,,9,Antonio Brown,,0.09934413580246913
+22,6,rank,,,9,Doug Flutie,,0.09211033950617283
+22,7,rank,,,8,"Jodie Sweetin,Kim Fields",,0.10044642857142856
+22,8,rank,,,6,Wanya Morris,,0.11138888888888887
+22,9,rank,,,5,"Antonio Brown,Ginger Zee",,0.125
+22,10,rank,,,3,,,0.16666666666666666
+23,1,rank,,,13,Rick Perry,,0.0976536817882972
+23,2,rank,,,13,Rick Perry,,0.0904215976331361
+23,3,rank,,,12,Rick Perry,,0.09805681531872008
+23,4,rank,,,11,"Babyface,Marilu Henner",,0.09739669421487605
+23,5,rank,,,9,Amber Rose,,0.11673606545401416
+23,6,rank,,,9,Amber Rose,,0.1013695987654321
+23,7,rank,,,8,Marilu Henner,,0.12268860946745562
+23,8,rank,,,7,Marilu Henner,,0.11196145124716553
+23,9,rank,,,6,James Hinchcliffe,,0.13854595336076816
+23,10,rank,,,5,Calvin Johnson Jr.,,0.1275
+23,11,rank,,,4,Jana Kramer,,0.1388888888888889
+24,1,rank,,,12,Chris Kattan,,0.10204315886134069
+24,2,rank,,,12,Chris Kattan,,0.10525321239606955
+24,3,rank,,,11,Charo,,0.11019283746556474
+24,4,rank,,,10,Mr. T,,0.0974074074074074
+24,5,rank,,,9,David Ross,,0.1013695987654321
+24,6,rank,,,8,Nick Viall,,0.10714285714285714
+24,7,rank,,,7,"Bonner Bolton,David Ross",,0.11592970521541952
+24,8,rank,,,5,Bonner Bolton,,0.125
+24,9,rank,,,4,David Ross,,0.14
+24,10,rank,,,3,,,0.16666666666666666
+25,1,rank,,,13,Barbara Corcoran,,0.09898915187376728
+25,2,rank,,,13,"Barbara Corcoran,Nick Lachey",,0.09418145956607496
+25,3,rank,,,11,Sasha Pieterse,,0.07747933884297521
+25,4,rank,,,11,Nick Lachey,,0.08512396694214877
+25,5,rank,,,10,Nick Lachey,,0.09694444444444443
+25,6,rank,,,9,Nick Lachey,,0.1013695987654321
+25,7,rank,,,8,"Nikki Bella,Terrell Owens",,0.11065051020408163
+25,8,rank,,,6,Drew Scott,,0.11666666666666668
+25,9,rank,,,5,Drew Scott,,0.125
+25,10,rank,,,4,Drew Scott,,0.1579861111111111
+26,1,rank,,,10,"Kareem Abdul-Jabbar,Johnny Damon",,0.11308641975308642
+26,2,rank,,,8,"Kareem Abdul-Jabbar,Jennie Finch Daigle",,0.09685905612244898
+26,3,rank,,,6,"Jennie Finch Daigle,Chris Mazdzer,Mirai Nagasu",,0.11472222222222221
+26,4,rank,,,3,,,0.16666666666666666
+27,1,rank,,,13,Joe Amabile,,0.09709894806048652
+27,2,rank,,,12,Danelle Umstead,,0.11720521541950113
+27,3,rank,,,11,Joe Amabile,,0.10739669421487602
+27,4,rank,,,10,Joe Amabile,,0.08876543209876545
+27,5,rank,,,9,Joe Amabile,,0.10657793209876543
+27,6,rank,,,9,John Schneider,,0.1031057098765432
+27,7,rank,,,8,"Joe Amabile,DeMarcus Ware",,0.10132334183673469
+27,8,rank,,,6,"Joe Amabile,Bobby Bones",,0.1584201388888889
+27,9,rank,,,4,,,0.1579861111111111
+28,1,rank,,,12,Lamar Odom,,0.09577307162534433
+28,2,rank,,,12,Lamar Odom,,0.10863882590073067
+28,3,rank,,,10,Lamar Odom,,0.10682098765432098
+28,4,rank,,,10,Lamar Odom,,0.11916666666666667
+28,5,rank,,,9,Sean Spicer,,0.10657793209876543
+28,6,rank,,,9,Sean Spicer,,0.11467978395061729
+28,7,rank,,,8,Sean Spicer,,0.12364477040816327
+28,8,rank,,,7,Sean Spicer,,0.10912698412698414
+28,9,rank,,,6,Sean Spicer,,0.11333333333333336
+28,10,rank,,,5,James Van Der Beek,,0.11500000000000002
+28,11,rank,,,4,,,0.1388888888888889
+29,1,rank,,,15,Charles Oakley,,0.10428898033836305
+29,2,rank,,,15,Charles Oakley,,0.09404663923182441
+29,3,rank,,,14,Carole Baskin,,0.09926337398864872
+29,4,rank,,,13,Anne Heche,,0.11421057574903729
+29,5,rank,,,12,Jesse Metcalfe,,0.09826152683295541
+29,6,rank,,,11,Skai Jackson,,0.11512396694214874
+29,7,rank,,,10,Monica Aldama,,0.10629629629629629
+29,8,rank,,,8,Nelly,,0.1055484693877551
+29,9,rank,,,7,AJ McLean,,0.14100185528756956
+29,10,rank,,,6,"Johnny Weir,Nelly",,0.16493055555555555
+29,11,rank,,,4,,,0.14409722222222224
+30,1,rank,,,15,Martin Kove,,0.09180272108843537
+30,2,rank,,,15,Martin Kove,,0.0935034013605442
+30,3,rank,,,14,Cody Rigsby,,0.10459591836734694
+30,4,rank,,,13,"Brian Austin Green,Matt James",,0.10020134779750166
+30,5,rank,,,11,Iman Shumpert,,0.10090909090909089
+30,6,rank,,,10,Kenya Moore,,0.10074074074074073
+30,7,rank,,,9,"Mike ""The Miz"" Mizanin",,0.09384645061728396
+30,8,rank,,,8,"Jimmie Allen,Iman Shumpert",,0.12236926020408162
+30,9,rank,,,6,"Melora Hardin,Cody Rigsby",,0.137517146776406
+30,10,rank,,,4,,,0.1579861111111111
+31,1,rank,,,16,Vinny Guadagnino,,0.09957918400713436
+31,2,rank,,,15,Cheryl Ladd,,0.1084346898338668
+31,3,rank,,,14,Vinny Guadagnino,,0.11072653061224491
+31,4,rank,,,13,Sam Champion,,0.10166009204470743
+31,5,rank,,,12,Vinny Guadagnino,,0.1001492194674013
+31,6,rank,,,10,Vinny Guadagnino,,0.09324074074074072
+31,7,rank,,,9,Jordin Sparks,,0.12422496570644717
+31,8,rank,,,8,"Vinny Guadagnino,Heidi D'Amelio",,0.11065051020408165
+31,9,rank,,,6,"Trevor Donovan,Daniel Durant",,0.12555555555555556
+31,10,rank,,,4,,,0.17
+32,1,rank,,,14,Matt Walsh,,0.10607993197278912
+32,2,rank,,,13,Mauricio Umansky,,0.09418145956607495
+32,3,rank,,,12,Tyson Beckford,,0.10197141873278237
+32,4,rank,,,11,Barry Williams,,0.10393534946544265
+32,5,rank,,,10,Harry Jowsey,,0.10311728395061728
+32,6,rank,,,9,Harry Jowsey,,0.1015625
+32,7,rank,,,8,Harry Jowsey,,0.1132015306122449
+32,8,rank,,,7,Harry Jowsey,,0.10912698412698414
+32,9,rank,,,6,Harry Jowsey,,0.11666666666666665
+32,10,rank,,,5,Alyson Hannigan,,0.125
+32,11,rank,,,5,,,0.12875
+33,1,rank,,,13,Eric Roberts,,0.09522928994082838
+33,2,rank,,,13,"Reginald VelJohnson,Anna Delvey",,0.11746295662379577
+33,3,rank,,,11,"Reginald VelJohnson,Eric Roberts",,0.09991735537190083
+33,4,rank,,,9,Dwight Howard,,0.08866941015089164
+33,5,rank,,,8,Phaedra Parks,,0.11968315972222224
+33,6,rank,,,7,Ilona Maher,,0.11281179138321994
+33,7,rank,,,6,Dwight Howard,,0.11333333333333336
+33,8,rank,,,5,Stephen Nedoroscik,,0.14
+33,9,rank,,,5,,,0.1275
+34,1,rank,,,14,Corey Feldman,,0.09528163265306121
+34,2,rank,,,14,"Corey Feldman,Andy Richter",,0.10702964617799783
+34,3,rank,,,12,Lauren Jauregui,,0.10788296800201559
+34,4,rank,,,11,Andy Richter,,0.10103305785123967
+34,5,rank,,,10,Andy Richter,,0.09941358024691357
+34,6,rank,,,10,Andy Richter,,0.1198961937716263
+34,7,rank,,,9,Andy Richter,,0.10368441358024691
+34,8,rank,,,8,Andy Richter,,0.10642538265306122
+34,9,rank,,,7,Andy Richter,,0.13066893424036283
+34,10,rank,,,6,Dylan Efron,,0.0988888888888889
+34,11,rank,,,5,,,0.15836734693877552
+1,1,percent,,,6,Kelly Monaco,,0.12577498953693064
+1,2,percent,,,6,Evander Holyfield,,0.11976928142843003
+1,3,percent,,,5,Evander Holyfield,,0.12118796944715357
+1,4,percent,,,4,Joey McIntyre,,0.13693308252362418
+1,5,percent,,,3,Joey McIntyre,,0.17669252039226138
+1,6,percent,,,2,,,0.25
+2,1,percent,,,10,Kenny Mayne,,0.10478252534587687
+2,2,percent,,,9,Tatum O'Neal,,0.09708038917460662
+2,3,percent,,,8,Master P,,0.10959431539870354
+2,4,percent,,,7,Master P,,0.09924885287725914
+2,5,percent,,,6,Tia Carrere,,0.10670057730729172
+2,6,percent,,,5,George Hamilton,,0.17766075919993557
+2,7,percent,,,4,Jerry Rice,,0.1707233750166709
+2,8,percent,,,3,,,0.19078203372972713
+3,1,percent,,,11,Tucker Carlson,,0.07890731061574174
+3,2,percent,,,10,Jerry Springer,,0.08338987151407141
+3,3,percent,,,9,Emmitt Smith,,0.10774680558939408
+3,4,percent,,,8,Sara Evans,,0.11794661482805346
+3,5,percent,,,7,Jerry Springer,,0.19487176734172115
+3,6,percent,,,5,Jerry Springer,,0.10849567711070476
+3,7,percent,,,5,Jerry Springer,,0.14262408584988528
+3,8,percent,,,4,Monique Coleman,,0.13137570514118835
+3,9,percent,,,3,Mario Lopez,,0.19338221815218715
+3,10,percent,,,2,,,0.25
+4,1,percent,,,11,Billy Ray Cyrus,,0.08889633717747461
+4,2,percent,,,11,Clyde Drexler,,0.09540418086048369
+4,3,percent,,,10,Clyde Drexler,,0.10691064946081408
+4,4,percent,,,9,Clyde Drexler,,0.12280241577787344
+4,5,percent,,,8,Clyde Drexler,,0.09848528229775827
+4,6,percent,,,7,John Ratzenberger,,0.1486018190548176
+4,7,percent,,,6,Billy Ray Cyrus,,0.14404333819531287
+4,8,percent,,,5,Billy Ray Cyrus,,0.1314577600571192
+4,9,percent,,,4,Ian Ziering,,0.17201360606468952
+4,10,percent,,,3,,,0.17626960435406833
+5,1,percent,,,12,Josie Maran,,0.07047280120194739
+5,2,percent,,,11,Wayne Newton,,0.07968991619355414
+5,3,percent,,,10,Wayne Newton,,0.11627637520176692
+5,4,percent,,,9,Mark Cuban,,0.08246332451887227
+5,5,percent,,,8,Mark Cuban,,0.11524790251308026
+5,6,percent,,,7,Jane Seymour,,0.11389839022049955
+5,7,percent,,,6,Jane Seymour,,0.10473360373394874
+5,8,percent,,,5,Marie Osmond,,0.17226070739318083
+5,9,percent,,,4,Marie Osmond,,0.17879242502803586
+5,10,percent,,,3,,,0.20288393513583303
+6,1,percent,,,12,Adam Carolla,,0.09462195143489792
+6,2,percent,,,12,"Monica Seles,Penn Jillette",,0.11122601176370496
+6,3,percent,,,10,Marissa Jaret Winokur,,0.09400830686693443
+6,4,percent,,,9,Adam Carolla,,0.09704498253143673
+6,5,percent,,,8,Priscilla Presley,,0.10596953523954089
+6,6,percent,,,7,Marlee Matlin,,0.09456085737440005
+6,7,percent,,,6,Cristian de la Fuente,,0.11653571193668771
+6,8,percent,,,5,Marissa Jaret Winokur,,0.14617500017286095
+6,9,percent,,,4,Marissa Jaret Winokur,,0.15127388503163755
+6,10,percent,,,3,,,0.17222170501197542
+7,1,percent,,,13,"Jeffrey Ross,Ted McGinley",,0.0658629260035465
+7,2,percent,,,11,Cloris Leachman,,0.11336182223690158
+7,3,percent,,,9,Cloris Leachman,,0.07323036154549267
+7,4,percent,,,9,Rocco DiSpirito,,0.09394332479360745
+7,5,percent,,,8,Lance Bass,,0.15672747564421538
+7,6,percent,,,7,Cloris Leachman,,0.09623968359993249
+7,7,percent,,,6,Warren Sapp,,0.1059647368968711
+7,8,percent,,,5,Cody Linley,,0.1915756252695197
+7,9,percent,,,4,Cody Linley,,0.12689470404182007
+7,10,percent,,,3,,,0.20774155304100364
+8,1,percent,,,13,Steve Wozniak,,0.0923799535604455
+8,2,percent,,,13,Steve-O,,0.08416639172223918
+8,3,percent,,,12,Steve Wozniak,,0.10848795142005913
+8,4,percent,,,11,"Steve Wozniak,Holly Madison",,0.09847017470714317
+8,5,percent,,,9,Steve-O,,0.09111397329396537
+8,6,percent,,,8,Steve-O,,0.10805780191056513
+8,7,percent,,,7,Lawrence Taylor,,0.10620629994314638
+8,8,percent,,,6,Melissa Rycroft,,0.11155867855321892
+8,9,percent,,,5,Ty Murray,,0.15462188383890646
+8,10,percent,,,4,Ty Murray,,0.13602974574074297
+8,11,percent,,,3,,,0.18119268015777035
+9,1,percent,,,16,"Ashley Hamiliton,Macy Gray",,0.1024292590929887
+9,2,percent,,,14,Kathy Ireland,,0.0761537649875333
+9,3,percent,,,13,Michael Irvin,,0.08312599881044486
+9,4,percent,,,11,Michael Irvin,,0.13149122276072725
+9,5,percent,,,10,Michael Irvin,,0.09596946017090899
+9,6,percent,,,9,"Michael Irvin,Melissa Joan Hart",,0.14153259736608045
+9,7,percent,,,7,"Mark Dacascos,Michael Irvin",,0.12140855311730192
+9,8,percent,,,5,Aaron Carter,,0.1271121057507598
+9,9,percent,,,4,Donny Osmond,,0.13152974037950946
+9,10,percent,,,3,,,0.20297611261756351
+10,1,percent,,,11,Buzz Aldrin,,0.0894330091962272
+10,2,percent,,,11,Buzz Aldrin,,0.07594085837914365
+10,3,percent,,,10,Buzz Aldrin,,0.07575121799628676
+10,4,percent,,,9,Aiden Turner,,0.1220569706373151
+10,5,percent,,,8,Kate Gosselin,,0.09648191611800819
+10,6,percent,,,7,Jake Pavelka,,0.11803741258036318
+10,7,percent,,,6,Niecy Nash,,0.1624025709757205
+10,8,percent,,,5,Niecy Nash,,0.13153024729784274
+10,9,percent,,,4,Chad Ochocinco,,0.17234918579197167
+10,10,percent,,,3,,,0.2008743081053264
+11,1,percent,,,12,Margaret Cho,,0.12717412931489833
+11,2,percent,,,11,Michael Bolton,,0.07088985400896619
+11,3,percent,,,10,Margaret Cho,,0.09694823678089495
+11,4,percent,,,9,The Situation,,0.08697329400572817
+11,5,percent,,,8,Bristol Palin,,0.11636164775498575
+11,6,percent,,,7,Kurt Warner,,0.07984557359028421
+11,7,percent,,,6,Bristol Palin,,0.1566361583874476
+11,8,percent,,,5,Kurt Warner,,0.19371614232936926
+11,9,percent,,,4,Bristol Palin,,0.13772603851089243
+11,10,percent,,,3,,,0.16991652492319975
+12,1,percent,,,11,Mike Catherwood,,0.08795020451312092
+12,2,percent,,,11,Mike Catherwood,,0.14542034376625645
+12,3,percent,,,10,Wendy Williams,,0.07645267197449851
+12,4,percent,,,9,Kendra Wilkinson,,0.090316960914753
+12,5,percent,,,8,Petra Nemcova,,0.1282620530036782
+12,6,percent,,,7,Chris Jericho,,0.11871818651857761
+12,7,percent,,,6,Romeo,,0.19155691202260205
+12,8,percent,,,5,Ralph Macchio,,0.1255208851140171
+12,9,percent,,,4,Ralph Macchio,,0.13883861062715153
+12,10,percent,,,3,,,0.21805271591954437
+13,1,percent,,,12,Metta World Peace (Ron),,0.10777051186890925
+13,2,percent,,,11,Chaz Bono,,0.10545408361296137
+13,3,percent,,,10,Chaz Bono,,0.08133915890655831
+13,4,percent,,,9,Carson Kressley,,0.09027540617172089
+13,5,percent,,,8,Carson Kressley,,0.08380638278399277
+13,6,percent,,,7,Chaz Bono,,0.12383736754855025
+13,7,percent,,,6,Nancy Grace,,0.1255293610380837
+13,8,percent,,,5,Nancy Grace,,0.10221709673799576
+13,9,percent,,,4,Hope Solo,,0.15942108476371003
+13,10,percent,,,3,,,0.16666801556614694
+14,1,percent,,,12,Melissa Gilbert,,0.11511542948567421
+14,2,percent,,,12,Martina Navratilova,,0.08947371170897206
+14,3,percent,,,11,Melissa Gilbert,,0.12255805145364165
+14,4,percent,,,10,Gladys Knight,,0.10791463311015322
+14,5,percent,,,9,Gavin DeGraw,,0.12197179260102382
+14,6,percent,,,8,Gladys Knight,,0.1006849504548454
+14,7,percent,,,7,Melissa Gilbert,,0.09070770567631245
+14,8,percent,,,6,"Melissa Gilbert,Maria Menounos",,0.11110927539278748
+14,9,percent,,,4,Katherine Jenkins,,0.19036710110511215
+14,10,percent,,,3,,,0.18491111059085644
+15,1,percent,,,13,Pamela Anderson,,0.0615639468884585
+15,2,percent,,,12,Bristol Palin,,0.08127650729776689
+15,3,percent,,,11,"Bristol Palin,Drew Lachey",,0.11127228138217618
+15,4,percent,,,9,Kirstie Alley,,0.10163098373909946
+15,5,percent,,,8,Kelly Monaco,,0.09727130171249437
+15,6,percent,,,8,Emmitt Smith,,0.13199561657563819
+15,7,percent,,,7,Kirstie Alley,,0.10449120645388463
+15,8,percent,,,7,"Kirstie Alley,Shawn Johnson",,0.09846807784812182
+15,9,percent,,,5,"Emmitt Smith,Kelly Monaco",,0.14724749582804714
+15,10,percent,,,3,,,0.1671242387562301
+16,1,percent,,,12,D. L. Hughley,,0.057063824368352556
+16,2,percent,,,12,Dorothy Hamill,,0.0997381906902311
+16,3,percent,,,11,Wynonna Judd,,0.10703551096719797
+16,4,percent,,,10,Lisa Vanderpump,,0.1122772401512471
+16,5,percent,,,9,D. L. Hughley,,0.11533157978649514
+16,6,percent,,,8,Victor Ortiz,,0.10155335327799941
+16,7,percent,,,7,Andy Dick,,0.09772400764953837
+16,8,percent,,,6,Sean Lowe,,0.12637937500512322
+16,9,percent,,,5,Ingo Rademacher,,0.14441731530613372
+16,10,percent,,,4,Jacoby Jones,,0.17522168646990993
+17,1,percent,,,12,Bill Nye,,0.07275303433378685
+17,2,percent,,,12,Keyshawn Johnson,,0.11078346833267162
+17,3,percent,,,11,Valerie Harper,,0.11006768856145879
+17,4,percent,,,10,Valerie Harper,,0.09058786261351891
+17,5,percent,,,9,Leah Remini,,0.10484293282984146
+17,6,percent,,,8,Bill Engvall,,0.11161097128129302
+17,7,percent,,,8,Bill Engvall,,0.1256080923302424
+17,8,percent,,,7,Bill Engvall,,0.13871631732713516
+17,9,percent,,,6,Bill Engvall,,0.10363912616081335
+17,10,percent,,,5,Bill Engvall,,0.1580285027013864
+17,11,percent,,,4,Bill Engvall,,0.15571531762920457
+18,1,percent,,,12,Billy Dee Williams,,0.07268976511728542
+18,2,percent,,,11,Billy Dee Williams,,0.08436206448872664
+18,3,percent,,,9,Drew Carey,,0.0941870977027672
+18,4,percent,,,9,Candace Cameron Bure,,0.06898653610172271
+18,5,percent,,,9,Drew Carey,,0.08843401947933224
+18,6,percent,,,8,Drew Carey,,0.10197806448710184
+18,7,percent,,,7,NeNe Leakes,,0.09496444726824738
+18,8,percent,,,6,James Maslow,,0.19484692768013065
+18,9,percent,,,5,Candace Cameron Bure,,0.12219649972355422
+18,10,percent,,,4,Candace Cameron Bure,,0.15389498877604563
+19,1,percent,,,13,Lolo Jones,,0.08955599963374139
+19,2,percent,,,12,Michael Waltrip,,0.07649170521136257
+19,3,percent,,,11,Randy Couture,,0.08576397714334767
+19,4,percent,,,10,Jonathan Bennett,,0.13413606701522346
+19,5,percent,,,9,Michael Waltrip,,0.11662839278066096
+19,6,percent,,,9,Tommy Chong,,0.10166996957782658
+19,7,percent,,,8,Michael Waltrip,,0.12095415006662509
+19,8,percent,,,7,Michael Waltrip,,0.12365016483042734
+19,9,percent,,,6,Tommy Chong,,0.1330890938093177
+19,10,percent,,,5,Tommy Chong,,0.12599015077034836
+19,11,percent,,,4,Bethany Mota,,0.14103929839836551
+20,1,percent,,,12,Redfoo,,0.0949333275499794
+20,2,percent,,,12,Chris Soules,,0.0784305130326615
+20,3,percent,,,11,Charlotte McKinney,,0.11100375137989466
+20,4,percent,,,10,Chris Soules,,0.09696983046979804
+20,5,percent,,,9,Robert Herjavec,,0.14354268005735302
+20,6,percent,,,8,Robert Herjavec,,0.1054816421587498
+20,7,percent,,,7,Chris Soules,,0.11379389372939772
+20,8,percent,,,6,"Robert Herjavec,Chris Soules",,0.14605317756714245
+20,9,percent,,,4,Noah Galloway,,0.13064694912503555
+20,10,percent,,,3,,,0.2204954882554558
+21,1,percent,,,13,Kim Zolciak-Biermann,,0.13244410958125633
+21,2,percent,,,13,"Chaka Khan,Gary Busey",,0.09480610573531452
+21,3,percent,,,10,Paula Deen,,0.09324791873001899
+21,4,percent,,,10,Gary Busey,,0.1043343176434705
+21,5,percent,,,9,Paula Deen,,0.11180326159750405
+21,6,percent,,,9,Paula Deen,,0.11513086077222326
+21,7,percent,,,8,Tamar Braxton,,0.10763737073106147
+21,8,percent,,,7,Andy Grammer,,0.08784094360412616
+21,9,percent,,,6,Tamar Braxton,,0.14909351026205644
+21,10,percent,,,4,Nick Carter,,0.19552744828191096
+21,11,percent,,,4,Alek Skarlatos,,0.17966141360477092
+22,1,percent,,,12,Geraldo Rivera,,0.1035813147141192
+22,2,percent,,,12,Geraldo Rivera,,0.07502108185361898
+22,3,percent,,,11,Mischa Barton,,0.07749560852816212
+22,4,percent,,,10,Doug Flutie,,0.11660110441613544
+22,5,percent,,,9,Antonio Brown,,0.09142840302861094
+22,6,percent,,,9,Doug Flutie,,0.08085425424941056
+22,7,percent,,,8,"Jodie Sweetin,Kim Fields",,0.16727602955629822
+22,8,percent,,,6,Wanya Morris,,0.10547205215710294
+22,9,percent,,,5,"Antonio Brown,Ginger Zee",,0.14602027935218048
+22,10,percent,,,3,,,0.16783994678190794
+23,1,percent,,,13,Rick Perry,,0.08412564387801809
+23,2,percent,,,13,Rick Perry,,0.08718749447941586
+23,3,percent,,,12,Rick Perry,,0.10044346217036393
+23,4,percent,,,11,"Babyface,Marilu Henner",,0.06370113913904893
+23,5,percent,,,9,Amber Rose,,0.11785706562778395
+23,6,percent,,,9,Amber Rose,,0.09566056243746118
+23,7,percent,,,8,Marilu Henner,,0.13519320161110085
+23,8,percent,,,7,Marilu Henner,,0.12269748869826334
+23,9,percent,,,6,James Hinchcliffe,,0.16846757858874759
+23,10,percent,,,5,Calvin Johnson Jr.,,0.11446786197384869
+23,11,percent,,,4,Jana Kramer,,0.1588443649280116
+24,1,percent,,,12,Chris Kattan,,0.08553752301024138
+24,2,percent,,,12,Chris Kattan,,0.10031853764287241
+24,3,percent,,,11,Charo,,0.14168493716294117
+24,4,percent,,,10,Mr. T,,0.08108047995945541
+24,5,percent,,,9,David Ross,,0.10231924335880536
+24,6,percent,,,8,Nick Viall,,0.13161000746052412
+24,7,percent,,,7,"Bonner Bolton,David Ross",,0.12746114803464537
+24,8,percent,,,5,Bonner Bolton,,0.12906661644822753
+24,9,percent,,,4,David Ross,,0.14519454212831615
+24,10,percent,,,3,,,0.19528702913795012
+25,1,percent,,,13,Barbara Corcoran,,0.091792441316318
+25,2,percent,,,13,"Barbara Corcoran,Nick Lachey",,0.08247451855967936
+25,3,percent,,,11,Sasha Pieterse,,0.0706899631002237
+25,4,percent,,,11,Nick Lachey,,0.07093073612430374
+25,5,percent,,,10,Nick Lachey,,0.09303648794652374
+25,6,percent,,,9,Nick Lachey,,0.09684496630424626
+25,7,percent,,,8,"Nikki Bella,Terrell Owens",,0.11274870912951525
+25,8,percent,,,6,Drew Scott,,0.11969534375429054
+25,9,percent,,,5,Drew Scott,,0.14516572401672628
+25,10,percent,,,4,Drew Scott,,0.16855798722375123
+26,1,percent,,,10,"Kareem Abdul-Jabbar,Johnny Damon",,0.12006717454137687
+26,2,percent,,,8,"Kareem Abdul-Jabbar,Jennie Finch Daigle",,0.10092003808150458
+26,3,percent,,,6,"Jennie Finch Daigle,Chris Mazdzer,Mirai Nagasu",,0.09966085669431585
+26,4,percent,,,3,,,0.1677266828429078
+27,1,percent,,,13,Joe Amabile,,0.08438123123422472
+27,2,percent,,,12,Joe Amabile,,0.1252505698687395
+27,3,percent,,,11,Joe Amabile,,0.08251147516283015
+27,4,percent,,,10,Joe Amabile,,0.06828407544405805
+27,5,percent,,,9,Joe Amabile,,0.09586085530897852
+27,6,percent,,,9,John Schneider,,0.11995322951421489
+27,7,percent,,,8,"Joe Amabile,DeMarcus Ware",,0.09435853252532117
+27,8,percent,,,6,"Joe Amabile,Bobby Bones",,0.1752867315742291
+27,9,percent,,,4,,,0.13676206225134477
+28,1,percent,,,12,Lamar Odom,,0.08327899590997229
+28,2,percent,,,12,Lamar Odom,,0.07748983819772769
+28,3,percent,,,10,Lamar Odom,,0.11052162553417691
+28,4,percent,,,10,Lamar Odom,,0.12058311370066459
+28,5,percent,,,9,Sean Spicer,,0.09881993249169352
+28,6,percent,,,9,Sean Spicer,,0.09645859070093372
+28,7,percent,,,8,Sean Spicer,,0.12659516468796184
+28,8,percent,,,7,Sean Spicer,,0.13000510941325824
+28,9,percent,,,6,Sean Spicer,,0.09971041276277338
+28,10,percent,,,5,James Van Der Beek,,0.1243382674178263
+28,11,percent,,,4,,,0.1677308147991555
+29,1,percent,,,15,Carole Baskin,,0.09606207778865089
+29,2,percent,,,15,Charles Oakley,,0.07503244496358683
+29,3,percent,,,14,Carole Baskin,,0.07726599658122034
+29,4,percent,,,13,Anne Heche,,0.0865069313228056
+29,5,percent,,,12,Jesse Metcalfe,,0.08326122702426833
+29,6,percent,,,11,Skai Jackson,,0.11311790390125089
+29,7,percent,,,10,Monica Aldama,,0.06991017682333353
+29,8,percent,,,8,Nelly,,0.11820437768666903
+29,9,percent,,,7,Nelly,,0.1833007080123262
+29,10,percent,,,6,"Johnny Weir,Nelly",,0.18803774639852974
+29,11,percent,,,4,,,0.17776661213394257
+30,1,percent,,,15,Martin Kove,,0.0557766417463102
+30,2,percent,,,15,Martin Kove,,0.05585690705949269
+30,3,percent,,,14,Cody Rigsby,,0.11400169338815591
+30,4,percent,,,13,"Brian Austin Green,Matt James",,0.07618161396517212
+30,5,percent,,,11,Iman Shumpert,,0.07968906674044939
+30,6,percent,,,10,Kenya Moore,,0.0926082222286195
+30,7,percent,,,9,"Mike ""The Miz"" Mizanin",,0.08640166993930554
+30,8,percent,,,8,"Jimmie Allen,Olivia Jade",,0.14063796016587535
+30,9,percent,,,6,"Melora Hardin,Cody Rigsby",,0.13011169365499012
+30,10,percent,,,4,,,0.20586080119477923
+31,1,percent,,,16,Jason Lewis,,0.07928073379544237
+31,2,percent,,,15,Teresa Giudice,,0.09545283983527922
+31,3,percent,,,14,Cheryl Ladd,,0.10904303424712732
+31,4,percent,,,13,Sam Champion,,0.09244586008998391
+31,5,percent,,,12,Vinny Guadagnino,,0.10137243116553192
+31,6,percent,,,10,Vinny Guadagnino,,0.07304593128110545
+31,7,percent,,,9,Vinny Guadagnino,,0.12903297151377516
+31,8,percent,,,8,"Vinny Guadagnino,Heidi D'Amelio",,0.10607094589652596
+31,9,percent,,,6,"Trevor Donovan,Daniel Durant",,0.14077158045629992
+31,10,percent,,,4,,,0.2233826223978335
+32,1,percent,,,14,Matt Walsh,,0.10147166234273632
+32,2,percent,,,13,Mauricio Umansky,,0.08614676723077283
+32,3,percent,,,12,Tyson Beckford,,0.09223907893243838
+32,4,percent,,,11,Barry Williams,,0.09530132609836364
+32,5,percent,,,10,Harry Jowsey,,0.10006205062065887
+32,6,percent,,,9,Harry Jowsey,,0.13145677023402325
+32,7,percent,,,8,Harry Jowsey,,0.14179087209665303
+32,8,percent,,,7,Harry Jowsey,,0.10915015597058374
+32,9,percent,,,6,Harry Jowsey,,0.12297818482953327
+32,10,percent,,,5,Alyson Hannigan,,0.12646076655031951
+32,11,percent,,,5,,,0.13702979129049492
+33,1,percent,,,13,Eric Roberts,,0.08367532247637424
+33,2,percent,,,13,"Reginald VelJohnson,Eric Roberts",,0.09881662279958345
+33,3,percent,,,11,"Reginald VelJohnson,Eric Roberts",,0.0926884312758855
+33,4,percent,,,9,Dwight Howard,,0.10510726938333409
+33,5,percent,,,8,Phaedra Parks,,0.11741632702029296
+33,6,percent,,,7,Ilona Maher,,0.11631121487478079
+33,7,percent,,,6,Dwight Howard,,0.112335760232903
+33,8,percent,,,5,Stephen Nedoroscik,,0.1894756097918494
+33,9,percent,,,5,,,0.1454988358187891
+34,1,percent,,,14,Corey Feldman,,0.10794616644466837
+34,2,percent,,,14,"Corey Feldman,Andy Richter",,0.08864993284963053
+34,3,percent,,,12,Lauren Jauregui,,0.10048864634001665
+34,4,percent,,,11,Andy Richter,,0.0830967036411901
+34,5,percent,,,10,Andy Richter,,0.09056884871870015
+34,6,percent,,,10,Scott Hoying,,0.11756121665227223
+34,7,percent,,,9,Andy Richter,,0.11666332768863749
+34,8,percent,,,8,Andy Richter,,0.11079630712359809
+34,9,percent,,,7,Andy Richter,,0.11129479118259318
+34,10,percent,,,6,Dylan Efron,,0.10021242576066146
+34,11,percent,,,5,,,0.15270766160898377
+1,1,dynamic,0.3002838681596402,0.6997161318403597,6,Kelly Monaco,,0.12635341350585946
+1,2,dynamic,0.3034309941654848,0.6965690058345152,6,Evander Holyfield,,0.12665434392977584
+1,3,dynamic,0.3381397859596438,0.6618602140403562,5,Evander Holyfield,,0.12375780528476325
+1,4,dynamic,0.5248706003543192,0.4751293996456808,4,Joey McIntyre,,0.1409373210494001
+1,5,dynamic,0.675965339930397,0.324034660069603,3,Joey McIntyre,,0.17989720385216904
+1,6,dynamic,0.6979119497225766,0.30208805027742336,2,,,0.25
+2,1,dynamic,0.30015199380590074,0.6998480061940993,10,Master P,,0.09624673678802417
+2,2,dynamic,0.3009890492626539,0.6990109507373461,9,Master P,,0.09299614562358705
+2,3,dynamic,0.3063625566847259,0.6936374433152741,8,Master P,,0.113393073019282
+2,4,dynamic,0.3381397859596438,0.6618602140403562,7,Master P,,0.09994978906900968
+2,5,dynamic,0.46293336001837204,0.537066639981628,6,Tia Carrere,,0.10695334222966069
+2,6,dynamic,0.6270297904774574,0.37297020952254256,5,George Hamilton,,0.185882902315167
+2,7,dynamic,0.6867656086445184,0.3132343913554816,4,Jerry Rice,,0.17192822632303156
+2,8,dynamic,0.6979119497225766,0.30208805027742336,3,,,0.19338131359058583
+3,1,dynamic,0.3001044761276383,0.6998955238723616,11,Tucker Carlson,,0.07790075224950214
+3,2,dynamic,0.3004678041060222,0.6995321958939777,10,Jerry Springer,,0.08744628754779972
+3,3,dynamic,0.30208805027742336,0.6979119497225766,9,Emmitt Smith,,0.10907346974923124
+3,4,dynamic,0.30919094796401025,0.6908090520359897,8,Sara Evans,,0.12486554995365799
+3,5,dynamic,0.3381397859596438,0.6618602140403562,7,Jerry Springer,,0.1959210616672214
+3,6,dynamic,0.42832852032984275,0.5716714796701572,5,Jerry Springer,,0.10893104021925086
+3,7,dynamic,0.5716714796701571,0.4283285203298429,5,Jerry Springer,,0.1424450704928824
+3,8,dynamic,0.6618602140403562,0.3381397859596438,4,Monique Coleman,,0.13657250526107234
+3,9,dynamic,0.6908090520359897,0.30919094796401025,3,Mario Lopez,,0.19338221815219195
+3,10,dynamic,0.6979119497225766,0.30208805027742336,2,,,0.25
+4,1,dynamic,0.3001044761276383,0.6998955238723616,11,Billy Ray Cyrus,,0.09137446558862015
+4,2,dynamic,0.3004678041060222,0.6995321958939777,11,Clyde Drexler,,0.10079285868986858
+4,3,dynamic,0.30208805027742336,0.6979119497225766,10,Clyde Drexler,,0.1138316132786104
+4,4,dynamic,0.30919094796401025,0.6908090520359897,9,Clyde Drexler,,0.13002051126233738
+4,5,dynamic,0.3381397859596438,0.6618602140403562,8,Clyde Drexler,,0.09738499218932592
+4,6,dynamic,0.42832852032984275,0.5716714796701572,7,John Ratzenberger,,0.14869028509519558
+4,7,dynamic,0.5716714796701571,0.4283285203298429,6,Billy Ray Cyrus,,0.141852114949197
+4,8,dynamic,0.6618602140403562,0.3381397859596438,5,Billy Ray Cyrus,,0.12902846408400861
+4,9,dynamic,0.6908090520359897,0.30919094796401025,4,Ian Ziering,,0.17192073089163526
+4,10,dynamic,0.6979119497225766,0.30208805027742336,3,,,0.17388579713201313
+5,1,dynamic,0.3001044761276383,0.6998955238723616,12,Josie Maran,,0.06911135157930086
+5,2,dynamic,0.3004678041060222,0.6995321958939777,11,Wayne Newton,,0.08503552813609248
+5,3,dynamic,0.30208805027742336,0.6979119497225766,10,Wayne Newton,,0.1155641966986016
+5,4,dynamic,0.30919094796401025,0.6908090520359897,9,Mark Cuban,,0.08317947029906399
+5,5,dynamic,0.3381397859596438,0.6618602140403562,8,Mark Cuban,,0.11428443251561707
+5,6,dynamic,0.42832852032984275,0.5716714796701572,7,Jane Seymour,,0.11396859238142222
+5,7,dynamic,0.5716714796701571,0.4283285203298429,6,Jane Seymour,,0.10388005419759165
+5,8,dynamic,0.6618602140403562,0.3381397859596438,5,Marie Osmond,,0.16888670346628665
+5,9,dynamic,0.6908090520359897,0.30919094796401025,4,Marie Osmond,,0.17398348620175888
+5,10,dynamic,0.6979119497225766,0.30208805027742336,3,,,0.2061864943452281
+6,1,dynamic,0.3001044761276383,0.6998955238723616,12,Adam Carolla,,0.09461815119781015
+6,2,dynamic,0.3004678041060222,0.6995321958939777,12,"Monica Seles,Steve Guttenberg",,0.11119880192093358
+6,3,dynamic,0.30208805027742336,0.6979119497225766,10,Marissa Jaret Winokur,,0.09367602869359742
+6,4,dynamic,0.30919094796401025,0.6908090520359897,9,Adam Carolla,,0.09642224170047294
+6,5,dynamic,0.3381397859596438,0.6618602140403562,8,Priscilla Presley,,0.10554560715531469
+6,6,dynamic,0.42832852032984275,0.5716714796701572,7,Marlee Matlin,,0.0945549600005734
+6,7,dynamic,0.5716714796701571,0.4283285203298429,6,Cristian de la Fuente,,0.1090771009508499
+6,8,dynamic,0.6618602140403562,0.3381397859596438,5,Marissa Jaret Winokur,,0.1285395682984701
+6,9,dynamic,0.6908090520359897,0.30919094796401025,4,Marissa Jaret Winokur,,0.14387051934610767
+6,10,dynamic,0.6979119497225766,0.30208805027742336,3,,,0.1709225801739375
+7,1,dynamic,0.3001044761276383,0.6998955238723616,13,"Jeffrey Ross,Cloris Leachman",,0.07216314449053718
+7,2,dynamic,0.3004678041060222,0.6995321958939777,11,Cloris Leachman,,0.11700454291554353
+7,3,dynamic,0.30208805027742336,0.6979119497225766,9,Cloris Leachman,,0.07511366321147113
+7,4,dynamic,0.30919094796401025,0.6908090520359897,9,Rocco DiSpirito,,0.09399166060619266
+7,5,dynamic,0.3381397859596438,0.6618602140403562,8,Lance Bass,,0.15921775913046812
+7,6,dynamic,0.42832852032984275,0.5716714796701572,7,Cloris Leachman,,0.09632536512409968
+7,7,dynamic,0.5716714796701571,0.4283285203298429,6,Warren Sapp,,0.10442779264014662
+7,8,dynamic,0.6618602140403562,0.3381397859596438,5,Cody Linley,,0.18479185542291662
+7,9,dynamic,0.6908090520359897,0.30919094796401025,4,Cody Linley,,0.1318723839702481
+7,10,dynamic,0.6979119497225766,0.30208805027742336,3,,,0.21684069187452604
+8,1,dynamic,0.3000911610990888,0.6999088389009112,13,Steve Wozniak,,0.09463652955612165
+8,2,dynamic,0.3003562388950501,0.69964376110495,13,Steve-O,,0.08984063714830394
+8,3,dynamic,0.30138943058852713,0.6986105694114728,12,Steve Wozniak,,0.12107244453700909
+8,4,dynamic,0.3053788343383616,0.6946211656616383,11,"Steve Wozniak,Steve-O",,0.09984416205234524
+8,5,dynamic,0.32024116159172605,0.679758838408274,9,Steve-O,,0.09240182766945179
+8,6,dynamic,0.3689902969682859,0.6310097030317141,8,Steve-O,,0.1066991537281081
+8,7,dynamic,0.47961647363421395,0.5203835263657861,7,Lawrence Taylor,,0.10482866134561339
+8,8,dynamic,0.6044669956176942,0.39553300438230576,6,Melissa Rycroft,,0.10738842952704845
+8,9,dynamic,0.6702879228786678,0.3297120771213322,5,Ty Murray,,0.1455389944948675
+8,10,dynamic,0.6919571075344866,0.3080428924655134,4,Ty Murray,,0.13224414216906952
+8,11,dynamic,0.6979119497225766,0.30208805027742336,3,,,0.17530384158796972
+9,1,dynamic,0.3001044761276383,0.6998955238723616,16,"Ashley Hamiliton,Macy Gray",,0.09722088288768527
+9,2,dynamic,0.3004678041060222,0.6995321958939777,14,Kathy Ireland,,0.07208130604013634
+9,3,dynamic,0.30208805027742336,0.6979119497225766,13,Michael Irvin,,0.08460977964150508
+9,4,dynamic,0.30919094796401025,0.6908090520359897,11,Michael Irvin,,0.13150782425262755
+9,5,dynamic,0.3381397859596438,0.6618602140403562,10,Michael Irvin,,0.09771273563723692
+9,6,dynamic,0.42832852032984275,0.5716714796701572,9,"Michael Irvin,Melissa Joan Hart",,0.147770955871416
+9,7,dynamic,0.5716714796701571,0.4283285203298429,7,"Mark Dacascos,Michael Irvin",,0.11297598774040318
+9,8,dynamic,0.6618602140403562,0.3381397859596438,5,Aaron Carter,,0.13338836409652113
+9,9,dynamic,0.6908090520359897,0.30919094796401025,4,Donny Osmond,,0.13051017070127544
+9,10,dynamic,0.6979119497225766,0.30208805027742336,3,,,0.19519557141464147
+10,1,dynamic,0.3001044761276383,0.6998955238723616,11,Buzz Aldrin,,0.09253943490421807
+10,2,dynamic,0.3004678041060222,0.6995321958939777,11,Buzz Aldrin,,0.08177486091985268
+10,3,dynamic,0.30208805027742336,0.6979119497225766,10,Buzz Aldrin,,0.07565066995077911
+10,4,dynamic,0.30919094796401025,0.6908090520359897,9,Kate Gosselin,,0.11837444933444669
+10,5,dynamic,0.3381397859596438,0.6618602140403562,8,Kate Gosselin,,0.09537891918658137
+10,6,dynamic,0.42832852032984275,0.5716714796701572,7,Jake Pavelka,,0.11792687947089726
+10,7,dynamic,0.5716714796701571,0.4283285203298429,6,Niecy Nash,,0.13968850020106863
+10,8,dynamic,0.6618602140403562,0.3381397859596438,5,Niecy Nash,,0.1319461113406854
+10,9,dynamic,0.6908090520359897,0.30919094796401025,4,Chad Ochocinco,,0.1695034404981849
+10,10,dynamic,0.6979119497225766,0.30208805027742336,3,,,0.2065697579858179
+11,1,dynamic,0.3001044761276383,0.6998955238723616,12,Margaret Cho,,0.1263699640637528
+11,2,dynamic,0.3004678041060222,0.6995321958939777,11,Michael Bolton,,0.07195359929188802
+11,3,dynamic,0.30208805027742336,0.6979119497225766,10,Margaret Cho,,0.09679529148569134
+11,4,dynamic,0.30919094796401025,0.6908090520359897,9,The Situation,,0.0864251770211243
+11,5,dynamic,0.3381397859596438,0.6618602140403562,8,Bristol Palin,,0.12375561143491161
+11,6,dynamic,0.42832852032984275,0.5716714796701572,7,Kurt Warner,,0.08009044348792398
+11,7,dynamic,0.5716714796701571,0.4283285203298429,6,Bristol Palin,,0.14545502063691815
+11,8,dynamic,0.6618602140403562,0.3381397859596438,5,Bristol Palin,,0.21866726522298324
+11,9,dynamic,0.6908090520359897,0.30919094796401025,4,Bristol Palin,,0.13462008976683632
+11,10,dynamic,0.6979119497225766,0.30208805027742336,3,,,0.16975172303935437
+12,1,dynamic,0.3001044761276383,0.6998955238723616,11,Mike Catherwood,,0.08876743054429609
+12,2,dynamic,0.3004678041060222,0.6995321958939777,11,Mike Catherwood,,0.14280986633537765
+12,3,dynamic,0.30208805027742336,0.6979119497225766,10,Wendy Williams,,0.07655828535901327
+12,4,dynamic,0.30919094796401025,0.6908090520359897,9,Kendra Wilkinson,,0.09351581005394687
+12,5,dynamic,0.3381397859596438,0.6618602140403562,8,Petra Nemcova,,0.13087607457183964
+12,6,dynamic,0.42832852032984275,0.5716714796701572,7,Chris Jericho,,0.11846729261861412
+12,7,dynamic,0.5716714796701571,0.4283285203298429,6,Romeo,,0.18985221899062046
+12,8,dynamic,0.6618602140403562,0.3381397859596438,5,Ralph Macchio,,0.12423477340294382
+12,9,dynamic,0.6908090520359897,0.30919094796401025,4,Ralph Macchio,,0.13774865338639775
+12,10,dynamic,0.6979119497225766,0.30208805027742336,3,,,0.2207814028322805
+13,1,dynamic,0.3001044761276383,0.6998955238723616,12,Metta World Peace (Ron),,0.10916626384841205
+13,2,dynamic,0.3004678041060222,0.6995321958939777,11,Chaz Bono,,0.108285186990263
+13,3,dynamic,0.30208805027742336,0.6979119497225766,10,Chaz Bono,,0.08333253715884763
+13,4,dynamic,0.30919094796401025,0.6908090520359897,9,Carson Kressley,,0.09002007716797682
+13,5,dynamic,0.3381397859596438,0.6618602140403562,8,Carson Kressley,,0.08404091414422105
+13,6,dynamic,0.42832852032984275,0.5716714796701572,7,Chaz Bono,,0.12280940660912452
+13,7,dynamic,0.5716714796701571,0.4283285203298429,6,Nancy Grace,,0.11604548165471644
+13,8,dynamic,0.6618602140403562,0.3381397859596438,5,Nancy Grace,,0.10094652799728739
+13,9,dynamic,0.6908090520359897,0.30919094796401025,4,Hope Solo,,0.159925387285634
+13,10,dynamic,0.6979119497225766,0.30208805027742336,3,,,0.1666668368261924
+14,1,dynamic,0.3001044761276383,0.6998955238723616,12,Melissa Gilbert,,0.11453279194067607
+14,2,dynamic,0.3004678041060222,0.6995321958939777,12,Martina Navratilova,,0.08805212504600518
+14,3,dynamic,0.30208805027742336,0.6979119497225766,11,Melissa Gilbert,,0.1228550680764391
+14,4,dynamic,0.30919094796401025,0.6908090520359897,10,Gladys Knight,,0.10922705749800991
+14,5,dynamic,0.3381397859596438,0.6618602140403562,9,Gavin DeGraw,,0.1244060403594854
+14,6,dynamic,0.42832852032984275,0.5716714796701572,8,Gladys Knight,,0.10071140240107607
+14,7,dynamic,0.5716714796701571,0.4283285203298429,7,Melissa Gilbert,,0.08554509194792932
+14,8,dynamic,0.6618602140403562,0.3381397859596438,6,"Melissa Gilbert,Maria Menounos",,0.10941779745419966
+14,9,dynamic,0.6908090520359897,0.30919094796401025,4,Katherine Jenkins,,0.15202275163558865
+14,10,dynamic,0.6979119497225766,0.30208805027742336,3,,,0.20853983354465125
+15,1,dynamic,0.3001044761276383,0.6998955238723616,13,Pamela Anderson,,0.06126752871827545
+15,2,dynamic,0.3004678041060222,0.6995321958939777,12,Bristol Palin,,0.087080391429882
+15,3,dynamic,0.30208805027742336,0.6979119497225766,11,"Bristol Palin,Drew Lachey",,0.11236202826987308
+15,4,dynamic,0.30919094796401025,0.6908090520359897,9,Kirstie Alley,,0.10177823487322363
+15,5,dynamic,0.3381397859596438,0.6618602140403562,8,Kelly Monaco,,0.09727577934958617
+15,6,dynamic,0.42832852032984275,0.5716714796701572,8,Emmitt Smith,,0.13318521661844074
+15,7,dynamic,0.5716714796701571,0.4283285203298429,7,Kirstie Alley,,0.10142792036993362
+15,8,dynamic,0.6618602140403562,0.3381397859596438,7,"Kirstie Alley,Shawn Johnson",,0.09543294758839252
+15,9,dynamic,0.6908090520359897,0.30919094796401025,5,"Emmitt Smith,Kelly Monaco",,0.1509460894404345
+15,10,dynamic,0.6979119497225766,0.30208805027742336,3,,,0.16694004977730392
+16,1,dynamic,0.3001044761276383,0.6998955238723616,12,D. L. Hughley,,0.05848841332578223
+16,2,dynamic,0.3004678041060222,0.6995321958939777,12,Dorothy Hamill,,0.09852990104547212
+16,3,dynamic,0.30208805027742336,0.6979119497225766,11,Wynonna Judd,,0.10725955112238723
+16,4,dynamic,0.30919094796401025,0.6908090520359897,10,Lisa Vanderpump,,0.1098883849437972
+16,5,dynamic,0.3381397859596438,0.6618602140403562,9,D. L. Hughley,,0.11623579918967931
+16,6,dynamic,0.42832852032984275,0.5716714796701572,8,Victor Ortiz,,0.10160043019317162
+16,7,dynamic,0.5716714796701571,0.4283285203298429,7,Andy Dick,,0.09699415723837977
+16,8,dynamic,0.6618602140403562,0.3381397859596438,6,Sean Lowe,,0.12108631221108894
+16,9,dynamic,0.6908090520359897,0.30919094796401025,5,Ingo Rademacher,,0.14623935996211998
+16,10,dynamic,0.6979119497225766,0.30208805027742336,4,Jacoby Jones,,0.17294920535379454
+17,1,dynamic,0.3000911610990888,0.6999088389009112,12,Bill Nye,,0.07738851594267909
+17,2,dynamic,0.3003562388950501,0.69964376110495,12,Bill Nye,,0.10648575200958528
+17,3,dynamic,0.30138943058852713,0.6986105694114728,11,Valerie Harper,,0.11105654823908964
+17,4,dynamic,0.3053788343383616,0.6946211656616383,10,Valerie Harper,,0.08901462027337445
+17,5,dynamic,0.32024116159172605,0.679758838408274,9,Leah Remini,,0.10571101803772688
+17,6,dynamic,0.3689902969682859,0.6310097030317141,8,Bill Engvall,,0.11165501400615392
+17,7,dynamic,0.47961647363421395,0.5203835263657861,8,Bill Engvall,,0.12052820593200089
+17,8,dynamic,0.6044669956176942,0.39553300438230576,7,Bill Engvall,,0.13301556791251629
+17,9,dynamic,0.6702879228786678,0.3297120771213322,6,Bill Engvall,,0.1035220371964003
+17,10,dynamic,0.6919571075344866,0.3080428924655134,5,Bill Engvall,,0.1420131671637339
+17,11,dynamic,0.6979119497225766,0.30208805027742336,4,Bill Engvall,,0.14570678067041767
+18,1,dynamic,0.3001044761276383,0.6998955238723616,12,Billy Dee Williams,,0.07619521236453929
+18,2,dynamic,0.3004678041060222,0.6995321958939777,11,Billy Dee Williams,,0.08746780399056263
+18,3,dynamic,0.30208805027742336,0.6979119497225766,9,Drew Carey,,0.09429149873410016
+18,4,dynamic,0.30919094796401025,0.6908090520359897,9,Candace Cameron Bure,,0.06972232067842844
+18,5,dynamic,0.3381397859596438,0.6618602140403562,9,Drew Carey,,0.09330306845530194
+18,6,dynamic,0.42832852032984275,0.5716714796701572,8,Drew Carey,,0.10317252925266855
+18,7,dynamic,0.5716714796701571,0.4283285203298429,7,NeNe Leakes,,0.0916079502398688
+18,8,dynamic,0.6618602140403562,0.3381397859596438,6,James Maslow,,0.19826120990763407
+18,9,dynamic,0.6908090520359897,0.30919094796401025,5,Candace Cameron Bure,,0.11380467946336506
+18,10,dynamic,0.6979119497225766,0.30208805027742336,4,Candace Cameron Bure,,0.15522381814865804
+19,1,dynamic,0.3000911610990888,0.6999088389009112,13,Betsey Johnson,,0.0842554234039454
+19,2,dynamic,0.3003562388950501,0.69964376110495,12,Michael Waltrip,,0.07719991602922198
+19,3,dynamic,0.30138943058852713,0.6986105694114728,11,Randy Couture,,0.08366611965928107
+19,4,dynamic,0.3053788343383616,0.6946211656616383,10,Jonathan Bennett,,0.14645521947735615
+19,5,dynamic,0.32024116159172605,0.679758838408274,9,Michael Waltrip,,0.11742683249247371
+19,6,dynamic,0.3689902969682859,0.6310097030317141,9,Tommy Chong,,0.10203273305232496
+19,7,dynamic,0.47961647363421395,0.5203835263657861,8,Michael Waltrip,,0.11764763294750266
+19,8,dynamic,0.6044669956176942,0.39553300438230576,7,Michael Waltrip,,0.12337194303372533
+19,9,dynamic,0.6702879228786678,0.3297120771213322,6,Tommy Chong,,0.12339776404432205
+19,10,dynamic,0.6919571075344866,0.3080428924655134,5,Tommy Chong,,0.1254123861323342
+19,11,dynamic,0.6979119497225766,0.30208805027742336,4,Bethany Mota,,0.14844439887676067
+20,1,dynamic,0.3001044761276383,0.6998955238723616,12,Redfoo,,0.09529831130670809
+20,2,dynamic,0.3004678041060222,0.6995321958939777,12,Chris Soules,,0.08535102485597902
+20,3,dynamic,0.30208805027742336,0.6979119497225766,11,Charlotte McKinney,,0.10589668675360232
+20,4,dynamic,0.30919094796401025,0.6908090520359897,10,Chris Soules,,0.09937688198636929
+20,5,dynamic,0.3381397859596438,0.6618602140403562,9,Robert Herjavec,,0.15191395471275249
+20,6,dynamic,0.42832852032984275,0.5716714796701572,8,Robert Herjavec,,0.10493712095613313
+20,7,dynamic,0.5716714796701571,0.4283285203298429,7,Chris Soules,,0.1156608881198232
+20,8,dynamic,0.6618602140403562,0.3381397859596438,6,"Robert Herjavec,Noah Galloway",,0.15988642988815097
+20,9,dynamic,0.6908090520359897,0.30919094796401025,4,Noah Galloway,,0.14903576110821037
+20,10,dynamic,0.6979119497225766,0.30208805027742336,3,,,0.2214677245416429
+21,1,dynamic,0.3000911610990888,0.6999088389009112,13,Kim Zolciak-Biermann,,0.1368389031823944
+21,2,dynamic,0.3003562388950501,0.69964376110495,13,"Chaka Khan,Gary Busey",,0.09538478215531532
+21,3,dynamic,0.30138943058852713,0.6986105694114728,10,Paula Deen,,0.09935732453311844
+21,4,dynamic,0.3053788343383616,0.6946211656616383,10,Gary Busey,,0.10394292141367634
+21,5,dynamic,0.32024116159172605,0.679758838408274,9,Paula Deen,,0.11093608037752624
+21,6,dynamic,0.3689902969682859,0.6310097030317141,9,Paula Deen,,0.11354151410863104
+21,7,dynamic,0.47961647363421395,0.5203835263657861,8,Alek Skarlatos,,0.1010073784782299
+21,8,dynamic,0.6044669956176942,0.39553300438230576,7,Andy Grammer,,0.08802511631116519
+21,9,dynamic,0.6702879228786678,0.3297120771213322,6,Tamar Braxton,,0.14464539531725035
+21,10,dynamic,0.6919571075344866,0.3080428924655134,4,Nick Carter,,0.19087781525445582
+21,11,dynamic,0.6979119497225766,0.30208805027742336,4,Alek Skarlatos,,0.18432732863096835
+22,1,dynamic,0.3001044761276383,0.6998955238723616,12,Geraldo Rivera,,0.10613105775537841
+22,2,dynamic,0.3004678041060222,0.6995321958939777,12,Geraldo Rivera,,0.0752594414267397
+22,3,dynamic,0.30208805027742336,0.6979119497225766,11,Mischa Barton,,0.07745311836983287
+22,4,dynamic,0.30919094796401025,0.6908090520359897,10,Doug Flutie,,0.11821916030244854
+22,5,dynamic,0.3381397859596438,0.6618602140403562,9,Antonio Brown,,0.09150085727329144
+22,6,dynamic,0.42832852032984275,0.5716714796701572,9,Doug Flutie,,0.08092474862288439
+22,7,dynamic,0.5716714796701571,0.4283285203298429,8,"Jodie Sweetin,Kim Fields",,0.1480926323444075
+22,8,dynamic,0.6618602140403562,0.3381397859596438,6,Wanya Morris,,0.1129661781586444
+22,9,dynamic,0.6908090520359897,0.30919094796401025,5,"Antonio Brown,Ginger Zee",,0.14023579936019953
+22,10,dynamic,0.6979119497225766,0.30208805027742336,3,,,0.1668003146512408
+23,1,dynamic,0.3000911610990888,0.6999088389009112,13,Rick Perry,,0.08668411088345998
+23,2,dynamic,0.3003562388950501,0.69964376110495,13,Rick Perry,,0.08742930603969838
+23,3,dynamic,0.30138943058852713,0.6986105694114728,12,Rick Perry,,0.10007191247204826
+23,4,dynamic,0.3053788343383616,0.6946211656616383,11,"Babyface,Marilu Henner",,0.0634565601100336
+23,5,dynamic,0.32024116159172605,0.679758838408274,9,Amber Rose,,0.1179293863674274
+23,6,dynamic,0.3689902969682859,0.6310097030317141,9,Amber Rose,,0.09585133086684745
+23,7,dynamic,0.47961647363421395,0.5203835263657861,8,Marilu Henner,,0.12816529195285908
+23,8,dynamic,0.6044669956176942,0.39553300438230576,7,Marilu Henner,,0.12244765407856059
+23,9,dynamic,0.6702879228786678,0.3297120771213322,6,James Hinchcliffe,,0.1717679352296527
+23,10,dynamic,0.6919571075344866,0.3080428924655134,5,Calvin Johnson Jr.,,0.1250013757933317
+23,11,dynamic,0.6979119497225766,0.30208805027742336,4,Jana Kramer,,0.1567348518052576
+24,1,dynamic,0.3001044761276383,0.6998955238723616,12,Chris Kattan,,0.08543473577529559
+24,2,dynamic,0.3004678041060222,0.6995321958939777,12,Chris Kattan,,0.10006399110226422
+24,3,dynamic,0.30208805027742336,0.6979119497225766,11,Charo,,0.14016090860930586
+24,4,dynamic,0.30919094796401025,0.6908090520359897,10,Mr. T,,0.08148824334710433
+24,5,dynamic,0.3381397859596438,0.6618602140403562,9,David Ross,,0.10221288722095874
+24,6,dynamic,0.42832852032984275,0.5716714796701572,8,Nick Viall,,0.12987142815464608
+24,7,dynamic,0.5716714796701571,0.4283285203298429,7,"Bonner Bolton,David Ross",,0.12421311321676543
+24,8,dynamic,0.6618602140403562,0.3381397859596438,5,Bonner Bolton,,0.12770450391140858
+24,9,dynamic,0.6908090520359897,0.30919094796401025,4,David Ross,,0.1655362046801499
+24,10,dynamic,0.6979119497225766,0.30208805027742336,3,,,0.1994857110387727
+25,1,dynamic,0.3001044761276383,0.6998955238723616,13,Barbara Corcoran,,0.09257003966358596
+25,2,dynamic,0.3004678041060222,0.6995321958939777,13,"Barbara Corcoran,Nick Lachey",,0.08170949344913114
+25,3,dynamic,0.30208805027742336,0.6979119497225766,11,Sasha Pieterse,,0.07096029596277047
+25,4,dynamic,0.30919094796401025,0.6908090520359897,11,Nick Lachey,,0.07098047614008084
+25,5,dynamic,0.3381397859596438,0.6618602140403562,10,Nick Lachey,,0.09365692438776016
+25,6,dynamic,0.42832852032984275,0.5716714796701572,9,Nick Lachey,,0.09678675886818877
+25,7,dynamic,0.5716714796701571,0.4283285203298429,8,"Nikki Bella,Terrell Owens",,0.10997521261455223
+25,8,dynamic,0.6618602140403562,0.3381397859596438,6,Drew Scott,,0.11400337009354568
+25,9,dynamic,0.6908090520359897,0.30919094796401025,5,Drew Scott,,0.14640486503803168
+25,10,dynamic,0.6979119497225766,0.30208805027742336,4,Drew Scott,,0.16870773785540352
+26,1,dynamic,0.3009890492626539,0.6990109507373461,10,"Kareem Abdul-Jabbar,Johnny Damon",,0.12237383481393764
+26,2,dynamic,0.3381397859596438,0.6618602140403562,8,"Kareem Abdul-Jabbar,Jennie Finch Daigle",,0.10066072865706341
+26,3,dynamic,0.6270297904774574,0.37297020952254256,6,"Jennie Finch Daigle,Chris Mazdzer,Mirai Nagasu",,0.09897078509183038
+26,4,dynamic,0.6979119497225766,0.30208805027742336,3,,,0.16678682402911424
+27,1,dynamic,0.3001234181150166,0.6998765818849835,13,Joe Amabile,,0.09072975827595839
+27,2,dynamic,0.30065257129588735,0.6993474287041126,12,Joe Amabile,,0.12106831438171504
+27,3,dynamic,0.3034309941654848,0.6965690058345152,11,Joe Amabile,,0.08709045376708739
+27,4,dynamic,0.31751999908658446,0.6824800009134155,10,Joe Amabile,,0.07176563499842444
+27,5,dynamic,0.37807387080553606,0.621926129194464,9,Joe Amabile,,0.09731044078705038
+27,6,dynamic,0.5248706003543192,0.4751293996456808,9,John Schneider,,0.11941156061729037
+27,7,dynamic,0.6487065049629923,0.3512934950370077,8,"Joe Amabile,DeMarcus Ware",,0.08838029412220522
+27,8,dynamic,0.6891872367067873,0.3108127632932127,6,"Bobby Bones,Joe Amabile",,0.19623846536498768
+27,9,dynamic,0.6979119497225766,0.30208805027742336,4,,,0.15620391863304886
+28,1,dynamic,0.3000911610990888,0.6999088389009112,12,Lamar Odom,,0.08551002371486066
+28,2,dynamic,0.3003562388950501,0.69964376110495,12,Lamar Odom,,0.08625568298516277
+28,3,dynamic,0.30138943058852713,0.6986105694114728,10,Lamar Odom,,0.11261760210275151
+28,4,dynamic,0.3053788343383616,0.6946211656616383,10,Lamar Odom,,0.11697450024376706
+28,5,dynamic,0.32024116159172605,0.679758838408274,9,Sean Spicer,,0.10100841405259481
+28,6,dynamic,0.3689902969682859,0.6310097030317141,9,Sean Spicer,,0.09662543402342706
+28,7,dynamic,0.47961647363421395,0.5203835263657861,8,Sean Spicer,,0.12258566315556044
+28,8,dynamic,0.6044669956176942,0.39553300438230576,7,Sean Spicer,,0.12656593323284343
+28,9,dynamic,0.6702879228786678,0.3297120771213322,6,Sean Spicer,,0.09822646952929381
+28,10,dynamic,0.6919571075344866,0.3080428924655134,5,James Van Der Beek,,0.1210059712128726
+28,11,dynamic,0.6979119497225766,0.30208805027742336,4,,,0.14716696964239326
+29,1,dynamic,0.3000911610990888,0.6999088389009112,15,Carole Baskin,,0.10127606555860164
+29,2,dynamic,0.3003562388950501,0.69964376110495,15,Charles Oakley,,0.0734146122374476
+29,3,dynamic,0.30138943058852713,0.6986105694114728,14,Carole Baskin,,0.07798854071938256
+29,4,dynamic,0.3053788343383616,0.6946211656616383,13,Anne Heche,,0.08754668758206283
+29,5,dynamic,0.32024116159172605,0.679758838408274,12,Jesse Metcalfe,,0.08333668472059641
+29,6,dynamic,0.3689902969682859,0.6310097030317141,11,Skai Jackson,,0.11906381396327513
+29,7,dynamic,0.47961647363421395,0.5203835263657861,10,Monica Aldama,,0.0683877660191066
+29,8,dynamic,0.6044669956176942,0.39553300438230576,8,Nelly,,0.10679299642476456
+29,9,dynamic,0.6702879228786678,0.3297120771213322,7,Nelly,,0.16547132769632514
+29,10,dynamic,0.6919571075344866,0.3080428924655134,6,"Nelly,Johnny Weir",,0.1606176243490862
+29,11,dynamic,0.6979119497225766,0.30208805027742336,4,,,0.18398368588666547
+30,1,dynamic,0.3001044761276383,0.6998955238723616,15,Martin Kove,,0.05733383828427555
+30,2,dynamic,0.3004678041060222,0.6995321958939777,15,Martin Kove,,0.056052851464836184
+30,3,dynamic,0.30208805027742336,0.6979119497225766,14,Cody Rigsby,,0.11716376876298898
+30,4,dynamic,0.30919094796401025,0.6908090520359897,13,"Brian Austin Green,Matt James",,0.07610344259987646
+30,5,dynamic,0.3381397859596438,0.6618602140403562,11,Iman Shumpert,,0.08226829078216366
+30,6,dynamic,0.42832852032984275,0.5716714796701572,10,Kenya Moore,,0.09338948688049335
+30,7,dynamic,0.5716714796701571,0.4283285203298429,9,"Mike ""The Miz"" Mizanin",,0.0865461570013188
+30,8,dynamic,0.6618602140403562,0.3381397859596438,8,"Jimmie Allen,Iman Shumpert",,0.13450031155577183
+30,9,dynamic,0.6908090520359897,0.30919094796401025,6,"Cody Rigsby,Melora Hardin",,0.15052354368169008
+30,10,dynamic,0.6979119497225766,0.30208805027742336,4,,,0.17875319814020596
+31,1,dynamic,0.3001044761276383,0.6998955238723616,16,Vinny Guadagnino,,0.07331355501928766
+31,2,dynamic,0.3004678041060222,0.6995321958939777,15,Cheryl Ladd,,0.09062675543681374
+31,3,dynamic,0.30208805027742336,0.6979119497225766,14,Vinny Guadagnino,,0.10448118752663234
+31,4,dynamic,0.30919094796401025,0.6908090520359897,13,Sam Champion,,0.09166960308131761
+31,5,dynamic,0.3381397859596438,0.6618602140403562,12,Vinny Guadagnino,,0.10364491181956371
+31,6,dynamic,0.42832852032984275,0.5716714796701572,10,Vinny Guadagnino,,0.07354187746412619
+31,7,dynamic,0.5716714796701571,0.4283285203298429,9,Vinny Guadagnino,,0.11012175850237894
+31,8,dynamic,0.6618602140403562,0.3381397859596438,8,"Vinny Guadagnino,Heidi D'Amelio",,0.10206955692659521
+31,9,dynamic,0.6908090520359897,0.30919094796401025,6,"Trevor Donovan,Daniel Durant",,0.13504527882317532
+31,10,dynamic,0.6979119497225766,0.30208805027742336,4,,,0.240739420737915
+32,1,dynamic,0.3000911610990888,0.6999088389009112,14,Matt Walsh,,0.09462808113980573
+32,2,dynamic,0.3003562388950501,0.69964376110495,13,Mauricio Umansky,,0.08653720749726311
+32,3,dynamic,0.30138943058852713,0.6986105694114728,12,Tyson Beckford,,0.08801247122754191
+32,4,dynamic,0.3053788343383616,0.6946211656616383,11,Barry Williams,,0.0952463356006677
+32,5,dynamic,0.32024116159172605,0.679758838408274,10,Harry Jowsey,,0.10476535490431652
+32,6,dynamic,0.3689902969682859,0.6310097030317141,9,Harry Jowsey,,0.13515494826078256
+32,7,dynamic,0.47961647363421395,0.5203835263657861,8,Harry Jowsey,,0.13971539685557063
+32,8,dynamic,0.6044669956176942,0.39553300438230576,7,Harry Jowsey,,0.10575033323133223
+32,9,dynamic,0.6702879228786678,0.3297120771213322,6,Harry Jowsey,,0.12360128197670213
+32,10,dynamic,0.6919571075344866,0.3080428924655134,5,Alyson Hannigan,,0.12463108482466893
+32,11,dynamic,0.6979119497225766,0.30208805027742336,5,,,0.13993021877958128
+33,1,dynamic,0.3001234181150166,0.6998765818849835,13,Eric Roberts,,0.08562827166721632
+33,2,dynamic,0.30065257129588735,0.6993474287041126,13,"Reginald VelJohnson,Eric Roberts",,0.10424873262472387
+33,3,dynamic,0.3034309941654848,0.6965690058345152,11,"Reginald VelJohnson,Eric Roberts",,0.09497126787747279
+33,4,dynamic,0.31751999908658446,0.6824800009134155,9,Dwight Howard,,0.10470917352173423
+33,5,dynamic,0.37807387080553606,0.621926129194464,8,Phaedra Parks,,0.11859068090977626
+33,6,dynamic,0.5248706003543192,0.4751293996456808,7,Ilona Maher,,0.11614066500630628
+33,7,dynamic,0.6487065049629923,0.3512934950370077,6,Dwight Howard,,0.10351992888052962
+33,8,dynamic,0.6891872367067873,0.3108127632932127,5,Stephen Nedoroscik,,0.18085258183097164
+33,9,dynamic,0.6979119497225766,0.30208805027742336,5,,,0.1384347497359187
+34,1,dynamic,0.3000911610990888,0.6999088389009112,14,Corey Feldman,,0.10508770226166672
+34,2,dynamic,0.3003562388950501,0.69964376110495,14,"Corey Feldman,Andy Richter",,0.08702614359765591
+34,3,dynamic,0.30138943058852713,0.6986105694114728,12,Lauren Jauregui,,0.09911119261213762
+34,4,dynamic,0.3053788343383616,0.6946211656616383,11,Andy Richter,,0.08753336591888868
+34,5,dynamic,0.32024116159172605,0.679758838408274,10,Andy Richter,,0.09329780166228423
+34,6,dynamic,0.3689902969682859,0.6310097030317141,10,Andy Richter,,0.11603563510965806
+34,7,dynamic,0.47961647363421395,0.5203835263657861,9,Andy Richter,,0.11637796125640522
+34,8,dynamic,0.6044669956176942,0.39553300438230576,8,Andy Richter,,0.09429619647012719
+34,9,dynamic,0.6702879228786678,0.3297120771213322,7,Andy Richter,,0.11274198140942367
+34,10,dynamic,0.6919571075344866,0.3080428924655134,6,Dylan Efron,,0.09329039954031589
+34,11,dynamic,0.6979119497225766,0.30208805027742336,5,,,0.12765218158152108

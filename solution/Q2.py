@@ -85,7 +85,7 @@ CONTROVERSY_CASES = {
 class VotingMethodAnalyzer:
     """投票组合方法分析器"""
     
-    def __init__(self, vote_estimates_path: str = "q1_fan_vote_estimates.csv",
+    def __init__(self, vote_estimates_path: str = "q1_fan_vote_estimates_enhanced.csv",
                  cleaned_data_path: str = "dwts_cleaned.csv"):
         self.vote_path = vote_estimates_path
         self.cleaned_path = cleaned_data_path

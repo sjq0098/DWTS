@@ -87,7 +87,7 @@ class FeatureEngineer:
     
     def __init__(self, 
                  long_data_path: str = "dwts_long_format.csv",
-                 vote_data_path: str = "q1_fan_vote_estimates.csv",
+                 vote_data_path: str = "q1_fan_vote_estimates_enhanced.csv",
                  cleaned_data_path: str = "dwts_cleaned.csv"):
         self.long_data_path = long_data_path
         self.vote_data_path = vote_data_path
