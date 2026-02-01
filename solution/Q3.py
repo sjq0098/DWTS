@@ -1303,7 +1303,7 @@ class Q3Visualizer:
             show=False,
             plot_size=None
         )
-        axes[0].set_title("Judge Score Model", fontsize=12)
+        # MCM图表不显示标题
         
         # 右图: 粉丝模型
         plt.sca(axes[1])
@@ -1314,7 +1314,7 @@ class Q3Visualizer:
             show=False,
             plot_size=None
         )
-        axes[1].set_title("Fan Votes Model", fontsize=12)
+        # MCM图表不显示标题
         
         plt.tight_layout()
         plt.savefig(OUTPUT_DIR / "fig6_shap_summary.png", dpi=300, bbox_inches="tight")
@@ -1429,7 +1429,7 @@ class Q3Visualizer:
         
         ax1.set_xlabel("RankSHAP Importance (NDCG-based)", fontsize=11)
         ax1.set_ylabel("Feature", fontsize=11)
-        ax1.set_title("RankSHAP: Feature Contribution to Ranking Quality", fontsize=12)
+        # MCM图表不显示标题
         ax1.set_yticks(y)
         ax1.set_yticklabels(features_display, fontsize=9)
         ax1.invert_yaxis()
@@ -1478,7 +1478,7 @@ class Q3Visualizer:
         
         ax2.set_xlabel("Normalized Importance", fontsize=11)
         ax2.set_ylabel("Feature", fontsize=11)
-        ax2.set_title("TreeSHAP vs RankSHAP (Judge Model)", fontsize=12)
+        # MCM图表不显示标题
         ax2.set_yticks(y2)
         ax2.set_yticklabels(features_cmp_display, fontsize=9)
         ax2.invert_yaxis()
