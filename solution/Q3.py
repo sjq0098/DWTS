@@ -1435,11 +1435,6 @@ class Q3Visualizer:
         ax1.invert_yaxis()
         ax1.grid(axis="x", linestyle="--", alpha=0.4)
         ax1.legend()
-        ax1.text(
-            0.0, -0.12,
-            "* const: within a season-week group, values are constant so RankSHAP=0",
-            transform=ax1.transAxes, fontsize=8, color=COLORS["dark"]
-        )
 
         # 数值标签
         for bar in list(bars1) + list(bars2):

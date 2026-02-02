@@ -816,7 +816,7 @@ class Q4NewVotingSystem:
             ax.invert_yaxis()
             ax.set_xlabel("Week", fontsize=10)
             ax.set_ylabel("Combined Rank", fontsize=10)
-            ax.set_title(f"S{season}: {celeb}", fontsize=11)
+            # 删去 ax.set_title(f"S{season}: {celeb}", fontsize=11)
             ax.legend(fontsize=8, loc="best")
             ax.grid(True, alpha=0.3)
 
