@@ -1013,6 +1013,229 @@ class UncertaintyAnalyzer:
 
 
 # ============================================================
+# PART 4: 多解性/不可辨识诊断（最小实验）
+# ============================================================
+class IllPosednessDiagnostic:
+    """多解性诊断：在淘汰约束下采样可行投票分布，评估解集宽度"""
+
+    def __init__(self, estimator, trials_per_week: int = 120, max_weeks: int = 80, local_kappa: float = 40.0):
+        self.estimator = estimator
+        self.pred_df = estimator.pred_df
+        self.trials_per_week = trials_per_week
+        self.max_weeks = max_weeks
+        self.local_kappa = local_kappa
+        self.rng = np.random.default_rng(RANDOM_SEED)
+
+        self.rank_seasons = set(range(1, 3)) | set(range(28, int(self.pred_df["season"].max()) + 1))
+        self.TWIST_START_SEASON = 28
+        self.ENABLE_TWIST = True
+
+        self.results = None
+        self.summary = None
+
+    def _predict_elims(self, judge_scores, vote_shares, rule, use_twist, k):
+        if k <= 0:
+            return set()
+
+        if rule == "rank":
+            judge_rank = stats.rankdata(-judge_scores, method="min")
+            vote_rank = stats.rankdata(-vote_shares, method="min")
+            combined = judge_rank + vote_rank
+            order = np.argsort(-combined)  # 分数越高越差
+        else:
+            judge_pct = judge_scores / (judge_scores.sum() + 1e-9)
+            vote_pct = vote_shares / (vote_shares.sum() + 1e-9)
+            combined = judge_pct + vote_pct
+            order = np.argsort(combined)  # 分数越低越差
+
+        pred = order[:k].tolist()
+        bottom2 = order[:2].tolist()
+
+        if use_twist and k == 1 and len(bottom2) == 2:
+            a, b = bottom2[0], bottom2[1]
+            elim = a if judge_scores[a] < judge_scores[b] else b
+            pred = [elim]
+
+        return set(pred)
+
+    def _sample_votes(self, n, base=None, mode="uniform"):
+        if mode == "uniform" or base is None:
+            return self.rng.dirichlet(np.ones(n))
+        # local: 以基解为中心的Dirichlet扰动
+        base = np.clip(base, 1e-9, None)
+        base = base / base.sum()
+        alpha = base * self.local_kappa + 1e-3
+        return self.rng.dirichlet(alpha)
+
+    def run(self):
+        print("\n" + "=" * 60)
+        print("PART 4: 多解性/不可辨识诊断")
+        print("=" * 60)
+
+        week_groups = list(self.pred_df.groupby(["season", "week"], sort=True))
+        week_groups = [(int(s), int(w), g) for (s, w), g in week_groups]
+
+        elim_weeks = [(s, w, g) for (s, w, g) in week_groups
+                      if g["is_elimination_week"].fillna(0).astype(int).sum() > 0]
+
+        if len(elim_weeks) == 0:
+            print("  无淘汰周数据，跳过诊断。")
+            return self
+
+        if len(elim_weeks) > self.max_weeks:
+            idx = self.rng.choice(len(elim_weeks), size=self.max_weeks, replace=False)
+            elim_weeks = [elim_weeks[i] for i in idx]
+
+        rows = []
+        for s, w, g in elim_weeks:
+            judge_scores = g["judge_total"].values
+            true_set = set(g.loc[g["is_elimination_week"].fillna(0).astype(int) == 1, "celebrity_name"])
+            k = len(true_set)
+            if k <= 0 or len(g) <= 1:
+                continue
+
+            rule = "rank" if s in self.rank_seasons else "percent"
+            use_twist = self.ENABLE_TWIST and (s >= self.TWIST_START_SEASON)
+            base = g["vote_share_hat"].to_numpy()
+            base = np.clip(base, 1e-9, None)
+            base = base / base.sum()
+
+            metrics = {}
+            for mode in ["uniform", "local"]:
+                accepted = []
+                for _ in range(self.trials_per_week):
+                    vote_shares = self._sample_votes(len(g), base=base, mode=mode)
+                    pred_set = self._predict_elims(judge_scores, vote_shares, rule, use_twist, k)
+                    if pred_set == true_set:
+                        accepted.append(vote_shares)
+
+                accept_rate = len(accepted) / self.trials_per_week
+                mean_share_std = np.nan
+                mean_l1_to_base = np.nan
+
+                if len(accepted) >= 2:
+                    acc_arr = np.vstack(accepted)
+                    mean_share_std = acc_arr.std(axis=0).mean()
+                    mean_l1_to_base = np.mean(np.abs(acc_arr - base), axis=1).mean()
+
+                metrics.update({
+                    f"n_feasible_{mode}": len(accepted),
+                    f"accept_rate_{mode}": accept_rate,
+                    f"mean_share_std_{mode}": mean_share_std,
+                    f"mean_l1_to_base_{mode}": mean_l1_to_base
+                })
+
+            rows.append({
+                "season": s,
+                "week": w,
+                "rule_used": ("rank+twist" if (rule == "rank" and use_twist and k == 1) else rule),
+                "n_contestants": len(g),
+                "k_elims": k,
+                "trials": self.trials_per_week,
+                "local_kappa": self.local_kappa,
+                **metrics
+            })
+
+        self.results = pd.DataFrame(rows)
+        if len(self.results) == 0:
+            print("  无可用诊断周，跳过。")
+            return self
+
+        self.summary = {
+            "weeks_tested": len(self.results),
+            "mean_accept_rate_uniform": self.results["accept_rate_uniform"].mean(),
+            "mean_accept_rate_local": self.results["accept_rate_local"].mean(),
+            "feasible_week_ratio_uniform": (self.results["n_feasible_uniform"] >= 2).mean(),
+            "feasible_week_ratio_local": (self.results["n_feasible_local"] >= 2).mean(),
+            "mean_share_std_uniform": self.results["mean_share_std_uniform"].mean(),
+            "mean_share_std_local": self.results["mean_share_std_local"].mean(),
+            "mean_l1_to_base_local": self.results["mean_l1_to_base_local"].mean()
+        }
+
+        print("\n[Ill-Posedness Diagnostics]")
+        print(f"  诊断周数: {self.summary['weeks_tested']}")
+        print(f"  可行解占比(>=2个) uniform: {self.summary['feasible_week_ratio_uniform']:.3f}")
+        print(f"  可行解占比(>=2个) local:   {self.summary['feasible_week_ratio_local']:.3f}")
+        print(f"  平均接受率 uniform: {self.summary['mean_accept_rate_uniform']:.3f}")
+        print(f"  平均接受率 local:   {self.summary['mean_accept_rate_local']:.3f}")
+        print(f"  平均解集宽度 uniform: {self.summary['mean_share_std_uniform']:.4f}")
+        print(f"  平均解集宽度 local:   {self.summary['mean_share_std_local']:.4f}")
+        print(f"  平均偏离基解 local:   {self.summary['mean_l1_to_base_local']:.4f}")
+        return self
+
+    def save_results(self, output_path: str = "q1_illposed_diagnostic.csv"):
+        if self.results is not None and len(self.results) > 0:
+            self.results.to_csv(output_path, index=False)
+            print(f"\n[Step 4] 多解性诊断结果已保存至: {output_path}")
+        return self
+
+    def plot_diagnostic(self):
+        if self.results is None or len(self.results) == 0:
+            return self
+
+        plot_df = self.results.copy()
+        melt_cols = ["accept_rate_uniform", "accept_rate_local"]
+        box_df = plot_df.melt(
+            id_vars=["season", "week", "rule_used", "n_contestants"],
+            value_vars=melt_cols,
+            var_name="proposal",
+            value_name="accept_rate"
+        )
+        box_df["proposal"] = box_df["proposal"].map({
+            "accept_rate_uniform": "uniform",
+            "accept_rate_local": "local"
+        })
+
+        fig, axes = plt.subplots(1, 2, figsize=(10, 4.2), dpi=300)
+
+        sns.boxplot(
+            data=box_df,
+            x="proposal", y="accept_rate",
+            palette=[COLORS["primary"], COLORS["accent"]],
+            ax=axes[0]
+        )
+        axes[0].set_xlabel("Sampling Proposal")
+        axes[0].set_ylabel("Acceptance Rate")
+        axes[0].set_title("Feasible Set Measure")
+        max_accept = float(box_df["accept_rate"].max()) if len(box_df) else 0.0
+        axes[0].set_ylim(0, max(0.05, max_accept * 1.1))
+
+        scatter_df = plot_df.copy()
+        scatter_df = scatter_df[scatter_df["accept_rate_local"].notna()]
+        scatter_df = scatter_df[scatter_df["accept_rate_local"] > 0]
+        if len(scatter_df) == 0:
+            axes[1].text(
+                0.5, 0.5,
+                "No feasible samples\n(acceptance rate = 0)",
+                ha="center", va="center",
+                transform=axes[1].transAxes,
+                fontsize=10, color="gray"
+            )
+        else:
+            sizes = 30 + 8 * scatter_df["n_contestants"].clip(3, 16)
+            axes[1].scatter(
+                scatter_df["mean_share_std_local"],
+                scatter_df["accept_rate_local"],
+                s=sizes,
+                c=COLORS["secondary"],
+                alpha=0.7,
+                edgecolor="navy",
+                linewidth=0.5
+            )
+        axes[1].set_xlabel("Mean Share Std (Local)")
+        axes[1].set_ylabel("Acceptance Rate (Local)")
+        axes[1].set_title("Local Multiplicity vs Feasibility")
+        max_local = float(scatter_df["accept_rate_local"].max()) if len(scatter_df) else 0.0
+        axes[1].set_ylim(0, max(0.05, max_local * 1.1))
+
+        plt.tight_layout()
+        plt.savefig(OUTPUT_DIR / "fig9_illposed_diagnostic.png", dpi=300, bbox_inches="tight")
+        plt.close()
+        print(f"\n[Plots] 多解性诊断图表已保存至 {OUTPUT_DIR}")
+        return self
+
+
+# ============================================================
 # 主函数
 # ============================================================
 def main():
@@ -1032,6 +1255,10 @@ def main():
     # Part 3: 不确定性分析
     analyzer = UncertaintyAnalyzer(estimator, B=60, sigma_pool=0.18)
     analyzer.run()
+
+    # Part 4: 多解性诊断（最小实验）
+    diagnostic = IllPosednessDiagnostic(estimator, trials_per_week=120, max_weeks=80, local_kappa=40.0)
+    diagnostic.run().save_results().plot_diagnostic()
     
     # 汇总报告
     print("\n" + "=" * 70)
@@ -1051,10 +1278,18 @@ def main():
     
     print("\n【Part 3 - 不确定性度量】")
     print(f"  - 平均相对不确定性: {analyzer.unc_df['rel_ci80'].mean():.4f}")
+
+    if diagnostic.summary:
+        print("\n【Part 4 - 多解性诊断】")
+        print(f"  - 诊断周数: {diagnostic.summary['weeks_tested']}")
+        print(f"  - 可行解占比(>=2个) uniform: {diagnostic.summary['feasible_week_ratio_uniform']:.3f}")
+        print(f"  - 可行解占比(>=2个) local:   {diagnostic.summary['feasible_week_ratio_local']:.3f}")
+        print(f"  - 平均解集宽度 local: {diagnostic.summary['mean_share_std_local']:.4f}")
     
     print(f"\n【输出文件】")
     print(f"  - q1_fan_vote_estimates_enhanced.csv (增强版票数估算)")
     print(f"  - {OUTPUT_DIR}/ (所有可视化图表)")
+    print(f"  - q1_illposed_diagnostic.csv (多解性诊断结果)")
     
     return estimator, evaluator, analyzer
 
