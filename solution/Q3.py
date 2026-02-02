@@ -387,7 +387,11 @@ class XGBoostRankSHAPAnalyzer:
         print(f"  测试集: {len(self.X_test)} 样本")
         return self
     
-    def train_xgboost_models(self, do_grid_search: bool = False):
+    def train_xgboost_models(self,
+                             do_grid_search: bool = False,
+                             max_depth: int = None,
+                             learning_rate: float = None,
+                             n_estimators: int = None):
         """训练XGBoost模型"""
         # 基础参数
         base_params = {
@@ -402,6 +406,14 @@ class XGBoostRankSHAPAnalyzer:
             "random_state": RANDOM_SEED,
             "n_jobs": -1
         }
+
+        # 允许外部覆盖关键超参数（用于敏感性分析）
+        if max_depth is not None:
+            base_params["max_depth"] = int(max_depth)
+        if learning_rate is not None:
+            base_params["learning_rate"] = float(learning_rate)
+        if n_estimators is not None:
+            base_params["n_estimators"] = int(n_estimators)
         
         if do_grid_search:
             print("\n[Step 2] 执行网格搜索...")

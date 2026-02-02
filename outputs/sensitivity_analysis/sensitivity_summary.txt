@@ -1,0 +1,15 @@
+Q4 gamma:
+- Popularity最佳 gamma=0.00
+- Excitement最佳 gamma=0.00
+- Fairness最佳 gamma=1.00
+- 结论: 指标随gamma变化较平滑，整体稳健（见归一化曲线与CI带）
+
+Q1 融合权重:
+- Exact Elim最佳权重=1.00
+- 结论: 曲线接近平坦，融合权重对淘汰一致性影响有限，模型稳健
+
+Q3 超参数:
+- max_depth最佳=7.0
+- learning_rate最佳=0.05
+- n_estimators最佳=300.0
+- 结论: learning_rate更敏感，max_depth与n_estimators在测试范围内影响较小
